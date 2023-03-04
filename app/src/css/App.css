@@ -1,15 +1,12 @@
 #root {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding-bottom: 1rem;
   text-align: center;
 }
 
-.App{
-  display: flex;
-  flex-direction: column; /* aligns the items in a column */
-  justify-content: center; /* centers the items vertically */
-  align-items: center; /* centers the items horizontally */
+.App {
+  width: 100%;
 }
 
 .logo {
@@ -48,9 +45,80 @@
   color: #888;
 }
 
-.worldMap {
+.menuLinks {
+  transition: border-color 0.25s;
+  border: 1px solid transparent;
+}
+.menuLinks:hover {
+  border-color: #646cff;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1b2838;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+nav button {
+  border-radius: 0px;
+  background-color: #1b2838;
+}
+
+.navigation {
+  position: relative;
+  padding-right: 6.1rem;
+}
+
+.navigation-content {
+  text-align: left;
+  display: none;
+  position: fixed;
+  background-color: #1b2838;
+  margin-top: 0px;
+  min-width: 167px;
+  max-width: 168px;
+
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  margin: 0;
+  text-decoration: none;
+  display: block;
+  border: 1px solid transparent;
+}
+
+.navigation a:hover {
+  text-decoration: none;
+}
+
+.navigation:hover .navigation-content {
+  display: block;
+}
+
+.myhub {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid transparent;
+  height: 27px;
   width: 100%;
-  background-color: rgb(255, 255, 255);
+}
+
+.mapScreen {
+  width: 100%;
+}
+
+.worldMap {
+  width: 98%;
+  margin: 1%;
+  background-color: rgba(255, 255, 255, 0.21);
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px rgba(82, 95, 156, 0.619);
 }
