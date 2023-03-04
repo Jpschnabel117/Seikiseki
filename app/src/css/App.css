@@ -7,6 +7,7 @@
 
 .App {
   width: 100%;
+  height: 100%;
 }
 
 .logo {
@@ -54,12 +55,12 @@
 }
 
 nav {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #1b2838;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  position: fixed;
 }
 
 nav button {
@@ -69,7 +70,7 @@ nav button {
 
 .navigation {
   position: relative;
-  padding-right: 6.1rem;
+  padding-right: 7.1em;
 }
 
 .navigation-content {
@@ -106,19 +107,43 @@ nav button {
 .myhub {
   display: flex;
   justify-content: center;
+  z-index: 2;
   border-bottom: 1px solid transparent;
   height: 27px;
   width: 100%;
 }
 
 .mapScreen {
+  position: absolute;
   width: 100%;
+  background-color: black;
+  top: 3em;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .worldMap {
+  position: absolute;
   width: 98%;
   margin: 1%;
   background-color: rgba(255, 255, 255, 0.21);
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(82, 95, 156, 0.619);
+  top: 3em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.overlay {
+  width: 98%;
+  margin: 1%;
+  position: absolute;
+  top: 3em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 }
