@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux'
 import reducers from './redux/reducers'
 import Client from './client'
-import App from './components/App';
+import App from './App';
 import { createStore as createReduxStore } from 'redux';
 import Context from './withContext';
 
@@ -22,4 +22,4 @@ root.render(
             <App />
         </Context.Provider>
     </Provider>,
-);
+)
