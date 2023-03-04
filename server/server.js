@@ -18,6 +18,7 @@ app.options('/',cors(corsOptions))
 app.get('/', cors(corsOptions),(req, res, next) => {
 	console.log('Recieved response');
 	res.send('Hello world!!');
+	next();
 });
 
 app.listen(3000, () => console.log('Example app is listening on port 3000.'));
