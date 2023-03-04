@@ -12,9 +12,9 @@ app.use((req, res, next) => {
   console.log('Time: ', Date.now());
   next();
 });
-
-app.use(cors(corsOptions));
-app.get('./', (req, res) => {
+app.use(cors)
+// app.use(cors(corsOptions));
+app.get('/', cors(corsOptions), (req, res) => {
 	console.log('Recieved response');
 	res.send('Hello world!!');
 });
