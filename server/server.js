@@ -5,9 +5,8 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const mysql = require('mysql2');
-const {Route} = require('express');
 let populate_data_flag = 0;
-const env =require('dotenv').config();
+require('dotenv').config();
 const readline = require('readline').createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -38,12 +37,7 @@ app.use((req, res, next) => {
   next();
 });
 app.options('/', cors(corsOptions));
-// app.use(cors(corsOptions));
-app.get('/', cors(corsOptions), (req, res, next) => {
-  console.log('Recieved response');
-  res.send('Hello world!!');
-  next();
-});
+
 
 app.post('/addUser', cors(corsOptions), (req, res, next) => {
   const {data} = req.body;
