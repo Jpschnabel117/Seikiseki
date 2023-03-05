@@ -130,6 +130,12 @@ nav button {
 .worldMapMarks .sphere{
   fill:#c0c0bb33;
 }
+.worldMapMarks .graticules{
+  fill:#c0c0bb33;
+  stroke: #0000002f;
+}
+
+
 
 
 #worldMap {
