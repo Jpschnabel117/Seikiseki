@@ -57,6 +57,22 @@ app.post('/addUser', cors(corsOptions), (req, res, next) => {
     console.log(res, field);
     res.status(200).send('User Added');
   });
+  next();
+});
+
+app.post('/deleteUser', cors(corsOptions), (req, res, next) => {
+  const {data} = req.body;
+  const {uid} = data;
+
+  const sql = `DELETE FROM Users WHERE id = ${uid}`;
+  connection.query(sql, (errback, resback, fields) => {
+    if (errback) {
+      res.status(404).send(errback);
+    }
+    console.log(res, field);
+    res.status(200).send(`UserID: ${uid} now watching launch ${lid}`);
+  });
+  next();
 });
 
 app.post('/Watch', cors(corsOptions), (req, res, next) => {
@@ -71,6 +87,7 @@ app.post('/Watch', cors(corsOptions), (req, res, next) => {
     console.log(res, field);
     res.status(200).send(`UserID: ${uid} now watching launch ${lid}`);
   });
+  next();
 });
 
 
