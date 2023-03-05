@@ -12,7 +12,7 @@ const readline = require('readline').createInterface({
   output: process.stdout,
 });
 const connection = mysql.createConnection({
-  database: process.env.DATABASE,
+  database: 'seikiseki',
   user: process.env.user,
   password: process.env.password,
   host: process.env.host,
@@ -85,6 +85,18 @@ app.post('/Watch', cors(corsOptions), (req, res, next) => {
 });
 
 
+app.get('/getLaunches', cors(corsOptions), (req, res) => {
+  const sql = 'SELECT * FROM Launches';
+  connection.query(sql, function(errback, resback, fields) {
+    if (errback) {
+      console.log(errback);
+      res.status(404);
+    }
+    console.log(resback);
+    res.send(JSON.stringify(resback));
+  });
+});
+
 readline.question('Do you need to fetch data? Y/N \n', (input) => {
   if (input == 'Y') {
     populate_data_flag = 1;
@@ -125,3 +137,8 @@ if (populate_data_flag == 1 ) {
 
 
 app.listen(3000, () => console.log('Example app is listening on port 3000.'));
+app.get('/', cors(corsOptions), (req, res, next) => {
+  console.log('Recieved response');
+  res.send('Hello world!!');
+  next();
+});
