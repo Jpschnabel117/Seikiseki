@@ -113,16 +113,27 @@ nav button {
 
 .mapScreen {
   position: absolute;
-  width: 100%;
+  width: 90vw;
+  height: 50vh;
   top: 3em;
   left: 0;
   right: 0;
   bottom: 0;
 }
 
-.worldMap {
+
+.worldMapMarks .wMapFeature{
+  fill: #137b80;
+  stroke: #C0C0BB;
+}
+
+.worldMapMarks .sphere{
+  fill:#c0c0bb33;
+}
+
+
+#worldMap {
   position: absolute;
-  width: 98%;
   margin: 1%;
   background-color: rgba(255, 255, 255, 0.21);
   border-radius: 10px;
@@ -134,7 +145,8 @@ nav button {
   z-index: 0;
 }
 
-.overlay {
+
+/* .overlay {
   width: 98%;
   margin: 1%;
   position: absolute;
@@ -143,4 +155,4 @@ nav button {
   right: 0;
   bottom: 0;
   z-index: 1;
-}
+} */

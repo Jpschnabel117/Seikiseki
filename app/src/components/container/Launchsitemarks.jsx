@@ -1,8 +1,7 @@
 import * as d3 from "d3";
 import React, { useEffect } from "react";
-import worldMap from "../../assets/wrld-bp-1-svg.svg";
 
-function Launchsite(props) {
+function Launchsitemarks(props) {
 
   return (
     <>
@@ -11,4 +10,4 @@ function Launchsite(props) {
   );
 }
 
-export default Launchsite;
+export default Launchsitemarks;

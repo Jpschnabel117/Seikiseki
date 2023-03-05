@@ -1,22 +1,17 @@
 import * as d3 from "d3";
-import React, { useEffect} from "react";
-import worldMap from "../../assets/wrld-bp-1-svg.svg";
-import Launchsite from "./Launchsite";
+import React, { useEffect } from "react";
+import Launchsitemarks  from "./Launchsitemarks";
+import Worldmapmarks from "./Worldmapmarks";
 
-function Container() {
-    let width;
-    let height;
-    // if(!data){
-    //     return <pre>loading...</pre>
-    // }
+function Container(props) {
+    let worldMapData = props.worldGeoData
 
   return (
     <div className="mapScreen">
       {/* <img src={worldMap} className="worldMap" alt="mapsvg" /> */}
-      <svg id="sites" className="overlay">
-        <g>
-          <Launchsite />
-        </g>
+      <svg id="worldMap">
+        <Worldmapmarks worldMapData={worldMapData}/>
+        {/* <Launchsitemarks /> */}
       </svg>
     </div>
   );
