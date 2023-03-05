@@ -5,7 +5,7 @@ function Worldmapmarks(props) {
   let data = props.worldMapData;
   console.log(data);
 
-  const projection = d3.geoEqualEarth();
+  const projection = d3.geoEquirectangular(); //change projections here
   const path = d3.geoPath(projection);
 
   return (
