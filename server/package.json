@@ -20,6 +20,8 @@
     "request": "^2.88.2"
   },
   "devDependencies": {
-    "@types/mysql": "^2.15.21"
+    "@types/mysql": "^2.15.21",
+    "eslint": "^8.35.0",
+    "eslint-config-google": "^0.14.0"
   }
 }

@@ -11,8 +11,8 @@ CREATE TABLE Launches(
     id INT PRIMARY KEY AUTO_INCREMENT,
     location_name VARCHAR(255) NOT NULL UNIQUE,
     country VARCHAR(2),
-    longitude INT,
-    latitude INT,
+    longitude FLOAT,
+    latitude FLOAT,
     utc_offset INT(1)
 );
 -- @block
@@ -26,9 +26,23 @@ CREATE TABLE Watching (
 -- @block
 DROP TABLE Watching;
 DROP TABLE Launches;
+
+
 -- @block 
-INSERT INTO Users(email, bio, country)
-VALUES ("test", "testing bio", "US");
+INSERT INTO Users(email, pass, bio, country)
+VALUES ("test", "pass", "testing bio", "US");
+-- @block
+INSERT INTO Watching(user_id, launch_id)
+VALUES (1, 41);
+
+
+
+
+-- @block
+SELECT * from Watching
+-- @block
+SELECT *
+from Launches;
 -- @block
 SELECT email,
     id
