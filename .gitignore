@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+.env
+.env.*
+server/certs/update_whitelist_crts.sh
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
