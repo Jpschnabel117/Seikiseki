@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import "../css/App.css";
 import Header from "./header/Header";
 import Container from "./container/Container";
@@ -14,25 +14,50 @@ function App(props) {
   //converting world data to Geojson
   const countries = worldTopoData.objects.ne_50m_admin_0_countries;
   const worldGeoData = feature(worldTopoData, countries);
-  let launchSiteData;
-  fetch("http://localhost:3000/getLauncheSites")
-    .then(data => data.json()).then((response) => {
-      launchSiteData = response;
-    });
 
+  
+  const [launchSiteData, setLaunchSiteData] = useState([]);
+   const [loading, setLoading] = useState(true);
 
-  /*
-  add loading the launch 
-  */
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        setLoading(true);
+        const response = await fetch("http://localhost:3000/getLaunchSites");
+        const data = await response.json();
+        setLaunchSiteData(data);
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
+  console.log(launchSiteData);
+
 
   console.log("loaded");
   return (
     <div className="App">
       <Header />
-      <Routes>
-        <Route path="/" element={<Container worldGeoData={worldGeoData} launchSiteData={launchSiteData} />} />
-        <Route path="/profile" element={<Profilepage />} />
-      </Routes>
+      {loading ? (
+        <h1 className="loading">Loading...</h1>
+      ) : (
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Container
+                worldGeoData={worldGeoData}
+                launchSiteData={launchSiteData}
+              />
+            }
+          />
+          <Route path="/profile" element={<Profilepage />} />
+        </Routes>
+      )}
     </div>
   );
 }
