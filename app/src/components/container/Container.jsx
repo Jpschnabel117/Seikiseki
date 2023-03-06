@@ -4,6 +4,7 @@ import Worldmapmarks from "./Worldmapmarks";
 
 function Container(props) {
   let launchSiteData = props.launchSiteData;
+  let launchData = props.launchData;
 
   return (
     <div className="mapScreen">
@@ -11,6 +12,7 @@ function Container(props) {
       <svg id="worldMap">
         <Worldmapmarks
           launchSiteData={launchSiteData}
+          launchData={launchData}
         />
       </svg>
     </div>

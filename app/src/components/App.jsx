@@ -1,10 +1,13 @@
+
+const apiKey = import.meta.env.VITE_API_KEY
 import { useState, useEffect } from "react";
 import "../css/App.css";
 import Header from "./header/Header";
 import Container from "./container/Container";
 import Profilepage from "../pages/profilepage";
 import { Route, Routes } from "react-router-dom";
-import * as d3 from "d3";
+import localLaunchData from "../assets/launchtestdata.json";
+
 
 function App(props) {
   const [count, setCount] = useState(0);
@@ -32,10 +35,7 @@ function App(props) {
     }
 
     const myHeaders = new Headers();
-    myHeaders.append(
-      "Authorization",
-      "Bearer f512ef1e-c1e4-4e0d-8f9e-d5adfa82ae74"
-    );
+    myHeaders.append("Authorization", `Bearer ${apiKey}`);
 
     const requestOptions = {
       method: "GET",
@@ -60,9 +60,9 @@ function App(props) {
     fetchSiteData();
     //fetchLaunchData();
   }, []);
-  console.log(launches)
-  //load all the launches data , call launch api for it
-
+  console.log(launches);
+  let launchData = localLaunchData; // change this to launches when going to api
+  console.log(launchData);
   return (
     <div className="App">
       <Header />
@@ -72,7 +72,12 @@ function App(props) {
         <Routes>
           <Route
             path="/"
-            element={<Container launchSiteData={launchSiteData} />}
+            element={
+              <Container
+                launchSiteData={launchSiteData}
+                launchData={launchData}
+              />
+            }
           />
           <Route path="/profile" element={<Profilepage />} />
         </Routes>
