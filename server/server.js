@@ -5,7 +5,8 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const mysql = require('mysql2');
-require('dotenv').config();
+require('dotenv').config(); // Load environment variables
+
 const connection = mysql.createConnection({
   database: 'seikiseki',
   user: process.env.user,
@@ -19,67 +20,82 @@ connection.connect(function(err) {
   console.log('Connected!');
 });
 
-
+// Set CORS options
 const corsOptions = {
   origin: process.env.origin,
   methods: ['POST', 'GET'],
   optionsSuccessStatus: 200,
 };
 
-
+// Middleware to log the current time for every incoming request
 app.use((req, res, next) => {
   console.log('Time: ', Date.now());
   next();
 });
+
+// Enable preflight requests for all routes
 app.options('/', cors(corsOptions));
 
-
+// Route to add a new user to the database
 app.post('/addUser', cors(corsOptions), (req, res, next) => {
   const {data} = req.body;
   const {email, pass, bio, country} = data;
   // do basic validation here
-  connection.query(`INSERT INTO Users(email,pass, bio, country) VALUES ('${email}', '${pass}', '${bio}'), '${country}'`, (err, res, field) => {
-    if (eb) {
+  connection.query(`INSERT INTO Users(email,pass, bio, country) VALUES ('${email}', '${pass}', '${bio}'), '${country}'`, (err, result, fields) => {
+    if (err) {
       res.status(404).send(err);
       throw err;
     }
-    console.log(res, field);
+    console.log(result, fields);
     res.status(200).send('User Added');
   });
   next();
 });
 
+// Route to delete a user from the database
 app.post('/deleteUser', cors(corsOptions), (req, res, next) => {
   const {data} = req.body;
   const {uid} = data;
 
   const sql = `DELETE FROM Users WHERE id = ${uid}`;
-  connection.query(sql, (errback, resback, fields) => {
-    if (errback) {
-      res.status(404).send(errback);
+  connection.query(sql, (err, result, fields) => {
+    if (err) {
+      res.status(404).send(err);
     }
-    res.status(200).send(`UserID: ${uid} now watching launch ${lid}`);
+    res.status(200).send(`UserID: ${uid} deleted`);
   });
   next();
 });
 
+// Route to add a new launch to a user's watchlist
 app.post('/Watch', cors(corsOptions), (req, res, next) => {
   const {data} = req.body;
   const {uid, lid} = data;
 
   const sql = `INSERT INTO Watching(user_id, launch_id) VALUES (${uid}, ${lid})`;
-  connection.query(sql, (errback, resback, fields) => {
-    if (errback) {
-      res.status(404).send(errback);
+  connection.query(sql, (err, result, fields) => {
+    if (err) {
+      res.status(404).send(err);
     }
-    console.log(res, field);
+    console.log(result, fields);
     res.status(200).send(`UserID: ${uid} now watching launch ${lid}`);
   });
   next();
 });
 
-
+// Route to get a list of all launch sites from the database
 app.get('/getLauncheSites', cors(corsOptions), (req, res) => {
+  const sql = 'SELECT * FROM Launches';
+  connection.query(sql, function(err, result, fields) {
+    if (err) {
+      console.log(err);
+      res.status(404);
+    }
+    res.send(JSON.stringify(result));
+  });
+});
+
+app.get('/getLaunchSites', cors(corsOptions), (req, res) => {
   const sql = 'SELECT * FROM Launches';
   connection.query(sql, function(errback, resback, fields) {
     if (errback) {
@@ -90,16 +106,14 @@ app.get('/getLauncheSites', cors(corsOptions), (req, res) => {
   });
 });
 
-
 app.get('/populateBackend', cors(corsOptions), (req, res) => {
   // Populating SQL table with request data
   // need to run this twice, once on page 1, and once on page 2
-  const request = require('request');
   const options = {
-    'method': 'GET',
-    'url': 'https://fdo.rocketlaunch.live/json/locations?page=2',
-    'headers': {
-      'Authorization': `Bearer ${process.env.api_key}`,
+    method: 'GET',
+    url: 'https://fdo.rocketlaunch.live/json/locations?page=2',
+    headers: {
+      Authorization: `Bearer ${process.env.api_key}`,
     },
   };
   request(options, function(error, response) {
@@ -118,20 +132,19 @@ app.get('/populateBackend', cors(corsOptions), (req, res) => {
       const sql = `INSERT INTO Launches(location_name, country, longitude, latitude, utc_offset) VALUES ('${name}','${country.code}','${longitude}','${latitude}','${utc_offset}')`;
       connection.query(sql, function(err, result) {
         if (err) {
-          res.send('404');
+          console.error(err);
+          return res.status(500).send('Internal Server Error');
         };
         console.log('1 record inserted');
-        res.send('200');
-        next();
       });
     }
+    res.status(200).send('Success');
   });
 });
 
-
-app.listen(3000, () => console.log('Example app is listening on port 3000.'));
-app.get('/', cors(corsOptions), (req, res, next) => {
-  console.log('Recieved response');
+app.get('/', cors(corsOptions), (req, res) => {
+  console.log('Received response');
   res.send('Hello world!!');
-  next();
 });
+
+app.listen(3000, () => console.log(`Example app is listening on port 3000.`));
