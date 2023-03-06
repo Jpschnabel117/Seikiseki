@@ -5,12 +5,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const mysql = require('mysql2');
-let populate_data_flag = 0;
 require('dotenv').config();
-const readline = require('readline').createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
 const connection = mysql.createConnection({
   database: 'seikiseki',
   user: process.env.user,
@@ -63,7 +58,6 @@ app.post('/deleteUser', cors(corsOptions), (req, res, next) => {
     if (errback) {
       res.status(404).send(errback);
     }
-    console.log(res, field);
     res.status(200).send(`UserID: ${uid} now watching launch ${lid}`);
   });
   next();
@@ -85,22 +79,21 @@ app.post('/Watch', cors(corsOptions), (req, res, next) => {
 });
 
 
-app.get('/getLaunches', cors(corsOptions), (req, res) => {
+app.get('/getLauncheSites', cors(corsOptions), (req, res) => {
   const sql = 'SELECT * FROM Launches';
   connection.query(sql, function(errback, resback, fields) {
     if (errback) {
       console.log(errback);
       res.status(404);
     }
-    console.log(resback);
     res.send(JSON.stringify(resback));
   });
 });
 
 
-if (0) {
-// Populating SQL table with request data
-// need to run this twice, once on page 1, and once on page 2
+app.get('/populateBackend', cors(corsOptions), (req, res) => {
+  // Populating SQL table with request data
+  // need to run this twice, once on page 1, and once on page 2
   const request = require('request');
   const options = {
     'method': 'GET',
@@ -124,12 +117,16 @@ if (0) {
       console.log(country);
       const sql = `INSERT INTO Launches(location_name, country, longitude, latitude, utc_offset) VALUES ('${name}','${country.code}','${longitude}','${latitude}','${utc_offset}')`;
       connection.query(sql, function(err, result) {
-        if (err) throw err;
+        if (err) {
+          res.send('404');
+        };
         console.log('1 record inserted');
+        res.send('200');
+        next();
       });
     }
   });
-}
+});
 
 
 app.listen(3000, () => console.log('Example app is listening on port 3000.'));

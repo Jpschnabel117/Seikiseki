@@ -9,7 +9,13 @@ export default class Client {
   
   async sendRequest(options,url="http://localhost:3000/") {
     const response = await fetch(url, options);
-    return response.json();
+    storeResults(response.json());
   }
 
+  /**
+    * @param  {Object} payload //Contains the results of a search
+    */
+    async storeResults(payload){
+        store.dispatch(stateActions.searchResults(payload)) 
+    }
 }

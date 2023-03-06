@@ -15,23 +15,22 @@ function App(props) {
   const countries = worldTopoData.objects.ne_50m_admin_0_countries;
   const worldGeoData = feature(worldTopoData, countries);
   let launchSiteData;
-  fetch("http://localhost:3000/getLaunches")
-  .then(data => data.json()).then((response) => {
-    console.log(response);
-    launchSiteData = response;
-  })
+  fetch("http://localhost:3000/getLauncheSites")
+    .then(data => data.json()).then((response) => {
+      launchSiteData = response;
+    });
 
 
   /*
   add loading the launch 
   */
 
- console.log("loaded");
+  console.log("loaded");
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Container worldGeoData={worldGeoData} launchSiteData={launchSiteData}/>} />
+        <Route path="/" element={<Container worldGeoData={worldGeoData} launchSiteData={launchSiteData} />} />
         <Route path="/profile" element={<Profilepage />} />
       </Routes>
     </div>
