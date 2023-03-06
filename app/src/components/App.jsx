@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import "../css/App.css";
 import Header from "./header/Header";
 import Container from "./container/Container";
@@ -7,6 +7,9 @@ import { Route, Routes } from "react-router-dom";
 import worldTopoData from "../assets/worldMapRawData.json";
 import { feature } from "topojson-client";
 import * as d3 from "d3";
+import { connect } from 'react-redux';
+import { withContext } from '../withContext';
+
 
 function App(props) {
   const [count, setCount] = useState(0);
@@ -15,9 +18,9 @@ function App(props) {
   const countries = worldTopoData.objects.ne_50m_admin_0_countries;
   const worldGeoData = feature(worldTopoData, countries);
 
-  
+
   const [launchSiteData, setLaunchSiteData] = useState([]);
-   const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
@@ -61,5 +64,7 @@ function App(props) {
     </div>
   );
 }
+
+
 
 export default App;

@@ -5,6 +5,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const mysql = require('mysql2');
+const request = require('request');
 require('dotenv').config(); // Load environment variables
 
 const connection = mysql.createConnection({
@@ -84,17 +85,6 @@ app.post('/Watch', cors(corsOptions), (req, res, next) => {
 });
 
 // Route to get a list of all launch sites from the database
-app.get('/getLauncheSites', cors(corsOptions), (req, res) => {
-  const sql = 'SELECT * FROM Launches';
-  connection.query(sql, function(err, result, fields) {
-    if (err) {
-      console.log(err);
-      res.status(404);
-    }
-    res.send(JSON.stringify(result));
-  });
-});
-
 app.get('/getLaunchSites', cors(corsOptions), (req, res) => {
   const sql = 'SELECT * FROM Launches';
   connection.query(sql, function(errback, resback, fields) {
@@ -104,6 +94,16 @@ app.get('/getLaunchSites', cors(corsOptions), (req, res) => {
     }
     res.send(JSON.stringify(resback));
   });
+});
+
+
+app.get('/serverSideProps', cors(corsOptions), (req, res) => {
+  const sendBackData = {worldMapData: require('./assets/worldMapRawData.json'), svg: './assets/wrld-bp-1-svg.svg'};
+  try {
+    res.status(200).send(JSON.stringify(sendBackData));
+  } catch (error) {
+    res.status(404);
+  }
 });
 
 app.get('/populateBackend', cors(corsOptions), (req, res) => {
