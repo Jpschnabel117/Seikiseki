@@ -97,12 +97,8 @@ app.get('/getLaunches', cors(corsOptions), (req, res) => {
   });
 });
 
-readline.question('Do you need to fetch data? Y/N \n', (input) => {
-  if (input == 'Y') {
-    populate_data_flag = 1;
-  }
-});
-if (populate_data_flag == 1 ) {
+
+if (0) {
 // Populating SQL table with request data
 // need to run this twice, once on page 1, and once on page 2
   const request = require('request');

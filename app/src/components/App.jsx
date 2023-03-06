@@ -13,26 +13,27 @@ function App(props) {
 
   //converting world data to Geojson
   const countries = worldTopoData.objects.ne_50m_admin_0_countries;
-  let worldGeoData = feature(worldTopoData, countries);
+  const worldGeoData = feature(worldTopoData, countries);
+  let launchSiteData;
+  fetch("http://localhost:3000/getLaunches")
+  .then(data => data.json()).then((response) => {
+    console.log(response);
+    launchSiteData = response;
+  })
+
 
   /*
-  add loading the launch sites
-  */
-  /*
-  add loading the launchs
+  add loading the launch 
   */
 
+ console.log("loaded");
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Container worldGeoData={worldGeoData} />} />
+        <Route path="/" element={<Container worldGeoData={worldGeoData} launchSiteData={launchSiteData}/>} />
         <Route path="/profile" element={<Profilepage />} />
       </Routes>
-
-      {/* <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button> */}
     </div>
   );
 }
