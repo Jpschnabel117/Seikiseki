@@ -1,3 +1,9 @@
+export const toggleFetching = (data) => {
+    return {
+        type: 'TOGGLE_FETCHING',
+        payload : { data }
+    }
+};
 export const fillLocationData = (data) => {
     return {
         type: 'FILL_LOCATION_DATA',

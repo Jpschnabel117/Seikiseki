@@ -1,7 +1,12 @@
+import { feature } from "topojson-client";
+
 let initialState = {
     locations : {},
     worldMapData : {},
-    worldMapSvg : ''
+    worldMapSvg : '',
+    isFetching : false,
+    countries:{},
+    worldGeoData : {}
 };
 
 const container = (state=initialState, action) => {
@@ -12,8 +17,11 @@ const container = (state=initialState, action) => {
             return newState;
         }
         case 'WORLD_MAP_DATA' : {
-            const worldMapData = action.payload;
-            const newState = Object.assign({}, {...state}, {worldMapData:worldMapData});
+            const { data } = action.payload;
+            const { worldMapData } = data;
+            const countries = worldMapData.objects.ne_50m_admin_0_countries;
+            const worldGeoData = feature(worldMapData, countries);
+            const newState = Object.assign({}, {...state}, {countries:countries, worldMapData:worldMapData, worldGeoData:worldGeoData});
             return newState;
 
         }
@@ -23,6 +31,14 @@ const container = (state=initialState, action) => {
             return newState;
 
         }
+
+        case 'TOGGLE_FETCHING' : {
+            const value  = action.payload;
+            console.log("flip", value.data)
+            const newState = Object.assign({}, {...state}, {isFinite:value.data});
+            return newState;            
+        }
+
     default:
         return state
     }

@@ -6,14 +6,21 @@ class Client {
     store = data.store;
   }
     async get_server_side_props(){
+      store.dispatch(stateActions.toggleFetching(true));
       var requestOptions = {
         method: 'GET',
         redirect: 'follow'
       };
-      const response = await fetch(`${url}/serverSideProps`, requestOptions)
-      const { worldMapData, svg } = await response.json();
-      store.dispatch(stateActions.populateWorldMapData({ worldMapData}));
-      store.dispatch(stateActions.populateWorldMapSvg({svg}));
+      const res = fetch(`${url}/serverSideProps`, requestOptions)
+      res.then((data) => data.json()).then((json) => {
+        const { worldMapData, worldMapSvg } = json;
+        console.log(worldMapData)
+        store.dispatch(stateActions.toggleFetching(false));
+        store.dispatch(stateActions.populateWorldMapData({worldMapData}));
+        store.dispatch(stateActions.populateWorldMapSvg({worldMapSvg}));
+
+      }) 
+      
     }
 
 
