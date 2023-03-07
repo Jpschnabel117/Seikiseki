@@ -1,4 +1,4 @@
-const apiKey = import.meta.env.VITE_API_KEY
+const apiKey = import.meta.env.VITE_API_KEY;
 import { useState, useEffect } from "react";
 import "../css/App.css";
 import Header from "./header/Header";
@@ -6,21 +6,36 @@ import Container from "./container/Container";
 import Profilepage from "../pages/profilepage";
 import { Route, Routes } from "react-router-dom";
 import * as d3 from "d3";
-import { connect } from 'react-redux';
-import { withContext } from '../withContext';
+import { connect } from "react-redux";
+import { withContext } from "../withContext";
 import localLaunchData from "../assets/launchtestdata.json";
 
+
+
+let launchDataArr = localLaunchData; // change this to launches when going to api
+
+let launchIndex = {}
+launchDataArr.forEach((launch) => {
+  if (launch.pad && launch.pad.location && launch.pad.location.name) {
+    const padLocationName = launch.pad.location.name;
+    if (!launchIndex[padLocationName]) {
+      launchIndex[padLocationName] = [];
+    }
+    launchIndex[padLocationName].push(launch);
+  }
+});
+console.log(launchIndex)
 
 function App(props) {
   const [count, setCount] = useState(0);
   //converting world data to Geojson
   const [launchSiteData, setLaunchSiteData] = useState([]);
   const [launches, setLaunches] = useState([]);
+
   const [loadingSites, setLoadingSites] = useState(true);
 
   //CHANGE THIS BACK TO TRUE------------------------------v
   const [loadingLaunches, setLoadingLaunches] = useState(false);
-
   useEffect(() => {
     async function fetchSiteData() {
       try {
@@ -29,6 +44,7 @@ function App(props) {
         const data = await response.json();
         setLaunchSiteData(data);
         setLoadingSites(false);
+        
       } catch (error) {
         console.error(error);
       }
@@ -60,10 +76,7 @@ function App(props) {
     fetchSiteData();
     //fetchLaunchData();
   }, []);
-  console.log(launches);
-  
-  let launchData = localLaunchData; // change this to launches when going to api
-  console.log(launchData);
+  //console.log(launches);
   return (
     <div className="App">
       <Header />
@@ -76,7 +89,7 @@ function App(props) {
             element={
               <Container
                 launchSiteData={launchSiteData}
-                launchData={launchData}
+                launchData={launchIndex}
               />
             }
           />
@@ -87,12 +100,11 @@ function App(props) {
   );
 }
 
-
 const mapStateToProps = (state) => ({
   worldMapData: state.container.worldMapData,
   worldMapSvg: state.container.worldMapSvg,
   fetching: state.container.isFetching,
-  countries: state.container.countries
+  countries: state.container.countries,
 });
 
 const AppContainer = withContext(connect(mapStateToProps, null)(App));

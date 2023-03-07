@@ -1,4 +1,5 @@
 import * as d3 from "d3";
+import { select } from "d3";
 import React, { useEffect, useState } from "react";
 import Worldmapmarks from "./Worldmapmarks";
 

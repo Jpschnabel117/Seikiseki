@@ -67,7 +67,7 @@ nav {
   justify-content: space-between;
   background-color: #1b2838;
   position: fixed;
-  z-index: 100;
+  z-index: 99;
 }
 
 nav button {
@@ -122,7 +122,7 @@ nav button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 9999;
+  z-index: 101;
   background-color: white;
   border: 1px solid black;
   padding: 20px;
@@ -157,7 +157,6 @@ nav button {
 
 .worldMapMarks .site {
   fill: #a34a4a6b;
-
   opacity: 1;
 }
 

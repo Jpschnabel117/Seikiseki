@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-export const launchPopUp = (props) => {
-  const [launchs, setLaunchs] = useState([]);
+const LaunchPopUp = (props) => {
+  const [launches, setLaunchs] = useState(props.launches);
   const [loading, setLoading] = useState(true);
 
   return (
@@ -12,9 +12,17 @@ export const launchPopUp = (props) => {
       ) : (
         <>
           <h1>This is a Popup!</h1>
+          {launches ? (
+            <h1> list of launches here</h1>
+          ) : (
+            <h1>no launches in time frame</h1>
+          )}
           <p>Click the button to close.</p>
         </>
       )}
     </div>
   );
 };
+
+
+export default LaunchPopUp;

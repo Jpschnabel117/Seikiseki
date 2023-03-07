@@ -10,7 +10,6 @@ import Context from "./withContext";
 import { BrowserRouter } from "react-router-dom";
 
 import "./css/index.css";
-
 // styling file
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const store = createReduxStore(reducers, undefined);
