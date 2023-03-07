@@ -1,17 +1,14 @@
-import * as d3 from "d3";
 import React, { useEffect, useState, useRef } from "react";
-import worldTopoData from "../../assets/worldMapRawData.json";
-import { feature } from "topojson-client";
+import * as d3 from "d3";
+import { connect } from 'react-redux';
+import { withContext } from '../../withContext';
 import { launchPopUp } from "./launchPopUp";
 
-function Worldmapmarks(props) {
-  const countries = worldTopoData.objects.ne_50m_admin_0_countries;
-  const worldGeoData = feature(worldTopoData, countries);
-
-  let launchSiteData = props.launchSiteData;
+function WorldMapMarks(props) {
+  const { worldGeoData, launchSiteData } = props;
   let launchData = props.launchData;
 
-  const projection = d3.geoEquirectangular(); //change projections here
+  const projection = d3.geoEquirectangular();
   const path = d3.geoPath(projection);
   const graticule = d3.geoGraticule();
 
@@ -49,10 +46,10 @@ function Worldmapmarks(props) {
     <g className="worldMapMarks">
       <path className="sphere" d={path({ type: "Sphere" })} />
       <path className="graticules" d={path(graticule())} />
-      {worldGeoData.features.map((feature) => (
+      {worldGeoData.features?.map((feature) => (
         <path className="wMapFeature" d={path(feature)} />
       ))}
-      {launchSiteData.map((site) => {
+      {launchSiteData?.map((site) => {
         if (site.longitude !== 0 || site.latitude !== 0) {
           const [x, y] = projection([site.longitude, site.latitude]);
           return (
@@ -74,4 +71,10 @@ function Worldmapmarks(props) {
   );
 }
 
-export default Worldmapmarks;
+const mapStateToProps = (state) => ({
+  worldGeoData: state.container.worldGeoData,
+});
+
+const WorldMapContainer = withContext(connect(mapStateToProps)(WorldMapMarks));
+
+export default WorldMapContainer;

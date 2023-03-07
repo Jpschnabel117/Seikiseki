@@ -17,7 +17,7 @@ const store = createReduxStore(reducers, undefined);
 
 Client.init({ store });
 let client = new Client();
-
+client.get_server_side_props();
 root.render(
   <BrowserRouter>
     <Provider store={store}>

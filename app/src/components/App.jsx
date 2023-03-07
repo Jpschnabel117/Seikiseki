@@ -1,4 +1,3 @@
-
 const apiKey = import.meta.env.VITE_API_KEY
 import { useState, useEffect } from "react";
 import "../css/App.css";
@@ -6,14 +5,15 @@ import Header from "./header/Header";
 import Container from "./container/Container";
 import Profilepage from "../pages/profilepage";
 import { Route, Routes } from "react-router-dom";
+import * as d3 from "d3";
+import { connect } from 'react-redux';
+import { withContext } from '../withContext';
 import localLaunchData from "../assets/launchtestdata.json";
 
 
 function App(props) {
   const [count, setCount] = useState(0);
-
   //converting world data to Geojson
-
   const [launchSiteData, setLaunchSiteData] = useState([]);
   const [launches, setLaunches] = useState([]);
   const [loadingSites, setLoadingSites] = useState(true);
@@ -87,4 +87,13 @@ function App(props) {
   );
 }
 
-export default App;
+
+const mapStateToProps = (state) => ({
+  worldMapData: state.container.worldMapData,
+  worldMapSvg: state.container.worldMapSvg,
+  fetching: state.container.isFetching,
+  countries: state.container.countries
+});
+
+const AppContainer = withContext(connect(mapStateToProps, null)(App));
+export default AppContainer;
