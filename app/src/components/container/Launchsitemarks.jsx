@@ -16,12 +16,19 @@ function Launchsitemarks({ cx, cy, r, site, launches }) {
     setIsOpen(false);
   };
 
+  let number = 0
+  let color = "#0000006b";
+  if(launches){
+    number = launches.length;
+    color = "#a34a4a6b";
+  }
+
 
   return (
     <>
-      <circle className="site" cx={cx} cy={cy} r={r} onClick={handleClick}>
+      <circle className="site"  fill={color} cx={cx} cy={cy} r={r} onClick={handleClick}>
         <title>
-          {site.location_name}: long:{site.longitude} lat:{site.latitude}
+          {site.location_name}: long:{site.longitude} lat:{site.latitude} Launches: {number}
         </title>
       </circle>
 {/*     

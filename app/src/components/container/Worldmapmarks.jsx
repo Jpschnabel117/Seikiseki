@@ -37,8 +37,11 @@ function WorldMapMarks(props) {
           if (site.longitude !== 0 || site.latitude !== 0) {
             const [x, y] = projection([site.longitude, site.latitude]);
             let siteLaunches = null;
+            let radius = 5
             if (launchData[site.location_name]) {
               siteLaunches = launchData[site.location_name];
+              console.log(siteLaunches)
+              radius = radius + siteLaunches.length*2
             } //check null
 
             return (
@@ -46,7 +49,7 @@ function WorldMapMarks(props) {
                 key={site.name}
                 cx={x}
                 cy={y}
-                r={5}
+                r={radius}
                 site={site}
                 launches={siteLaunches}
               />

@@ -172,13 +172,13 @@ nav button {
 }
 
 .worldMapMarks .site {
-  fill: #a34a4a6b;
+ 
   opacity: 1;
 }
 
 .worldMapMarks .site:hover {
   fill: #a34a4a;
-  r: 12;
+  
 }
 
 .worldMapMarks .sphere {
