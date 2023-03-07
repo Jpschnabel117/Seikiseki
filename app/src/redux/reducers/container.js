@@ -1,5 +1,7 @@
 let initialState = {
-    locations : {}
+    locations : {},
+    worldMapData : {},
+    svg : ''
 };
 
 const container = (state=initialState, action) => {

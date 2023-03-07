@@ -4,7 +4,6 @@ import Header from "./header/Header";
 import Container from "./container/Container";
 import Profilepage from "../pages/profilepage";
 import { Route, Routes } from "react-router-dom";
-import worldTopoData from "../assets/worldMapRawData.json";
 import { feature } from "topojson-client";
 import * as d3 from "d3";
 import { connect } from 'react-redux';
@@ -13,7 +12,6 @@ import { withContext } from '../withContext';
 
 function App(props) {
   const [count, setCount] = useState(0);
-
   //converting world data to Geojson
   const countries = worldTopoData.objects.ne_50m_admin_0_countries;
   const worldGeoData = feature(worldTopoData, countries);
@@ -66,5 +64,9 @@ function App(props) {
 }
 
 
+const mapStateToProps = (state) => ({
+  worldMapData: state.container.worldMapData
+});
 
-export default App;
+const AppContainer = withContext(connect(mapStateToProps, null)(App));
+export default AppContainer;
