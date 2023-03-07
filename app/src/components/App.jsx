@@ -61,6 +61,7 @@ function App(props) {
     //fetchLaunchData();
   }, []);
   console.log(launches);
+  
   let launchData = localLaunchData; // change this to launches when going to api
   console.log(launchData);
   return (
