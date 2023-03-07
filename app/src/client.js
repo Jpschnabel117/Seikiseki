@@ -12,7 +12,8 @@ class Client {
       };
       const response = await fetch(`${url}/serverSideProps`, requestOptions)
       const { worldMapData, svg } = await response.json();
-      console.log(worldMapData);
+      store.dispatch(stateActions.populateWorldMapData({ worldMapData}));
+      store.dispatch(stateActions.populateWorldMapSvg({svg}));
     }
 
 

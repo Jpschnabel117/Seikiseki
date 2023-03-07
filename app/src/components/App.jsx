@@ -13,7 +13,8 @@ import { withContext } from '../withContext';
 function App(props) {
   const [count, setCount] = useState(0);
   //converting world data to Geojson
-  const countries = worldTopoData.objects.ne_50m_admin_0_countries;
+  const { worldMapData } = props;
+  const countries = worldMapData.objects.ne_50m_admin_0_countries;
   const worldGeoData = feature(worldTopoData, countries);
 
 
@@ -65,7 +66,8 @@ function App(props) {
 
 
 const mapStateToProps = (state) => ({
-  worldMapData: state.container.worldMapData
+  worldMapData: state.container.worldMapData,
+  worldMapSvg: state.container.worldMapSvg
 });
 
 const AppContainer = withContext(connect(mapStateToProps, null)(App));
