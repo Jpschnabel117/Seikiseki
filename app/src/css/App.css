@@ -67,6 +67,9 @@ nav {
   justify-content: space-between;
   background-color: #1b2838;
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 99;
 }
 
@@ -117,19 +120,32 @@ nav button {
   width: 100%;
 }
 
-.launchPop{
-  position: fixed;
+.popup {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 101;
+  z-index: 1000;
+  padding: 1rem;
   background-color: white;
   border: 1px solid black;
-  padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+.popup h2 {
+  margin-top: 0;
+}
+
+.popup ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.popup button {
+  display: block;
+  margin: 1rem auto 0;
+}
 .mapScreen {
   display: flex;
   justify-content: center;
@@ -173,8 +189,6 @@ nav button {
   stroke: #0000001f;
 }
 
-
-
 #worldMap {
   width: 950px;
   height: 480px;
@@ -200,3 +214,66 @@ nav button {
   bottom: 0;
   z-index: 1;
 } */
+
+.testbox {
+  width: 100vh;
+  height: 100vh;
+  background-color: #a34a4a;
+  z-index: 1030;
+}
+
+.profilePageMain {
+  margin-top: 2.5em;
+  background-color: #646cff;
+  width: 100vw;
+}
+
+
+
+/* sssssssssssssssssss cardd style */
+.card {
+  background-color: #f7f7f7;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
+}

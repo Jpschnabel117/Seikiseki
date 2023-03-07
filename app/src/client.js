@@ -17,8 +17,6 @@ class Client {
         console.log(worldMapData)
         store.dispatch(stateActions.toggleFetching(false));
         store.dispatch(stateActions.populateWorldMapData({worldMapData}));
-        store.dispatch(stateActions.populateWorldMapSvg({worldMapSvg}));
-
       }) 
       
     }

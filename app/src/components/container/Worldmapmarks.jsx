@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import * as d3 from "d3";
 import { connect } from "react-redux";
 import { withContext } from "../../withContext";
-import LaunchPopUp from "./launchPopUp";
+import Launchsitemarks from "./Launchsitemarks";
 
 function WorldMapMarks(props) {
   const { worldGeoData, launchSiteData } = props;
@@ -12,36 +12,6 @@ function WorldMapMarks(props) {
   const path = d3.geoPath(projection);
   const graticule = d3.geoGraticule();
 
-  //put in seperate component Launchsitemarks--
-  function LaunchSite({ cx, cy, r, site, launches }) {
-    const ref = useRef();
-    const [showPopup, setShowPopup] = useState(false);
-
-    const togglePopup = () => {
-      setShowPopup(!showPopup);
-      console.log("hello");
-    };
-
-    useEffect(() => {
-      const circle = d3.select(ref.current);
-      circle.on("click", togglePopup);
-    }, []);
-
-    return (
-      <>
-        <circle className="site" ref={ref} cx={cx} cy={cy} r={r}>
-          <title>{site.location_name}</title>
-        </circle>
-        <h1>{showPopup} hello</h1>
-        {showPopup ? (
-          <div className="launchPop">
-            <button onClick={togglePopup}>Close Popup</button>
-            <LaunchPopUp site={site} launches={launches} />
-          </div>
-        ) : null}
-      </>
-    );
-  }
 
   //---------------------------------------------------------------
 
@@ -66,14 +36,13 @@ function WorldMapMarks(props) {
         {launchSiteData?.map((site) => {
           if (site.longitude !== 0 || site.latitude !== 0) {
             const [x, y] = projection([site.longitude, site.latitude]);
-            let siteLaunches = null
-            if(launchData[site.location_name]){
+            let siteLaunches = null;
+            if (launchData[site.location_name]) {
               siteLaunches = launchData[site.location_name];
-              console.log(siteLaunches)
-            }//check null
-            
+            } //check null
+
             return (
-              <LaunchSite
+              <Launchsitemarks
                 key={site.name}
                 cx={x}
                 cy={y}
@@ -85,6 +54,7 @@ function WorldMapMarks(props) {
           }
           return null;
         })}
+        
       </g>
     </>
   );

@@ -16,9 +16,4 @@ export const populateWorldMapData = (data) => {
         payload : { data }
     };
 };
-export const populateWorldMapSvg = (data) => {
-    return {
-        type: 'WORLD_MAP_SVG',
-        payload : { data }
-    };
-};
+
