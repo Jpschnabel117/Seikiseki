@@ -1,13 +1,13 @@
-import * as d3 from "d3";
-import { select } from "d3";
-import React, { useEffect, useState } from "react";
 import Worldmapmarks from "./Worldmapmarks";
-import Launchsitemarks from "./Launchsitemarks";
+import { connect } from "react-redux";
+import { withContext } from "../../withContext";
+import * as stateActions from "../../redux/stateActions";
+
+
 
 function Container(props) {
   let launchSiteData = props.launchSiteData;
   let launchData = props.launchData;
-
   return (
     <div className="mapScreen">
       <svg id="worldMap">
@@ -16,24 +16,36 @@ function Container(props) {
           launchData={launchData}
         />
       </svg>
-      {/*     
-      {isOpen && (        
+
+      {props.popupIsOpen && (
         <div className="popup">
-          <h2>{site.location_name}</h2>
-          {launches ? (
+          <h2>{props.site_name}</h2>
+          {launchData["Tanegashima Space Center"] ? (
             <ul>
-              {launches.map((launch) => (
+              {launchData[props.site_name]?.map((launch) => (
                 <li key={launch.id}>{launch.name}</li>
               ))}
             </ul>
           ) : (
-            <p>No launches scheduled at this site.</p>
+            <p>Hi</p>
           )}
-          <button onClick={handleClose}>Close</button>
+          <button onClick={() => props.togglePopup()}>Close</button>
         </div>
-      )} */}
+      )}
     </div>
   );
+
 }
 
-export default Container;
+
+const mapStateToProps = (state) => ({
+  worldGeoData: state.container.worldGeoData,
+  popupIsOpen: state.popup.isOpen,
+  site_name: state.popup.site_name,
+});
+const mapDispatchToProps = (dispatch) => ({
+  togglePopup: () => dispatch(stateActions.togglePopup(true))
+});
+const ContainerContainer = withContext(connect(mapStateToProps, mapDispatchToProps)(Container));
+
+export default ContainerContainer;

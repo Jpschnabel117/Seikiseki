@@ -16,4 +16,15 @@ export const populateWorldMapData = (data) => {
         payload : { data }
     };
 };
-
+export const togglePopup = (data) => {
+    return {
+        type: 'TOGGLE_POPUP',
+        payload : { data }
+    };
+}
+export const updateSiteName = (data) => {
+    return {
+        type: 'UPDATE_SITE_NAME',
+        payload : { data }
+    };
+}
