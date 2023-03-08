@@ -16,4 +16,9 @@ export const populateWorldMapData = (data) => {
         payload : { data }
     };
 };
-
+export const togglePopup = (data) => {
+    return {
+        type: 'TOGGLE_POPUP',
+        payload : { data }
+    };
+}

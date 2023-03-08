@@ -5,7 +5,7 @@ let initialState = {
     worldMapData : {},
     isFetching : false,
     countries:{},
-    worldGeoData : {}
+    worldGeoData : {},
 };
 
 const container = (state=initialState, action) => {

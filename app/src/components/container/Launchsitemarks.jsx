@@ -1,24 +1,18 @@
 import * as d3 from "d3";
-import React, {  useState } from "react";
-
-function Launchsitemarks({ cx, cy, r, site, launches }) {
-  
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleClick = () => {
-    setIsOpen(true);
-    console.log("hello")
-    //pass 
-  };
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import { withContext } from "../../withContext";
+import * as stateActions from "../../redux/stateActions";
+function LaunchSiteMarks(props) {
+  const { cx, cy, r, site, launches } = props;
 
 
-  const handleClose = () => {
-    setIsOpen(false);
-  };
 
-  let number = 0
+
+
+  let number = 0;
   let color = "#0000006b";
-  if(launches){
+  if (launches) {
     number = launches.length;
     color = "#a34a4a6b";
   }
@@ -26,29 +20,25 @@ function Launchsitemarks({ cx, cy, r, site, launches }) {
 
   return (
     <>
-      <circle className="site"  fill={color} cx={cx} cy={cy} r={r} onClick={handleClick}>
+      <circle className="site" fill={color} cx={cx} cy={cy} r={r} onClick={() => props.togglePopup(site.location_name)}>
         <title>
           {site.location_name}: long:{site.longitude} lat:{site.latitude} Launches: {number}
         </title>
       </circle>
-{/*     
-      {isOpen && (        
-        <div className="popup">
-          <h2>{site.location_name}</h2>
-          {launches ? (
-            <ul>
-              {launches.map((launch) => (
-                <li key={launch.id}>{launch.name}</li>
-              ))}
-            </ul>
-          ) : (
-            <p>No launches scheduled at this site.</p>
-          )}
-          <button onClick={handleClose}>Close</button>
-        </div>
-      )} */}
+
     </>
   );
 }
+const mapStateToProps = (state) => ({
+  popupIsOpen: state.popup.isOpen,
+  site_name: state.popup.site_name
+});
+const mapDispatchToProps = (dispatch) => ({
+  togglePopup: (site_name) => dispatch(stateActions.togglePopup(site_name)),
+});
+const LaunchSiteMarksContainer = withContext(
+  connect(mapStateToProps, mapDispatchToProps)
+    (LaunchSiteMarks
+    ));
 
-export default Launchsitemarks;
+export default LaunchSiteMarksContainer;
