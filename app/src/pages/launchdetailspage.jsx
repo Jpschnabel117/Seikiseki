@@ -22,7 +22,7 @@ function LaunchDetailsPage() {
     // } catch (error) {
     //   console.error("Error fetching launch data:", error);
     // }
-    // let tempLaunch = data.find((obj) => obj.id === launchId);
+    // let tempLaunch = data.find((obj) => obj.id === Number(launchId));
     // console.log(tempLaunch);
     // setLaunch(tempLaunch);
     //---end temporary

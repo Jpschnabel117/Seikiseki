@@ -131,6 +131,8 @@ nav button {
   background-color: white;
   border: 1px solid black;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  max-height: 80vh;
+  
 }
 
 .popup h2 {
@@ -173,14 +175,11 @@ nav button {
 }
 
 .worldMapMarks .site {
- 
-  
 }
 
 .worldMapMarks .site:hover {
   fill: #a34a4a;
   opacity: 0.7;
-  
 }
 
 .worldMapMarks .sphere {
@@ -230,14 +229,43 @@ nav button {
   width: 100vw;
 }
 
-.launchPage{
-    margin-top: 2.5em;
+.launchPage {
+  margin-top: 2.5em;
   background-color: #646cff;
   width: 100vw;
 }
 
+li:hover {
+  background-color: #1b2838;
+}
 
+.listDiv {
+}
 
+/* table styles */
+table {
+  display: inline-block;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+}
+tr:hover {
+  background-color: #f5f5f5;
+}
+/*  */
 /* sssssssssssssssssss cardd style */
 .card {
   background-color: #f7f7f7;

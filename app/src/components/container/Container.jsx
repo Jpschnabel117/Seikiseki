@@ -8,6 +8,34 @@ import { Link } from "react-router-dom";
 function Container(props) {
   let launchSiteData = props.launchSiteData;
   let launchIndex = props.launchIndex;
+
+  function launchStatus(value) {
+    let result;
+
+    switch (value) {
+      case -1:
+        result = "Not Set";
+        break;
+      case 0:
+        result = "Failure";
+        break;
+      case 1:
+        result = "Success";
+        break;
+      case 2:
+        result = "Partial Failure";
+        break;
+      case 3:
+        result = "In-Flight Abort";
+        break;
+      default:
+        result = "Invalid value";
+        break;
+    }
+
+    return result;
+  }
+
   return (
     <div className="mapScreen">
       <svg id="worldMap">
@@ -27,35 +55,62 @@ function Container(props) {
               {launchIndex["Cape Canaveral / KSC TBD"] ||
               launchIndex["Cape Canaveral SFS"] ||
               launchIndex["Kennedy Space Center"] ? (
-                <ul>
-                  {launchIndex["Cape Canaveral / KSC TBD"]?.map((launch) => (
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Provider</th>
+                      <th>Mission</th>
+                      <th>Vehicle</th>
+                      <th>Date</th>
+                      <th>Result</th>
+                    </tr>
+                  </thead>
+                  <tbody>
                     <>
-                      <li key={launch.id}>
-                        <Link to={`/launchdetails/${launch.id}`}>
-                          {launch.name}
-                        </Link>
-                      </li>
+                      {launchIndex["Cape Canaveral SFS"]?.map((launch) => (
+                        <tr>
+                          <td>{launch.provider.name}</td>
+                          <td className="linkTd">
+                            <Link to={`/launchdetails/${launch.id}`}>
+                              {launch.name}
+                            </Link>
+                          </td>
+                          <td>{launch.date_str}</td>
+                          <td>{launch.vehicle.name}</td>
+                          <td>{launchStatus(launch.result)}</td>
+                        </tr>
+                      ))}
+                      {launchIndex["Cape Canaveral / KSC TBD"]?.map(
+                        (launch) => (
+                          <tr>
+                            <td>{launch.provider.name}</td>
+                            <td className="linkTd">
+                              <Link to={`/launchdetails/${launch.id}`}>
+                                {launch.name}
+                              </Link>
+                            </td>
+                            <td>{launch.date_str}</td>
+                            <td>{launch.vehicle.name}</td>
+                            <td>{launchStatus(launch.result)}</td>
+                          </tr>
+                        )
+                      )}
+                      {launchIndex["Kennedy Space Center"]?.map((launch) => (
+                        <tr>
+                          <td>{launch.provider.name}</td>
+                          <td className="linkTd">
+                            <Link to={`/launchdetails/${launch.id}`}>
+                              {launch.name}
+                            </Link>
+                          </td>
+                          <td>{launch.date_str}</td>
+                          <td>{launch.vehicle.name}</td>
+                          <td>{launchStatus(launch.result)}</td>
+                        </tr>
+                      ))}
                     </>
-                  ))}
-                  {launchIndex["Cape Canaveral SFS"]?.map((launch) => (
-                    <>
-                      <li key={launch.id}>
-                        <Link to={`/launchdetails/${launch.id}`}>
-                          {launch.name}
-                        </Link>
-                      </li>
-                    </>
-                  ))}
-                  {launchIndex["Kennedy Space Center"]?.map((launch) => (
-                    <>
-                      <li key={launch.id}>
-                        <Link to={`/launchdetails/${launch.id}`}>
-                          {launch.name}
-                        </Link>
-                      </li>
-                    </>
-                  ))}
-                </ul>
+                  </tbody>
+                </table>
               ) : (
                 <p>No Launches in Selected Time Frame</p>
               )}
@@ -64,24 +119,40 @@ function Container(props) {
             <>
               <h2>{props.site_name}</h2>
               {launchIndex[props.site_name] ? (
-                <ul>
-                  {launchIndex[props.site_name]?.map((launch) => (
-                    <>
-                      <li key={launch.id}>
-                        <Link to={`/launchdetails/${launch.id}`}>
-                          {launch.name}
-                        </Link>
-                      </li>
-                    </>
-                  ))}
-                </ul>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Provider</th>
+                      <th>Mission</th>
+                      <th>Vehicle</th>
+                      <th>Date</th>
+                      <th>Result</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {launchIndex[props.site_name]?.map((launch) => (
+                      <tr>
+                        <td>{launch.provider.name}</td>
+                        <td className="linkTd">
+                          <Link to={`/launchdetails/${launch.id}`}>
+                            {launch.name}
+                          </Link>
+                        </td>
+                        <td>{launch.date_str}</td>
+                        <td>{launch.vehicle.name}</td>
+                        <td>{launchStatus(launch.result)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               ) : (
                 <p>No Launches in Selected Time Frame</p>
               )}
             </>
           )}
-
-          <button onClick={() => props.togglePopup()}>Close</button>
+          <div>
+            <button onClick={() => props.togglePopup()}>Close</button>
+          </div>
         </div>
       )}
     </div>
