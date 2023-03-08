@@ -174,11 +174,12 @@ nav button {
 
 .worldMapMarks .site {
  
-  opacity: 1;
+  
 }
 
 .worldMapMarks .site:hover {
   fill: #a34a4a;
+  opacity: 0.7;
   
 }
 

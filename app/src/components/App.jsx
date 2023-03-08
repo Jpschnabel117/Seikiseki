@@ -9,11 +9,13 @@ import * as d3 from "d3";
 import { connect } from "react-redux";
 import { withContext } from "../withContext";
 import localLaunchData from "../assets/launchtestdata.json";
+import LaunchDetailsPage from "../pages/launchdetailspage";
+
 
 
 
 let launchDataArr = localLaunchData; // change this to launches when going to api
-
+console.log(localLaunchData)
 let launchIndex = {}
 launchDataArr.forEach((launch) => {
   if (launch.pad && launch.pad.location && launch.pad.location.name) {
@@ -24,7 +26,14 @@ launchDataArr.forEach((launch) => {
     launchIndex[padLocationName].push(launch);
   }
 });
-console.log(launchIndex)
+console.log("launchIndex",launchIndex)
+
+  const launchIndexArray = Object.entries(launchIndex).map(([site, launches]) => ({
+    site,
+    launches,
+  }));
+  console.log("data array", launchIndexArray);
+  // should be [{launchsitename,launchesatsite[{},{}]}, etc]
 
 function App(props) {
   const [count, setCount] = useState(0);
@@ -89,10 +98,11 @@ function App(props) {
             element={
               <Container
                 launchSiteData={launchSiteData}
-                launchData={launchIndex}
+                launchIndex={launchIndex}
               />
             }
           />
+          <Route path="/launchdetails/:launchId" element={<LaunchDetailsPage/>}/>
           <Route path="/profile" element={<Profilepage />} />
         </Routes>
       )}
