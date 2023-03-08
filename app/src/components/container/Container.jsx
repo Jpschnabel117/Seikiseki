@@ -21,14 +21,14 @@ function Container(props) {
       {props.popupIsOpen && (
         <div className="popup">
           <h2>{props.site_name}</h2>
-          {props.popupIsOpen ? (
+          {launchData[props.site_name] ? (
             <ul>
               {launchData[props.site_name]?.map((launch) => (
                 <li key={launch.id}>{launch.name}</li>
               ))}
             </ul>
           ) : (
-            <p>Hi</p>
+            <p>No Launches in Selected Time Frame</p>
           )}
           <button onClick={() => props.togglePopup()}>Close</button>
         </div>
