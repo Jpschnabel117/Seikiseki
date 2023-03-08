@@ -2,6 +2,7 @@ import Worldmapmarks from "./Worldmapmarks";
 import { connect } from "react-redux";
 import { withContext } from "../../withContext";
 import * as stateActions from "../../redux/stateActions";
+import popup from "../../redux/reducers/popup";
 
 
 
@@ -20,7 +21,7 @@ function Container(props) {
       {props.popupIsOpen && (
         <div className="popup">
           <h2>{props.site_name}</h2>
-          {launchData["Tanegashima Space Center"] ? (
+          {props.popupIsOpen ? (
             <ul>
               {launchData[props.site_name]?.map((launch) => (
                 <li key={launch.id}>{launch.name}</li>

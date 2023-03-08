@@ -22,9 +22,3 @@ export const togglePopup = (data) => {
         payload : { data }
     };
 }
-export const updateSiteName = (data) => {
-    return {
-        type: 'UPDATE_SITE_NAME',
-        payload : { data }
-    };
-}

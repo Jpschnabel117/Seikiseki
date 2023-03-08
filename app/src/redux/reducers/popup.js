@@ -1,6 +1,6 @@
 let initialState = {
     isOpen : false,
-    site_name : "Tanegashima Space Center",
+    site_name : "",
 };
 
 const popup = (state=initialState, action) => {
@@ -16,14 +16,7 @@ const popup = (state=initialState, action) => {
             }
             return newState;
         }
-        case 'UPDATE_SITE_NAME' : {
-            const { data } = action.payload;
-            const { site_name } = data;
-
-            const newState = Object.assign({}, {...state}, {site_name:site_name});
-            return newState;
-        }
-       
+   
 
     default:
         return state

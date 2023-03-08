@@ -7,12 +7,7 @@ function LaunchSiteMarks(props) {
   const { cx, cy, r, site, launches } = props;
 
 
-  // const handleClick = () => {
 
-  // };
-  const handleClick = (site_name) => {
-    props.togglePopup(site_name);
-  };
 
 
   let number = 0;
@@ -40,7 +35,6 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   togglePopup: (site_name) => dispatch(stateActions.togglePopup(site_name)),
-  updateSiteName: (site_name) => dispatch(stateActions.updateSiteName(site_name))
 });
 const LaunchSiteMarksContainer = withContext(
   connect(mapStateToProps, mapDispatchToProps)
