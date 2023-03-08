@@ -121,33 +121,43 @@ nav button {
 }
 
 .popup {
+  width:max-content;
   color: black;
   position: absolute;
+  padding-bottom: 1em;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
-  padding: 1rem;
   background-color: white;
-  border: 1px solid black;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  max-height: 80vh;
-  
+  border: px solid black;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+  max-height: 83vh;
+  border-radius: 10px;
+  overflow-y: auto;
 }
+
+.popHead{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 1em 1em 1em;
+}
+
+.popHead div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 
 .popup h2 {
-  margin-top: 0;
+  margin: 0;
 }
 
-.popup ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
 
 .popup button {
   display: block;
-  margin: 1rem auto 0;
 }
 .mapScreen {
   display: flex;
@@ -246,7 +256,6 @@ li:hover {
 table {
   display: inline-block;
   max-height: 60vh;
-  overflow-y: auto;
 }
 
 th,
@@ -262,6 +271,7 @@ th {
   position: sticky;
   top: 0;
 }
+
 tr:hover {
   background-color: #f5f5f5;
 }
