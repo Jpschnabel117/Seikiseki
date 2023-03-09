@@ -14,6 +14,28 @@ function Container(props) {
     return url;
   }
 
+  function combineFlsites(){
+    const array1 = launchIndex["Cape Canaveral SFS"];
+    const array2 = launchIndex["Kennedy Space Center"];
+    const array3 = launchIndex["Cape Canaveral / KSC TBD"];
+
+    const flLaunches = [];
+
+    if (array1) {
+      flLaunches.push(...array1);
+    }
+    if (array2) {
+      flLaunches.push(...array2);
+    }
+    if (array3) {
+      flLaunches.push(...array3);
+    }
+
+    flLaunches.sort((a, b) => parseInt(a.sort_date) - parseInt(b.sort_date));
+
+    return flLaunches
+  }
+
   function launchStatus(value) {
     let result;
 
@@ -63,9 +85,7 @@ function Container(props) {
                 </div>
               </div>
               <div className="popBody">
-                {launchIndex["Cape Canaveral / KSC TBD"] ||
-                launchIndex["Cape Canaveral SFS"] ||
-                launchIndex["Kennedy Space Center"] ? (
+                {combineFlsites() ? (
                   <table>
                     <thead>
                       <tr>
@@ -78,8 +98,8 @@ function Container(props) {
                     </thead>
                     <tbody>
                       <>
-                        {console.log("oh no")}
-                        {launchIndex["Cape Canaveral SFS"]?.map((launch) => (
+               {/* here */}
+                        {combineFlsites()?.map((launch) => (
                           <tr>
                             <td>{launch.provider.name}</td>
                             <td className="linkTd">
@@ -98,46 +118,7 @@ function Container(props) {
                             <td>{launchStatus(launch.result)}</td>
                           </tr>
                         ))}
-                        {launchIndex["Cape Canaveral / KSC TBD"]?.map(
-                          (launch) => (
-                            <tr>
-                              <td>{launch.provider.name}</td>
-                              <td className="linkTd">
-                                <a
-                                  target="_blank"
-                                  href={findUrl(launch.quicktext)}
-                                >
-                                  {launch.name}
-                                </a>
-                                {/* <Link to={`/launchdetails/${launch.id}`}>
-                                  {launch.name}
-                                </Link> */}
-                              </td>
-                              <td>{launch.vehicle.name}</td>
-                              <td>{launch.date_str}</td>
-                              <td>{launchStatus(launch.result)}</td>
-                            </tr>
-                          )
-                        )}
-                        {launchIndex["Kennedy Space Center"]?.map((launch) => (
-                          <tr>
-                            <td>{launch.provider.name}</td>
-                            <td className="linkTd">
-                              <a
-                                target="_blank"
-                                href={findUrl(launch.quicktext)}
-                              >
-                                {launch.name}
-                              </a>
-                              {/* <Link to={`/launchdetails/${launch.id}`}>
-                                {launch.name}
-                              </Link> */}
-                            </td>
-                            <td>{launch.vehicle.name}</td>
-                            <td>{launch.date_str}</td>
-                            <td>{launchStatus(launch.result)}</td>
-                          </tr>
-                        ))}
+                        
                       </>
                     </tbody>
                   </table>
