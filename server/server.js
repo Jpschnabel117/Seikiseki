@@ -104,7 +104,7 @@ app.get('/serverSideProps', cors(corsOptions), (req, res) => {
   } catch (error) {
     res.status(404);
   }
-  
+
 });
 
 app.get('/populateBackend', cors(corsOptions), (req, res) => {

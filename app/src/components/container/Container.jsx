@@ -6,7 +6,6 @@ import popup from "../../redux/reducers/popup";
 import { Link } from "react-router-dom";
 
 function Container(props) {
-  let launchSiteData = props.launchSiteData;
   let launchIndex = props.launchIndex;
 
   function findUrl(slug) {
@@ -67,7 +66,6 @@ function Container(props) {
     <div className="mapScreen">
       <svg id="worldMap">
         <Worldmapmarks
-          launchSiteData={launchSiteData}
           launchIndex={launchIndex}
         />
       </svg>

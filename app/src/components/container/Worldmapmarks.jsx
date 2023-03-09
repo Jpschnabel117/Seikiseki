@@ -6,10 +6,9 @@ import Launchsitemarks from "./Launchsitemarks";
 import { Link } from "react-router-dom";
 
 function WorldMapMarks(props) {
-  const { worldGeoData, launchSiteData,locations } = props; //worldgeodata is from the store, launchSiteData should aswell
-  console.log("locations: ",locations)
-  let launchIndex = props.launchIndex;
-  console.log(launchSiteData)
+  const { worldGeoData, locations, launchIndex } = props; //worldgeodata is from the store, launchSiteData should aswell
+  let launchSiteData = locations
+  
   const projection = d3.geoEquirectangular();
   const path = d3.geoPath(projection);
   const graticule = d3.geoGraticule();
@@ -85,6 +84,7 @@ function WorldMapMarks(props) {
 
 const mapStateToProps = (state) => ({
   worldGeoData: state.container.worldGeoData,
+  locations: state.container.locations,
 });
 
 const WorldMapContainer = withContext(connect(mapStateToProps)(WorldMapMarks));

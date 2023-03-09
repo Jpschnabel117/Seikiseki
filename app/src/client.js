@@ -6,7 +6,7 @@ class Client {
     store = data.store;
   }
   async get_server_side_props() {
-    store.dispatch(stateActions.toggleFetching(true));
+    store.dispatch(stateActions.toggleFetchingWorldGeoData(true));
     var requestOptions = {
       method: "GET",
       redirect: "follow",
@@ -17,27 +17,26 @@ class Client {
       .then((json) => {
         const { worldMapData, worldMapSvg } = json;
         console.log(worldMapData);
-        store.dispatch(stateActions.toggleFetching(false));
+        store.dispatch(stateActions.toggleFetchingWorldGeoData(false));
         store.dispatch(stateActions.populateWorldMapData({ worldMapData }));
       });
   }
 
-  // async get_launch_sites() {
-  //   store.dispatch(stateActions.toggleFetching(true));
-  //   var requestOptions = {
-  //     method: "GET",
-  //     redirect: "follow",
-  //   };
-  //   const res = fetch(`${url}/getLaunchSites`, requestOptions);
-  //   res
-  //     .then((data) => data.json())
-  //     .then((json) => {
-  //       const { worldMapData, worldMapSvg } = json;
-  //       console.log(worldMapData);
-  //       store.dispatch(stateActions.toggleFetching(false));
-  //       store.dispatch(stateActions.populateWorldMapData({ worldMapData }));
-  //     });
-  // }
+  async get_launch_sites() {
+    store.dispatch(stateActions.toggleFetchingLaunchSites(true));
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+    const res = fetch(`${url}/getLaunchSites`, requestOptions);
+    res
+      .then((data) => data.json())
+      .then((json) => {
+        const locations = json;
+        store.dispatch(stateActions.toggleFetchingLaunchSites(false));
+        store.dispatch(stateActions.fillLocationData( {locations} ));
+      });
+  }
 }
 export default Client; 
 

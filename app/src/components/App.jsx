@@ -86,25 +86,20 @@ function App(props) {
   return (
     <div className="App">
       <Header />
-      {loadingSites || loadingLaunches ? (
+      {console.log(props.fetchingLaunchSites,props.fetchingGeoData)}
+      {props.fetchingLaunchSites || props.fetchingGeoData ? (
         <h1 className="loading">Loading...</h1>
       ) : (
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Container
-                launchSiteData={launchSiteData}
-                launchIndex={launchIndex}
-              />
-            }
-          />
-          <Route
-            path="/launchdetails/:launchId"
-            element={<LaunchDetailsPage />}
-          />
-          <Route path="/profile" element={<Profilepage />} />
-        </Routes>
+        <>
+          <Routes>
+            <Route path="/" element={<Container launchIndex={launchIndex} />} />
+            <Route
+              path="/launchdetails/:launchId"
+              element={<LaunchDetailsPage />}
+            />
+            <Route path="/profile" element={<Profilepage />} />
+          </Routes>
+        </>
       )}
     </div>
   );
@@ -113,9 +108,11 @@ function App(props) {
 const mapStateToProps = (state) => ({
   worldMapData: state.container.worldMapData,
   worldMapSvg: state.container.worldMapSvg,
-  fetching: state.container.isFetching,
+  fetchingGeoData: state.container.isFetchingWorldGeoData,
+  fetchingLaunchSites: state.container.isFetchingLaunchSites,
   countries: state.container.countries,
 });
 
 const AppContainer = withContext(connect(mapStateToProps, null)(App));
+
 export default AppContainer;

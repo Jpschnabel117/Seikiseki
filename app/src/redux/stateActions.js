@@ -1,8 +1,14 @@
-export const toggleFetching = (data) => {
+export const toggleFetchingWorldGeoData = (data) => {
     return {
-        type: 'TOGGLE_FETCHING',
-        payload : { data }
-    }
+      type: "TOGGLE_FETCHING_WORLD_GEO_DATA",
+      payload: { data },
+    };
+};
+export const toggleFetchingLaunchSites = (data) => {
+  return {
+    type: "TOGGLE_FETCHING_LAUNCH_SITES",
+    payload: { data },
+  };
 };
 export const fillLocationData = (data) => {
     return {
