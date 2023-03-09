@@ -9,6 +9,11 @@ function Container(props) {
   let launchSiteData = props.launchSiteData;
   let launchIndex = props.launchIndex;
 
+  function findUrl(slug) {
+    const url = slug.match(/https?:\/\/[^\s]+/)[0];
+    return url;
+  }
+
   function launchStatus(value) {
     let result;
 
@@ -78,9 +83,15 @@ function Container(props) {
                           <tr>
                             <td>{launch.provider.name}</td>
                             <td className="linkTd">
-                              <Link to={`/launchdetails/${launch.id}`}>
+                              <a
+                                target="_blank"
+                                href={findUrl(launch.quicktext)}
+                              >
                                 {launch.name}
-                              </Link>
+                              </a>
+                              {/* <Link to={`/launchdetails/${launch.id}`}>
+                                {launch.name}
+                              </Link> */}
                             </td>
                             <td>{launch.vehicle.name}</td>
                             <td>{launch.date_str}</td>
@@ -92,9 +103,15 @@ function Container(props) {
                             <tr>
                               <td>{launch.provider.name}</td>
                               <td className="linkTd">
-                                <Link to={`/launchdetails/${launch.id}`}>
+                                <a
+                                  target="_blank"
+                                  href={findUrl(launch.quicktext)}
+                                >
                                   {launch.name}
-                                </Link>
+                                </a>
+                                {/* <Link to={`/launchdetails/${launch.id}`}>
+                                  {launch.name}
+                                </Link> */}
                               </td>
                               <td>{launch.vehicle.name}</td>
                               <td>{launch.date_str}</td>
@@ -106,9 +123,15 @@ function Container(props) {
                           <tr>
                             <td>{launch.provider.name}</td>
                             <td className="linkTd">
-                              <Link to={`/launchdetails/${launch.id}`}>
+                              <a
+                                target="_blank"
+                                href={findUrl(launch.quicktext)}
+                              >
                                 {launch.name}
-                              </Link>
+                              </a>
+                              {/* <Link to={`/launchdetails/${launch.id}`}>
+                                {launch.name}
+                              </Link> */}
                             </td>
                             <td>{launch.vehicle.name}</td>
                             <td>{launch.date_str}</td>
@@ -148,9 +171,12 @@ function Container(props) {
                         <tr>
                           <td>{launch.provider.name}</td>
                           <td className="linkTd">
-                            <Link to={`/launchdetails/${launch.id}`}>
+                            <a target="_blank" href={findUrl(launch.quicktext)}>
                               {launch.name}
-                            </Link>
+                            </a>
+                            {/* <Link to={`/launchdetails/${launch.id}`}>
+                              {launch.name}
+                            </Link> */}
                           </td>
                           <td>{launch.vehicle.name}</td>
                           <td>{launch.date_str}</td>
