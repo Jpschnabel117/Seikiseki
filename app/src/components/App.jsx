@@ -5,18 +5,14 @@ import Header from "./header/Header";
 import Container from "./container/Container";
 import Profilepage from "../pages/profilepage";
 import { Route, Routes } from "react-router-dom";
-import * as d3 from "d3";
 import { connect } from "react-redux";
 import { withContext } from "../withContext";
 import localLaunchData from "../assets/launchtestdata.json";
 import LaunchDetailsPage from "../pages/launchdetailspage";
 
-
-
-
 let launchDataArr = localLaunchData; // change this to launches when going to api
-console.log(localLaunchData)
-let launchIndex = {}
+console.log(localLaunchData);
+let launchIndex = {};
 launchDataArr.forEach((launch) => {
   if (launch.pad && launch.pad.location && launch.pad.location.name) {
     const padLocationName = launch.pad.location.name;
@@ -26,14 +22,16 @@ launchDataArr.forEach((launch) => {
     launchIndex[padLocationName].push(launch);
   }
 });
-console.log("launchIndex",launchIndex)
+console.log("launchIndex", launchIndex);
 
-  const launchIndexArray = Object.entries(launchIndex).map(([site, launches]) => ({
+const launchIndexArray = Object.entries(launchIndex).map(
+  ([site, launches]) => ({
     site,
     launches,
-  }));
-  console.log("data array", launchIndexArray);
-  // should be [{launchsitename,launchesatsite[{},{}]}, etc]
+  })
+);
+console.log("launch index as array", launchIndexArray);
+// should be [{launchsitename,launchesatsite[{},{}]}, etc]
 
 function App(props) {
   const [count, setCount] = useState(0);
@@ -53,7 +51,6 @@ function App(props) {
         const data = await response.json();
         setLaunchSiteData(data);
         setLoadingSites(false);
-        
       } catch (error) {
         console.error(error);
       }
@@ -102,7 +99,10 @@ function App(props) {
               />
             }
           />
-          <Route path="/launchdetails/:launchId" element={<LaunchDetailsPage/>}/>
+          <Route
+            path="/launchdetails/:launchId"
+            element={<LaunchDetailsPage />}
+          />
           <Route path="/profile" element={<Profilepage />} />
         </Routes>
       )}

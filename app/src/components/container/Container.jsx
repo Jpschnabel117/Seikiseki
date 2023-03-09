@@ -71,7 +71,6 @@ function Container(props) {
           launchIndex={launchIndex}
         />
       </svg>
-
       {props.popupIsOpen && (
         <div className="popup">
           {props.site_name === "Kennedy Space Center" ||
@@ -98,7 +97,7 @@ function Container(props) {
                     </thead>
                     <tbody>
                       <>
-               {/* here */}
+                        {/* here */}
                         {combineFlsites()?.map((launch) => (
                           <tr>
                             <td>{launch.provider.name}</td>
@@ -118,7 +117,6 @@ function Container(props) {
                             <td>{launchStatus(launch.result)}</td>
                           </tr>
                         ))}
-                        
                       </>
                     </tbody>
                   </table>
@@ -174,6 +172,11 @@ function Container(props) {
           )}
         </div>
       )}
+      <div className="dateRangeSelect">
+        <button>1964-1984</button>
+        <button>1984-2004</button>
+        <button>2004+</button>
+      </div>
     </div>
   );
 }

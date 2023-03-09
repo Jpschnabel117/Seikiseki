@@ -104,6 +104,7 @@ app.get('/serverSideProps', cors(corsOptions), (req, res) => {
   } catch (error) {
     res.status(404);
   }
+  
 });
 
 app.get('/populateBackend', cors(corsOptions), (req, res) => {
@@ -121,21 +122,22 @@ app.get('/populateBackend', cors(corsOptions), (req, res) => {
     const data = JSON.parse(response.body);
     const result = data.result;
     for (i in result) {
-      let {name, latitude, longitude, country, utc_offset} = result[i];
+      let { name, latitude, longitude, country, utc_offset } = result[i];
       if (!longitude) longitude = 0.0;
       if (!latitude) latitude = 0.0;
       if (!utc_offset) utc_offset = 0;
       if (!country) {
-        country = {code: 'NA'};
+        country = { code: "NA" };
       }
       console.log(country);
       const sql = `INSERT INTO Launches(location_name, country, longitude, latitude, utc_offset) VALUES ('${name}','${country.code}','${longitude}','${latitude}','${utc_offset}')`;
-      connection.query(sql, function(err, result) {
+      //ON DUPLICATE KEY UPDATE location_name='${name}'   ....etc
+      connection.query(sql, function (err, result) {
         if (err) {
           console.error(err);
-          return res.status(500).send('Internal Server Error');
-        };
-        console.log('1 record inserted');
+          return res.status(500).send("Internal Server Error");
+        }
+        console.log("1 record inserted");
       });
     }
     res.status(200).send('Success');

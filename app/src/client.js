@@ -1,29 +1,43 @@
 import * as stateActions from "./redux/stateActions";
-const url = "http://localhost:3000"
+const url = "http://localhost:3000" //probaly put in env
 let store;
 class Client {
   static init(data) {
     store = data.store;
   }
-    async get_server_side_props(){
-      store.dispatch(stateActions.toggleFetching(true));
-      var requestOptions = {
-        method: 'GET',
-        redirect: 'follow'
-      };
-      const res = fetch(`${url}/serverSideProps`, requestOptions)
-      res.then((data) => data.json()).then((json) => {
+  async get_server_side_props() {
+    store.dispatch(stateActions.toggleFetching(true));
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+    const res = fetch(`${url}/serverSideProps`, requestOptions);
+    res
+      .then((data) => data.json())
+      .then((json) => {
         const { worldMapData, worldMapSvg } = json;
-        console.log(worldMapData)
+        console.log(worldMapData);
         store.dispatch(stateActions.toggleFetching(false));
-        store.dispatch(stateActions.populateWorldMapData({worldMapData}));
-      }) 
-      
-    }
+        store.dispatch(stateActions.populateWorldMapData({ worldMapData }));
+      });
+  }
 
-
-
-
+  // async get_launch_sites() {
+  //   store.dispatch(stateActions.toggleFetching(true));
+  //   var requestOptions = {
+  //     method: "GET",
+  //     redirect: "follow",
+  //   };
+  //   const res = fetch(`${url}/getLaunchSites`, requestOptions);
+  //   res
+  //     .then((data) => data.json())
+  //     .then((json) => {
+  //       const { worldMapData, worldMapSvg } = json;
+  //       console.log(worldMapData);
+  //       store.dispatch(stateActions.toggleFetching(false));
+  //       store.dispatch(stateActions.populateWorldMapData({ worldMapData }));
+  //     });
+  // }
 }
 export default Client; 
 
