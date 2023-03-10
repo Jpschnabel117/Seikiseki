@@ -1,12 +1,12 @@
-import Worldmapmarks from "./Worldmapmarks";
-import { connect } from "react-redux";
-import { withContext } from "../../withContext";
-import * as stateActions from "../../redux/stateActions";
-import popup from "../../redux/reducers/popup";
-import { Link } from "react-router-dom";
+import Worldmapmarks from './Worldmapmarks';
+import {connect} from 'react-redux';
+import {withContext} from '../../withContext';
+import * as stateActions from '../../redux/stateActions';
+import popup from '../../redux/reducers/popup';
+import {Link} from 'react-router-dom';
 
 function Container(props) {
-  let launchIndex = props.launchIndex;
+  const launchIndex = props.launchIndex;
 
   function findUrl(slug) {
     const url = slug.match(/https?:\/\/[^\s]+/)[0];
@@ -14,9 +14,9 @@ function Container(props) {
   }
 
   function combineFlsites() {
-    const array1 = launchIndex["Cape Canaveral SFS"];
-    const array2 = launchIndex["Kennedy Space Center"];
-    const array3 = launchIndex["Cape Canaveral / KSC TBD"];
+    const array1 = launchIndex['Cape Canaveral SFS'];
+    const array2 = launchIndex['Kennedy Space Center'];
+    const array3 = launchIndex['Cape Canaveral / KSC TBD'];
 
     const flLaunches = [];
 
@@ -31,7 +31,6 @@ function Container(props) {
     }
 
     flLaunches.sort((a, b) => parseInt(a.sort_date) - parseInt(b.sort_date));
-    console.log("florida:",flLaunches)
     return flLaunches;
   }
 
@@ -40,22 +39,22 @@ function Container(props) {
 
     switch (value) {
       case -1:
-        result = "Not Set";
+        result = 'Not Set';
         break;
       case 0:
-        result = "Failure";
+        result = 'Failure';
         break;
       case 1:
-        result = "Success";
+        result = 'Success';
         break;
       case 2:
-        result = "Partial Failure";
+        result = 'Partial Failure';
         break;
       case 3:
-        result = "In-Flight Abort";
+        result = 'In-Flight Abort';
         break;
       default:
-        result = "Invalid value";
+        result = 'Invalid value';
         break;
     }
 
@@ -69,12 +68,12 @@ function Container(props) {
       </svg>
       {props.popupIsOpen && (
         <div className="popup">
-          {props.site_name === "Kennedy Space Center" ||
-          props.site_name === "Cape Canaveral SFS" ||
-          props.site_name === "Cape Canaveral / KSC TBD" ? (
+          {props.site_name === 'Kennedy Space Center' ||
+          props.site_name === 'Cape Canaveral SFS' ||
+          props.site_name === 'Cape Canaveral / KSC TBD' ? (
             <>
               <div className="popHead">
-                <h2> {"Cape Canaveral / Kennedy Space Center"}</h2>
+                <h2> {'Cape Canaveral / Kennedy Space Center'}</h2>
                 <div>
                   <button onClick={() => props.togglePopup()}>Close</button>
                 </div>
@@ -100,7 +99,7 @@ function Container(props) {
                             <td className="linkTd">
                               <a
                                 target="_blank"
-                                href={findUrl(launch.quicktext)}
+                                href={findUrl(launch.quicktext)} rel="noreferrer"
                               >
                                 {launch.name}
                               </a>
@@ -146,7 +145,7 @@ function Container(props) {
                         <tr>
                           <td>{launch.provider.name}</td>
                           <td className="linkTd">
-                            <a target="_blank" href={findUrl(launch.quicktext)}>
+                            <a target="_blank" href={findUrl(launch.quicktext)} rel="noreferrer">
                               {launch.name}
                             </a>
                             {/* <Link to={`/launchdetails/${launch.id}`}>
@@ -170,7 +169,7 @@ function Container(props) {
       )}
       <div className="dateRangeSelect">
         <button onClick={() => props.changeDateRange([-220906800, 410245200])}>
-        
+
           1963-1984
         </button>
         <button onClick={() => props.changeDateRange([410245201, 1072933200])}>
@@ -198,7 +197,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(stateActions.changeDateRange(data)),
 });
 const ContainerContainer = withContext(
-  connect(mapStateToProps, mapDispatchToProps)(Container)
+    connect(mapStateToProps, mapDispatchToProps)(Container),
 );
 
 export default ContainerContainer;
