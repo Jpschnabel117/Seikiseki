@@ -45,18 +45,25 @@ function WorldMapMarks(props) {
             if (launchIndex[site.location_name]) { //
               siteLaunches = launchIndex[site.location_name];
               console.log(siteLaunches);
-              radius = radius + siteLaunches.length * 1.2;
+              
               if (
                 site.location_name === "Cape Canaveral / KSC TBD" ||
                 site.location_name === "Cape Canaveral SFS" ||
                 site.location_name === "Kennedy Space Center"
               ) {
-                radius =
-                  radius +
-                  (launchIndex["Cape Canaveral / KSC TBD"].length +
-                    launchIndex["Cape Canaveral SFS"].length +
-                    launchIndex["Kennedy Space Center"].length) *
-                    1.2;
+                let lengthSum = 0;
+                if (launchIndex["Cape Canaveral / KSC TBD"]) {
+                  lengthSum += launchIndex["Cape Canaveral / KSC TBD"].length;
+                }
+                if (launchIndex["Cape Canaveral SFS"]) {
+                  lengthSum += launchIndex["Cape Canaveral SFS"].length;
+                }
+                if (launchIndex["Kennedy Space Center"]) {
+                  lengthSum += launchIndex["Kennedy Space Center"].length;
+                }
+                radius += lengthSum * 1.2;
+              }else{
+                radius = radius + siteLaunches.length * 1.2;
               }
               if (radius > 15) {
                 radius = 20;

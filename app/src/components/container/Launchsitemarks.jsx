@@ -17,7 +17,7 @@ let radius = r
   }
   if (
     site.location_name === "Cape Canaveral SFS" ||
-    site.location_name === "Kennedy Space Center"
+    site.location_name === "Cape Canaveral / KSC TBD"
   ) {
     radius = 0;
   }

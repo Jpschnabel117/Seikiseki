@@ -31,7 +31,7 @@ function Container(props) {
     }
 
     flLaunches.sort((a, b) => parseInt(a.sort_date) - parseInt(b.sort_date));
-
+    console.log("florida:",flLaunches)
     return flLaunches;
   }
 

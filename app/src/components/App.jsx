@@ -13,9 +13,9 @@ import LaunchDetailsPage from "../pages/launchdetailspage";
 let launchDataArr = localLaunchData; // change this to launches when going to api
 console.log(launchDataArr)
 
-let launchIndex = {};
 
 function convertToLaunchIndex(unformated){
+let launchIndex = {};
 unformated.forEach((launch) => {
   if (launch.pad && launch.pad.location && launch.pad.location.name) {
     const padLocationName = launch.pad.location.name;
@@ -25,21 +25,22 @@ unformated.forEach((launch) => {
     launchIndex[padLocationName].push(launch);
   }
 });
+return launchIndex
 }
 
-convertToLaunchIndex(launchDataArr)
+//convertToLaunchIndex(launchDataArr)
 
 
 
-console.log("launchIndex", launchIndex);
 
-const launchIndexArray = Object.entries(launchIndex).map(
-  ([site, launches]) => ({
-    site,
-    launches,
-  })
-);
-console.log("launch index as array", launchIndexArray);
+
+// const launchIndexArray = Object.entries(launchIndex).map(
+//   ([site, launches]) => ({
+//     site,
+//     launches,
+//   })
+// );
+// console.log("launch index as array", launchIndexArray);
 // should be [{launchsitename,launchesatsite[{},{}]}, etc]
 
 function formatDate(unixTimestamp) {
@@ -55,7 +56,7 @@ function App(props) {
   //converting world data to Geojson
   const [launches, setLaunches] = useState([]);
   //CHANGE THIS BACK TO TRUE------------------------------v
-  const [loadingLaunches, setLoadingLaunches] = useState(false);
+  const [loadingLaunches, setLoadingLaunches] = useState(true);
   useEffect(() => {
     var myHeaders = new Headers();
     myHeaders.append("Authorization", `Bearer ${import.meta.env.VITE_API_KEY}`);
@@ -87,7 +88,7 @@ function App(props) {
             }
             console.log("page: ", pages);
             const result = await response.json();
-            if(pages === result.last_page){
+            if (pages === result.last_page) {
               break;
             }
             dataAsPageArray.push({ pages, data: result.result });
@@ -96,11 +97,13 @@ function App(props) {
             break;
           }
         }
-        console.log(dataAsPageArray)
+        console.log(dataAsPageArray);
 
         let flatarray = dataAsPageArray.flatMap((obj) => obj.data);
-        console.log("flat: ",flatarray)
-        //setLaunches(data);
+        console.log("flat: ", flatarray);
+
+        ;
+        setLaunches(convertToLaunchIndex(flatarray));
         setLoadingLaunches(false);
 
         //console.log("fetched data from api: ", data);
@@ -109,19 +112,19 @@ function App(props) {
       }
     }
 
-   //fetchLaunchData();
+   fetchLaunchData();
   }, [props.timeLineDateStart]);
   console.log(launches);
   return (
     <div className="App">
       <Header />
       {console.log(props.fetchingLaunchSites, props.fetchingGeoData)}
-      {props.fetchingLaunchSites || props.fetchingGeoData ? (
+      {props.fetchingLaunchSites || props.fetchingGeoData || loadingLaunches? (
         <h1 className="loading">Loading...</h1>
       ) : (
         <>
           <Routes>
-            <Route path="/" element={<Container launchIndex={launchIndex} />} />
+            <Route path="/" element={<Container launchIndex={launches} />} />
             <Route
               path="/launchdetails/:launchId"
               element={<LaunchDetailsPage />}
