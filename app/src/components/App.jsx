@@ -11,21 +11,21 @@ import localLaunchData from "../assets/launchtestdata.json";
 import LaunchDetailsPage from "../pages/launchdetailspage";
 
 let launchDataArr = localLaunchData; // change this to launches when going to api
-console.log(launchDataArr)
+console.log(launchDataArr);
 
 
-function convertToLaunchIndex(unformated){
-let launchIndex = {};
-unformated.forEach((launch) => {
-  if (launch.pad && launch.pad.location && launch.pad.location.name) {
-    const padLocationName = launch.pad.location.name;
-    if (!launchIndex[padLocationName]) {
-      launchIndex[padLocationName] = [];
+function convertToLaunchIndex(unformated) {
+  let launchIndex = {};
+  unformated.forEach((launch) => {
+    if (launch.pad && launch.pad.location && launch.pad.location.name) {
+      const padLocationName = launch.pad.location.name;
+      if (!launchIndex[padLocationName]) {
+        launchIndex[padLocationName] = [];
+      }
+      launchIndex[padLocationName].push(launch);
     }
-    launchIndex[padLocationName].push(launch);
-  }
-});
-return launchIndex
+  });
+  return launchIndex;
 }
 
 //convertToLaunchIndex(launchDataArr)
@@ -112,14 +112,14 @@ function App(props) {
       }
     }
 
-   fetchLaunchData();
+    //  fetchLaunchData();
   }, [props.timeLineDateStart]);
   console.log(launches);
   return (
     <div className="App">
       <Header />
       {console.log(props.fetchingLaunchSites, props.fetchingGeoData)}
-      {props.fetchingLaunchSites || props.fetchingGeoData || loadingLaunches? (
+      {props.fetchingLaunchSites || props.fetchingGeoData || loadingLaunches ? (
         <h1 className="loading">Loading...</h1>
       ) : (
         <>
