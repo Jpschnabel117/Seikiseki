@@ -6,7 +6,7 @@ import Launchsitemarks from "./Launchsitemarks";
 import { Link } from "react-router-dom";
 
 function WorldMapMarks(props) {
-  const { worldGeoData, locations, launchIndex } = props; //worldgeodata is from the store, launchSiteData should aswell
+  const { worldGeoData, locations, launchIndex } = props; 
   let launchSiteData = locations
   
   const projection = d3.geoEquirectangular();
@@ -30,6 +30,7 @@ function WorldMapMarks(props) {
         //   );
         // }}
       >
+      
         <path className="sphere" d={path({ type: "Sphere" })} />
         <path className="graticules" d={path(graticule())} />
         {worldGeoData.features?.map((feature) => (
@@ -41,7 +42,7 @@ function WorldMapMarks(props) {
             let siteLaunches = null;
             let radius = 5;
 
-            if (launchIndex[site.location_name]) {
+            if (launchIndex[site.location_name]) { //
               siteLaunches = launchIndex[site.location_name];
               console.log(siteLaunches);
               radius = radius + siteLaunches.length * 1.2;

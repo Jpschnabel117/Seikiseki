@@ -7,6 +7,10 @@ let initialState = {
   isFetchingLaunchSites: false,
   countries: {},
   worldGeoData: {},
+  timeLineDateStart: -220906800, //Jan 01 1963
+  timeLineDateEnd: 410245200, //Jan 01 1983
+  brushTimeStart: -220906799, //Jan 01 1963 ---v one year
+  brushTimeEnd: -189370800, //Jan 01 1964
 };
 
 const container = (state = initialState, action) => {
@@ -56,6 +60,18 @@ const container = (state = initialState, action) => {
         {},
         { ...state },
         { isFetchingLaunchSites: value.data }
+      );
+      return newState;
+    }
+
+    case "CHANGE_DATE_RANGE": {
+      const {data} = action.payload;
+
+      console.log("NEW RANGE:", data);
+      const newState = Object.assign(
+        {},
+        { ...state },
+        { timeLineDateStart: data[0], timeLineDateEnd: data[1] }
       );
       return newState;
     }

@@ -1,6 +1,8 @@
+const now = new Date();
+
 let initialState = {
-    isOpen : false,
-    site_name : "",
+  isOpen: false,
+  site_name: "",
 };
 
 const popup = (state=initialState, action) => {

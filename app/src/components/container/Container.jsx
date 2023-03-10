@@ -13,7 +13,7 @@ function Container(props) {
     return url;
   }
 
-  function combineFlsites(){
+  function combineFlsites() {
     const array1 = launchIndex["Cape Canaveral SFS"];
     const array2 = launchIndex["Kennedy Space Center"];
     const array3 = launchIndex["Cape Canaveral / KSC TBD"];
@@ -32,7 +32,7 @@ function Container(props) {
 
     flLaunches.sort((a, b) => parseInt(a.sort_date) - parseInt(b.sort_date));
 
-    return flLaunches
+    return flLaunches;
   }
 
   function launchStatus(value) {
@@ -65,9 +65,7 @@ function Container(props) {
   return (
     <div className="mapScreen">
       <svg id="worldMap">
-        <Worldmapmarks
-          launchIndex={launchIndex}
-        />
+        <Worldmapmarks launchIndex={launchIndex} />
       </svg>
       {props.popupIsOpen && (
         <div className="popup">
@@ -171,9 +169,17 @@ function Container(props) {
         </div>
       )}
       <div className="dateRangeSelect">
-        <button>1964-1984</button>
-        <button>1984-2004</button>
-        <button>2004+</button>
+        <button onClick={() => props.changeDateRange([-220906800, 410245200])}>
+        
+          1963-1984
+        </button>
+        <button onClick={() => props.changeDateRange([410245201, 1072933200])}>
+          1984-2004
+        </button>
+        <button onClick={() => props.changeDateRange([1072933201, 4102452000])}>
+          2004+
+        </button>
+        <div>{props.timeLineDateStart}</div>
       </div>
     </div>
   );
@@ -183,9 +189,13 @@ const mapStateToProps = (state) => ({
   worldGeoData: state.container.worldGeoData,
   popupIsOpen: state.popup.isOpen,
   site_name: state.popup.site_name,
+  timeLineDateStart: state.container.timeLineDateStart,
+  timeLineDateEnd: state.container.timeLineDateEnd,
 });
 const mapDispatchToProps = (dispatch) => ({
   togglePopup: () => dispatch(stateActions.togglePopup(true)),
+  changeDateRange: (data) =>
+    dispatch(stateActions.changeDateRange(data)),
 });
 const ContainerContainer = withContext(
   connect(mapStateToProps, mapDispatchToProps)(Container)

@@ -28,3 +28,9 @@ export const togglePopup = (data) => {
         payload : { data }
     };
 }
+export const changeDateRange = (data) => {
+  return {
+    type: "CHANGE_DATE_RANGE",
+    payload: { data },
+  };
+};
