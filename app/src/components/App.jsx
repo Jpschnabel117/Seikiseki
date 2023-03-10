@@ -108,7 +108,7 @@ function App(props) {
       }
     }
 
-    //  fetchLaunchData();
+    fetchLaunchData();
   }, [props.timeLineDateStart]);
   return (
     <div className="App">
