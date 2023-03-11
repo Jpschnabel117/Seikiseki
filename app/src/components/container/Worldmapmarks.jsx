@@ -60,12 +60,12 @@ function WorldMapMarks(props) {
                 if (launchIndex['Kennedy Space Center']) {
                   lengthSum += launchIndex['Kennedy Space Center'].length;
                 }
-                radius += lengthSum * 1.2;
+                radius += lengthSum * 1.1;
               } else {
-                radius = radius + siteLaunches.length * 1.2;
+                radius = radius + siteLaunches.length * 1.1;
               }
-              if (radius > 15) {
-                radius = 20;
+              if (radius > 30) {
+                radius = 30;
               }
             } else {
               radius = 0;
@@ -92,6 +92,7 @@ function WorldMapMarks(props) {
 const mapStateToProps = (state) => ({
   worldGeoData: state.container.worldGeoData,
   locations: state.container.locations,
+  launchIndex: state.container.launchIndex,
 });
 
 const WorldMapContainer = withContext(connect(mapStateToProps)(WorldMapMarks));

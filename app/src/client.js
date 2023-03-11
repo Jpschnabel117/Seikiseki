@@ -5,6 +5,8 @@ class Client {
   static init(data) {
     store = data.store;
   }
+
+  
   async get_server_side_props() {
     store.dispatch(stateActions.toggleFetchingWorldGeoData(true));
     const requestOptions = {
@@ -36,6 +38,8 @@ class Client {
           store.dispatch(stateActions.fillLocationData( {locations} ));
         });
   }
+
+
 }
 export default Client;
 

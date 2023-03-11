@@ -64,7 +64,7 @@ function Container(props) {
   return (
     <div className="mapScreen">
       <svg id="worldMap">
-        <Worldmapmarks launchIndex={launchIndex} />
+        <Worldmapmarks />
       </svg>
       {props.popupIsOpen && (
         <div className="popup">
@@ -178,7 +178,6 @@ function Container(props) {
         <button onClick={() => props.changeDateRange([1072933201, 4102452000])}>
           2004+
         </button>
-        <div>{props.timeLineDateStart}</div>
       </div>
     </div>
   );
@@ -190,6 +189,7 @@ const mapStateToProps = (state) => ({
   site_name: state.popup.site_name,
   timeLineDateStart: state.container.timeLineDateStart,
   timeLineDateEnd: state.container.timeLineDateEnd,
+  launchIndex: state.container.launchIndex,
 });
 const mapDispatchToProps = (dispatch) => ({
   togglePopup: () => dispatch(stateActions.togglePopup(true)),
