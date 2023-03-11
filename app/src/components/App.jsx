@@ -11,6 +11,7 @@ import { connect } from "react-redux";
 import { withContext } from "../withContext";
 import localLaunchData from "../assets/launchtestdata.json";
 import LaunchDetailsPage from "../pages/launchdetailspage";
+import GraphIndex from './container/histograph/graphindex';
 import Client from "../client";
 import { populateLaunchIndex } from "../redux/stateActions";
 
@@ -31,16 +32,6 @@ function convertToLaunchIndex(unformated) {
   });
   return launchIndex;
 }
-
-// convertToLaunchIndex(launchDataArr)
-
-// const launchIndexArray = Object.entries(launchIndex).map(
-//   ([site, launches]) => ({
-//     site,
-//     launches,
-//   })
-// );
-// should be [{launchsitename,launchesatsite[{},{}]}, etc]
 
 function formatDate(unixTimestamp) {
   const date = new Date(unixTimestamp * 1000);
@@ -106,7 +97,7 @@ function App(props) {
   return (
     <div className="App">
       <Header />
-      {props.fetchingLaunchSites || props.fetchingGeoData || loadingLaunches ? (//changed to fetchingLaunches
+      {props.fetchingLaunchSites || props.fetchingGeoData  ? (//changed to fetchingLaunches
         <h1 className="loading">Loading...</h1>
       ) : (
         <>
@@ -118,6 +109,7 @@ function App(props) {
             />
             <Route path="/profile" element={<Profilepage />} />
           </Routes>
+          
         </>
       )}
     </div>

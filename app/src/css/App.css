@@ -319,3 +319,22 @@ p {
 .button:hover {
   opacity: 0.8;
 }
+
+
+
+.histo pre {
+  font-size: 7em;
+}
+.histo.tick line {
+  stroke: #c0c0bb;
+}
+.histo.tick text {
+  fill: #635f5d;
+}
+.histo.mark {
+  fill: #137b80;
+}
+.histo.axis-label {
+  font-size: 2.3em;
+  fill: #635f5d;
+}
