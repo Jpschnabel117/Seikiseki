@@ -10,6 +10,12 @@ export const toggleFetchingLaunchSites = (data) => {
     payload: { data },
   };
 };
+export const toggleFetchingLaunches = (data) => {
+  return {
+    type: "TOGGLE_FETCHING_LAUNCHES",
+    payload: { data },
+  };
+};
 export const fillLocationData = (data) => {
   return {
     type: "FILL_LOCATION_DATA",

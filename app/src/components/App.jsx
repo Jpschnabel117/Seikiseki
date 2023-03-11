@@ -53,9 +53,9 @@ function formatDate(unixTimestamp) {
 function App(props) {
   const [loadingLaunches, setLoadingLaunches] = useState(true);
   useEffect(() => {
+//i think all this gets replaced with just get_launches(props.timeLineDateStart,props.timeLineDateEnd)
     const myHeaders = new Headers();
     myHeaders.append("Authorization", `Bearer ${import.meta.env.VITE_API_KEY}`);
-
     const requestOptions = {
       method: "GET",
       headers: myHeaders,
@@ -101,12 +101,12 @@ function App(props) {
       }
     }
 
-    fetchLaunchData();
+    //fetchLaunchData();
   }, [props.timeLineDateStart]);
   return (
     <div className="App">
       <Header />
-      {props.fetchingLaunchSites || props.fetchingGeoData || loadingLaunches ? (
+      {props.fetchingLaunchSites || props.fetchingGeoData || loadingLaunches ? (//changed to fetchingLaunches
         <h1 className="loading">Loading...</h1>
       ) : (
         <>
@@ -129,6 +129,7 @@ const mapStateToProps = (state) => ({
   worldMapSvg: state.container.worldMapSvg,
   fetchingGeoData: state.container.isFetchingWorldGeoData,
   fetchingLaunchSites: state.container.isFetchingLaunchSites,
+  fetchingLaunches: state.container.isFetchingLaunches,
   countries: state.container.countries,
   timeLineDateStart: state.container.timeLineDateStart,
   timeLineDateEnd: state.container.timeLineDateEnd,

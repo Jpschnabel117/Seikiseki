@@ -5,6 +5,7 @@ const initialState = {
   worldMapData: {},
   isFetchingWorldGeoData: false,
   isFetchingLaunchSites: false,
+  isFetchingLaunches: false,
   countries: {},
   worldGeoData: {},
   timeLineDateStart: -220906800, // Jan 01 1963
@@ -69,6 +70,15 @@ const container = (state = initialState, action) => {
         {},
         { ...state },
         { isFetchingLaunchSites: value.data }
+      );
+      return newState;
+    }
+    case "TOGGLE_FETCHING_LAUNCHES": {
+      const value = action.payload;
+      const newState = Object.assign(
+        {},
+        { ...state },
+        { isFetchingLaunches: value.data }
       );
       return newState;
     }

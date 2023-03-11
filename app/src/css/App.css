@@ -121,7 +121,7 @@ nav button {
 }
 
 .popup {
-  width:max-content;
+  width: max-content;
   color: black;
   position: absolute;
   padding-bottom: 1em;
@@ -137,24 +137,22 @@ nav button {
   overflow-y: auto;
 }
 
-.popHead{
+.popHead {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1em 1em 1em 1em;
 }
 
-.popHead div{
+.popHead div {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-
 .popup h2 {
   margin: 0;
 }
-
 
 .popup button {
   display: block;
@@ -249,8 +247,6 @@ nav button {
 li:hover {
   background-color: #1b2838;
 }
-
-
 
 /* table styles */
 table {
