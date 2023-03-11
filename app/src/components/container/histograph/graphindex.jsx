@@ -9,7 +9,7 @@ import {
   timeMonths,
   sum,
 } from "d3";
-import { useData } from "./useData";
+import {useData} from "./useData"
 import { AxisBottom } from "./AxisBottom";
 import { AxisLeft } from "./AxisLeft";
 import { Marks } from "./Marks";

@@ -5,6 +5,7 @@ import { withContext } from "../../../withContext";
 
 function useData(props) {
   const [data, setData] = useState(null);
+  console.log("index", launchIndex)
 
   useEffect(() => {
     let graphData = [];
