@@ -23,10 +23,20 @@ CREATE TABLE Watching (
     FOREIGN KEY (user_id) REFERENCES Users(id),
     FOREIGN KEY (launch_id) REFERENCES Launches(id)
 );
--- @block
-DROP TABLE Watching;
-DROP TABLE Launches;
 
+
+-- @block
+CREATE TABLE LaunchData(
+    id INT PRIMARY KEY,
+    sort_date INT(9),
+    rocket_name VARCHAR(255),
+    launch_site VARCHAR(255),
+    provider VARCHAR(255),
+    vehicle VARCHAR(255),
+    date_str VARCHAR(12),
+    quicktext VARCHAR(255),
+    result int(1)
+)
 
 -- @block 
 INSERT INTO Users(email, pass, bio, country)
@@ -34,6 +44,10 @@ VALUES ("test", "pass", "testing bio", "US");
 -- @block
 INSERT INTO Watching(user_id, launch_id)
 VALUES (1, 41);
+-- @block
+DROP TABLE Watching;
+DROP TABLE Launches;
+
 
 
 

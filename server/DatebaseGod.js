@@ -3,23 +3,65 @@
 /* eslint-disable guard-for-in */
 // Populating SQL table with request data
 // need to run this twice, once on page 1, and once on page 2
+require('dotenv').config(); // Load environment variables
+const request = require('request');
 
-import request from 'request';
+let last_page;
 
-populateLaunchTableData = async () => {
+
+async function populateLaunchTableData(dataarray = [], page = 1) {
   const options = {
     method: 'GET',
-    url: 'https://fdo.rocketlaunch.live/json/launches?after_date=1963-01-01&page=1',
+    url: `https://fdo.rocketlaunch.live/json/launches?after_date=1963-01-01&page=${page}`,
     headers: {
       Authorization: `Bearer ${process.env.api_key}`,
     },
   };
-  request(options, function(error, response) {
-    if (error) throw new Error(error);
-    const data = JSON.parse(response.body);
-    const {last_page} = data;
-  });
+  const data = {};
+  try {
+    request(options, async (err, results) => {
+      try {
+        data = (results.body);
+      } catch (error) {
+        console.error('Error parsing JSON:', err);
+        console.error('Response body:', results.body);
+        throw new Error('Error parsing JSON');
+      }
+    });
+
+    if (!last_page) {
+      last_page = data.last_page;
+    }
+
+    if (page > last_page) {
+      return {
+        message: `inserted ${page} pages of data`,
+        data: putData(dataarray),
+      };
+    }
+
+    for (const launch of await data.result) {
+      const obj = {
+        'id': launch.id,
+        'sort_date': launch['sort_date'],
+        'rocket_name': launch['name'],
+        'provider': launch['provider.name'],
+        'vehicle': launch['vehicle.name'],
+        'date_str': launch['date_str'],
+        'quicktext': launch['quicktext'],
+        'result': launch['result'],
+      };
+
+      dataarray.push(obj);
+      page++;
+
+      await populateLaunchTableData(dataarray, page);
+    }
+  } catch (error) {
+    console.error(error);
+  }
 };
+
 
 populateLaunches = async () => {
   const options= (page) = {
@@ -61,3 +103,5 @@ populateLaunches = async () => {
   }
 };
 
+
+populateLaunchTableData();
