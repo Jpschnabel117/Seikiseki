@@ -1,106 +1,23 @@
 [
-  { 
-    "id": 3281,
-    "cospar_id": "",
-    "sort_date": "1678153020",
-    "name": "ALOS-3",
-    "provider": {
-      "id": 135,
-      "name": "Mitsubishi Heavy Industries",
-      "slug": "mitsubishi-heavy-industries"
-    },
-    "vehicle": {
-      "id": 136,
-      "name": "H-3",
-      "company_id": 135,
-      "slug": "h-3"
-    },
-    "pad": {
-      "id": 30,
-      "name": "LA-Y2",
-      "location": {
-        "id": 19,
-        "name": "Tanegashima Space Center",
-        "state": null,
-        "statename": null,
-        "country": "Japan",
-        "slug": "tanegashima-space-center"
-      }
-    },
-    "missions": [
-      {
-        "id": 5018,
-        "name": "ALOS-3",
-        "description": null
-      }
-    ],
-    "mission_description": null,
-    "launch_description": "A Mitsubishi Heavy Industries H-3 rocket will launch the ALOS-3 mission on Tuesday, March 7, 2023 at 1:37 AM (UTC).",
-    "win_open": null,
-    "t0": "2023-03-07T01:37Z",
-    "win_close": null,
-    "est_date": {
-      "month": 3,
-      "day": 6,
-      "year": 2023,
-      "quarter": null
-    },
-    "date_str": "Mar 07",
-    "tags": [
-      {
-        "id": 14,
-        "text": "Vehicle Debut"
-      }
-    ],
-    "slug": "alos-3",
-    "weather_summary": "Partly Cloudy\nTemp: 58.89F\nWind: 4.42mph\n",
-    "weather_temp": 58.89,
-    "weather_condition": "Partly Cloudy",
-    "weather_wind_mph": 4.42,
-    "weather_icon": "wi-day-cloudy",
-    "weather_updated": "2023-02-17T00:00:22+00:00",
-    "quicktext": "H-3 - ALOS-3 - Mar 07 (estimated) - https://rocketlaunch.live/launch/alos-3 for info/stream",
-    "media": [
-      {
-        "id": 1200,
-        "media_url": "https://youtu.be/5RWCnKbysO0",
-        "youtube_vidid": "5RWCnKbysO0",
-        "featured": true,
-        "ldfeatured": true,
-        "approved": true
-      },
-      {
-        "id": 1180,
-        "media_url": "https://www.youtube.com/live/tEEwsYYzyME",
-        "youtube_vidid": "tEEwsYYzyME",
-        "featured": false,
-        "ldfeatured": false,
-        "approved": true
-      }
-    ],
-    "result": -1,
-    "suborbital": false,
-    "modified": "2023-03-05T16:13:46+00:00"
-  },
   {
-    "id": 1181,
-    "cospar_id": "",
-    "sort_date": "1678298400",
-    "name": "\"Good Luck, Have Fun\"",
+    "id": 3291,
+    "cospar_id": "1963-009",
+    "sort_date": "-212968798",
+    "name": "Explorer 17",
     "provider": {
-      "id": 127,
-      "name": "Relativity Space",
-      "slug": "relativity-space"
+      "id": 12,
+      "name": "U.S. Air Force",
+      "slug": "u-s-air-force"
     },
     "vehicle": {
-      "id": 92,
-      "name": "Terran 1",
-      "company_id": 127,
-      "slug": "terran-1"
+      "id": 138,
+      "name": "Thor-Delta B",
+      "company_id": 147,
+      "slug": "thor-delta-b"
     },
     "pad": {
-      "id": 128,
-      "name": "SLC-16",
+      "id": 90,
+      "name": "SLC-17A",
       "location": {
         "id": 62,
         "name": "Cape Canaveral SFS",
@@ -112,723 +29,174 @@
     },
     "missions": [
       {
-        "id": 1261,
-        "name": "Terran 1 Flight 1",
+        "id": 5029,
+        "name": "Explorer 17",
         "description": null
       }
     ],
     "mission_description": null,
-    "launch_description": "A Relativity Space Terran 1 rocket will launch the \"Good Luck, Have Fun\" mission on Wednesday, March 8, 2023 at 6:00 PM (UTC).",
-    "win_open": "2023-03-08T18:00Z",
-    "t0": null,
-    "win_close": "2023-03-08T21:00Z",
+    "launch_description": "A U.S. Air Force Thor-Delta B rocket launched the Explorer 17 mission on Wednesday, April 3, 1963 at 2:00 AM (UTC).",
+    "win_open": null,
+    "t0": "1963-04-03T02:00Z",
+    "win_close": null,
     "est_date": {
       "month": null,
       "day": null,
       "year": null,
       "quarter": null
     },
-    "date_str": "Mar 08",
-    "tags": [
-      {
-        "id": 23,
-        "text": "Test Flight"
-      },
-      {
-        "id": 14,
-        "text": "Vehicle Debut"
-      }
-    ],
-    "slug": "terran-1-flight-1",
-    "weather_summary": "Rain\nTemp: 76.81F\nWind: 16.19mph\n",
-    "weather_temp": 76.81,
-    "weather_condition": "Rain",
-    "weather_wind_mph": 16.19,
-    "weather_icon": "wi-rain",
-    "weather_updated": "2023-03-06T12:00:16+00:00",
-    "quicktext": "Terran 1 - \"Good Luck, Have Fun\" - Wed Mar 08, 2023 18:00:00 UTC (L-1 days, 18:59:24) - https://rocketlaunch.live/launch/terran-1-flight-1 for info/stream",
-    "media": [
-      {
-        "id": 1187,
-        "media_url": "",
-        "youtube_vidid": "_YAlOGZM32U",
-        "featured": true,
-        "ldfeatured": true,
-        "approved": true
-      }
-    ],
-    "result": -1,
-    "suborbital": false,
-    "modified": "2023-02-22T19:47:58+00:00"
-  },
-  {
-    "id": 3313,
-    "cospar_id": "",
-    "sort_date": "1678389180",
-    "name": "OneWeb-17",
-    "provider": {
-      "id": 1,
-      "name": "SpaceX",
-      "slug": "spacex"
-    },
-    "vehicle": {
-      "id": 1,
-      "name": "Falcon 9",
-      "company_id": 1,
-      "slug": "falcon-9"
-    },
-    "pad": {
-      "id": 3,
-      "name": "SLC-40",
-      "location": {
-        "id": 62,
-        "name": "Cape Canaveral SFS",
-        "state": "FL",
-        "statename": "Florida",
-        "country": "United States",
-        "slug": "cape-canaveral-sfs"
-      }
-    },
-    "missions": [
-      {
-        "id": 5069,
-        "name": "OneWeb-17",
-        "description": null
-      }
-    ],
-    "mission_description": null,
-    "launch_description": "A SpaceX Falcon 9 rocket will launch the OneWeb-17 mission on Thursday, March 9, 2023 at 7:13 PM (UTC).",
-    "win_open": null,
-    "t0": "2023-03-09T19:13Z",
-    "win_close": null,
-    "est_date": {
-      "month": 3,
-      "day": 9,
-      "year": 2023,
-      "quarter": null
-    },
-    "date_str": "Mar 09",
-    "tags": [
-      {
-        "id": 112,
-        "text": "B1073"
-      },
-      {
-        "id": 93,
-        "text": "Series: OneWeb"
-      }
-    ],
-    "slug": "oneweb-17",
-    "weather_summary": null,
-    "weather_temp": null,
-    "weather_condition": null,
-    "weather_wind_mph": null,
-    "weather_icon": null,
-    "weather_updated": null,
-    "quicktext": "Falcon 9 - OneWeb-17 - Mar 09 (estimated) - https://rocketlaunch.live/launch/oneweb-17 for info/stream",
-    "media": [],
-    "result": -1,
-    "suborbital": false,
-    "modified": "2023-03-06T21:06:43+00:00"
-  },
-  {
-    "id": 3320,
-    "cospar_id": "",
-    "sort_date": "1678662720",
-    "name": "Olymp-K 2",
-    "provider": {
-      "id": 104,
-      "name": "Russian Military",
-      "slug": "russian-military"
-    },
-    "vehicle": {
-      "id": 8,
-      "name": "Proton-M",
-      "company_id": 13,
-      "slug": "proton-m"
-    },
-    "pad": {
-      "id": 24,
-      "name": "LC-81/24",
-      "location": {
-        "id": 50,
-        "name": "Baikonur Cosmodrome",
-        "state": null,
-        "statename": null,
-        "country": "Kazakhstan",
-        "slug": "baikonur-cosmodrome"
-      }
-    },
-    "missions": [
-      {
-        "id": 5076,
-        "name": "Olymp-K 2",
-        "description": null
-      }
-    ],
-    "mission_description": null,
-    "launch_description": "A Russian Military Proton-M rocket will launch the Olymp-K 2 mission on Sunday, March 12, 2023 at 11:12 PM (UTC).",
-    "win_open": null,
-    "t0": "2023-03-12T23:12Z",
-    "win_close": null,
-    "est_date": {
-      "month": 3,
-      "day": 12,
-      "year": 2023,
-      "quarter": null
-    },
-    "date_str": "Mar 12",
+    "date_str": "Apr 03 1963",
     "tags": [],
-    "slug": "olymp-k-2",
+    "slug": "explorer-17",
     "weather_summary": null,
     "weather_temp": null,
     "weather_condition": null,
     "weather_wind_mph": null,
     "weather_icon": null,
     "weather_updated": null,
-    "quicktext": "Proton-M - Olymp-K 2 - Mar 12 (estimated) - https://rocketlaunch.live/launch/olymp-k-2 for info/stream",
+    "quicktext": "Thor-Delta B - Explorer 17 - Apr 03 1963 (estimated) - https://rocketlaunch.live/launch/explorer-17 for info/stream",
     "media": [],
-    "result": -1,
+    "result": 1,
     "suborbital": false,
-    "modified": "2023-02-26T15:26:30+00:00"
+    "modified": "2023-01-02T17:57:59+00:00"
   },
   {
-    "id": 3213,
-    "cospar_id": "",
-    "sort_date": "1678839900",
-    "name": "CRS2 SpX-27 (Dragon)",
+    "id": 3290,
+    "cospar_id": "1963-013",
+    "sort_date": "-209996517",
+    "name": "Telstar 2",
     "provider": {
-      "id": 1,
-      "name": "SpaceX",
-      "slug": "spacex"
-    },
-    "vehicle": {
-      "id": 1,
-      "name": "Falcon 9",
-      "company_id": 1,
-      "slug": "falcon-9"
-    },
-    "pad": {
-      "id": 2,
-      "name": "LC-39A",
-      "location": {
-        "id": 61,
-        "name": "Kennedy Space Center",
-        "state": "FL",
-        "statename": "Florida",
-        "country": "United States",
-        "slug": "kennedy-space-center"
-      }
-    },
-    "missions": [
-      {
-        "id": 4940,
-        "name": "CRS2 SpX-27 (Dragon)",
-        "description": null
-      }
-    ],
-    "mission_description": null,
-    "launch_description": "A SpaceX Falcon 9 rocket will launch the CRS2 SpX-27 (Dragon) mission on Wednesday, March 15, 2023 at 12:25 AM (UTC).",
-    "win_open": null,
-    "t0": "2023-03-15T00:25Z",
-    "win_close": null,
-    "est_date": {
-      "month": 3,
-      "day": 15,
-      "year": 2023,
-      "quarter": null
-    },
-    "date_str": "Mar 15",
-    "tags": [
-      {
-        "id": 12,
-        "text": "ISS Cargo"
-      }
-    ],
-    "slug": "crs2-spx-27-dragon",
-    "weather_summary": null,
-    "weather_temp": null,
-    "weather_condition": null,
-    "weather_wind_mph": null,
-    "weather_icon": null,
-    "weather_updated": null,
-    "quicktext": "Falcon 9 - CRS2 SpX-27 (Dragon) - Mar 15 (estimated) - https://rocketlaunch.live/launch/crs2-spx-27-dragon for info/stream",
-    "media": [],
-    "result": -1,
-    "suborbital": false,
-    "modified": "2023-03-06T18:55:50+00:00"
-  },
-  {
-    "id": 2970,
-    "cospar_id": "",
-    "sort_date": "1679103300",
-    "name": "SES-18 & SES-19",
-    "provider": {
-      "id": 1,
-      "name": "SpaceX",
-      "slug": "spacex"
-    },
-    "vehicle": {
-      "id": 1,
-      "name": "Falcon 9",
-      "company_id": 1,
-      "slug": "falcon-9"
-    },
-    "pad": {
-      "id": 3,
-      "name": "SLC-40",
-      "location": {
-        "id": 62,
-        "name": "Cape Canaveral SFS",
-        "state": "FL",
-        "statename": "Florida",
-        "country": "United States",
-        "slug": "cape-canaveral-sfs"
-      }
-    },
-    "missions": [
-      {
-        "id": 4609,
-        "name": "SES-18 & SES-19",
-        "description": null
-      }
-    ],
-    "mission_description": null,
-    "launch_description": "A SpaceX Falcon 9 rocket will launch the SES-18 & SES-19 mission on Saturday, March 18, 2023 at 1:35 AM (UTC).",
-    "win_open": null,
-    "t0": "2023-03-18T01:35Z",
-    "win_close": null,
-    "est_date": {
-      "month": 3,
-      "day": 18,
-      "year": 2023,
-      "quarter": null
-    },
-    "date_str": "Mar 18",
-    "tags": [],
-    "slug": "ses-18-ses-19",
-    "weather_summary": null,
-    "weather_temp": null,
-    "weather_condition": null,
-    "weather_wind_mph": null,
-    "weather_icon": null,
-    "weather_updated": null,
-    "quicktext": "Falcon 9 - SES-18 & SES-19 - Mar 18 (estimated) - https://rocketlaunch.live/launch/ses-18-ses-19 for info/stream",
-    "media": [],
-    "result": -1,
-    "suborbital": false,
-    "modified": "2023-02-27T20:23:04+00:00"
-  },
-  {
-    "id": 3314,
-    "cospar_id": "",
-    "sort_date": "1679875196",
-    "name": "OneWeb-18",
-    "provider": {
-      "id": 18,
-      "name": "ISRO",
-      "slug": "isro"
-    },
-    "vehicle": {
-      "id": 19,
-      "name": "GSLV-III",
-      "company_id": 18,
-      "slug": "gslv-iii"
-    },
-    "pad": {
-      "id": 8,
-      "name": "SLP",
-      "location": {
-        "id": 67,
-        "name": "Satish Dhawan Space Centre",
-        "state": null,
-        "statename": null,
-        "country": "India",
-        "slug": "satish-dhawan-space-centre"
-      }
-    },
-    "missions": [
-      {
-        "id": 5070,
-        "name": "OneWeb-18",
-        "description": null
-      }
-    ],
-    "mission_description": null,
-    "launch_description": "An ISRO GSLV-III rocket will launch the OneWeb-18 mission. The launch date is currently targeted for March 26, 2023 (UTC).",
-    "win_open": null,
-    "t0": null,
-    "win_close": null,
-    "est_date": {
-      "month": 3,
-      "day": 26,
-      "year": 2023,
-      "quarter": null
-    },
-    "date_str": "Mar 26",
-    "tags": [
-      {
-        "id": 93,
-        "text": "Series: OneWeb"
-      }
-    ],
-    "slug": "oneweb-18",
-    "weather_summary": null,
-    "weather_temp": null,
-    "weather_condition": null,
-    "weather_wind_mph": null,
-    "weather_icon": null,
-    "weather_updated": null,
-    "quicktext": "GSLV-III - OneWeb-18 - Mar 26 (estimated) - https://rocketlaunch.live/launch/oneweb-18 for info/stream",
-    "media": [],
-    "result": -1,
-    "suborbital": false,
-    "modified": "2023-03-06T18:55:33+00:00"
-  },
-  {
-    "id": 230,
-    "cospar_id": "",
-    "sort_date": "1680307197",
-    "name": "IRNSS-1J (NVS-01)",
-    "provider": {
-      "id": 18,
-      "name": "ISRO",
-      "slug": "isro"
-    },
-    "vehicle": {
-      "id": 16,
-      "name": "GSLV-II",
-      "company_id": 18,
-      "slug": "gslv-ii"
-    },
-    "pad": {
-      "id": 8,
-      "name": "SLP",
-      "location": {
-        "id": 67,
-        "name": "Satish Dhawan Space Centre",
-        "state": null,
-        "statename": null,
-        "country": "India",
-        "slug": "satish-dhawan-space-centre"
-      }
-    },
-    "missions": [
-      {
-        "id": 222,
-        "name": "IRNSS-1J (NVS-01)",
-        "description": null
-      }
-    ],
-    "mission_description": null,
-    "launch_description": "An ISRO GSLV-II rocket will launch the IRNSS-1J (NVS-01) mission. The launch date is currently targeted for March, 2023 (UTC).",
-    "win_open": null,
-    "t0": null,
-    "win_close": null,
-    "est_date": {
-      "month": 3,
-      "day": null,
-      "year": 2023,
-      "quarter": null
-    },
-    "date_str": "Mar 2023",
-    "tags": [
-      {
-        "id": 26,
-        "text": "Navigation Satellite"
-      }
-    ],
-    "slug": "irnss-1j",
-    "weather_summary": null,
-    "weather_temp": null,
-    "weather_condition": null,
-    "weather_wind_mph": null,
-    "weather_icon": null,
-    "weather_updated": null,
-    "quicktext": "GSLV-II - IRNSS-1J (NVS-01) - Mar 2023 (estimated) - https://rocketlaunch.live/launch/irnss-1j for info/stream",
-    "media": [],
-    "result": -1,
-    "suborbital": false,
-    "modified": "2023-01-21T17:23:32+00:00"
-  },
-  {
-    "id": 2659,
-    "cospar_id": "",
-    "sort_date": "1680307197",
-    "name": "Full Stack Test Flight",
-    "provider": {
-      "id": 1,
-      "name": "SpaceX",
-      "slug": "spacex"
-    },
-    "vehicle": {
-      "id": 119,
-      "name": "Super Heavy / Starship Prototype",
-      "company_id": 1,
-      "slug": "super-heavy-starship-prototype"
-    },
-    "pad": {
-      "id": 114,
-      "name": "Launch Pad",
-      "location": {
-        "id": 89,
-        "name": "Boca Chica Launch Site",
-        "state": "TX",
-        "statename": "Texas",
-        "country": "United States",
-        "slug": "boca-chica-launch-site"
-      }
-    },
-    "missions": [
-      {
-        "id": 4137,
-        "name": "Full Stack Test Flight",
-        "description": "This launch represents the first time a Starship prototype booster and ship will fly together on a flight which may not complete a full orbit. As this is a test program, any dates and times are simply an estimate based on publicly known information."
-      }
-    ],
-    "mission_description": "This launch represents the first time a Starship prototype booster and ship will fly together on a flight which may not complete a full orbit. As this is a test program, any dates and times are simply an estimate based on publicly known information.",
-    "launch_description": "A SpaceX Super Heavy / Starship Prototype rocket will launch the Full Stack Test Flight mission. The launch date is currently targeted for March, 2023 (UTC).",
-    "win_open": null,
-    "t0": null,
-    "win_close": null,
-    "est_date": {
-      "month": 3,
-      "day": null,
-      "year": 2023,
-      "quarter": null
-    },
-    "date_str": "Mar 2023",
-    "tags": [
-      {
-        "id": 23,
-        "text": "Test Flight"
-      }
-    ],
-    "slug": "full-stack-test-flig",
-    "weather_summary": null,
-    "weather_temp": null,
-    "weather_condition": null,
-    "weather_wind_mph": null,
-    "weather_icon": null,
-    "weather_updated": null,
-    "quicktext": "Super Heavy / Starship Prototype - Full Stack Test Flight - Mar 2023 (estimated) - https://rocketlaunch.live/launch/full-stack-test-flig for info/stream",
-    "media": [],
-    "result": -1,
-    "suborbital": false,
-    "modified": "2023-02-05T01:35:51+00:00"
-  },
-  {
-    "id": 3112,
-    "cospar_id": "",
-    "sort_date": "1680307197",
-    "name": "SILENTBARKER (NROL-107)",
-    "provider": {
-      "id": 3,
-      "name": "United Launch Alliance (ULA)",
-      "slug": "united-launch-alliance-ula"
-    },
-    "vehicle": {
-      "id": 3,
-      "name": "Atlas V",
-      "company_id": 3,
-      "slug": "atlas-v"
-    },
-    "pad": {
-      "id": 4,
-      "name": "SLC-41",
-      "location": {
-        "id": 62,
-        "name": "Cape Canaveral SFS",
-        "state": "FL",
-        "statename": "Florida",
-        "country": "United States",
-        "slug": "cape-canaveral-sfs"
-      }
-    },
-    "missions": [
-      {
-        "id": 4807,
-        "name": "SILENTBARKER (NROL-107)",
-        "description": null
-      }
-    ],
-    "mission_description": null,
-    "launch_description": "A United Launch Alliance (ULA) Atlas V rocket will launch the SILENTBARKER (NROL-107) mission. The launch date is currently targeted for March, 2023 (UTC).",
-    "win_open": null,
-    "t0": null,
-    "win_close": null,
-    "est_date": {
-      "month": 3,
-      "day": null,
-      "year": 2023,
-      "quarter": null
-    },
-    "date_str": "Mar 2023",
-    "tags": [
-      {
-        "id": 8,
-        "text": "Classified Payload"
-      }
-    ],
-    "slug": "nrol-107",
-    "weather_summary": null,
-    "weather_temp": null,
-    "weather_condition": null,
-    "weather_wind_mph": null,
-    "weather_icon": null,
-    "weather_updated": null,
-    "quicktext": "Atlas V - SILENTBARKER (NROL-107) - Mar 2023 (estimated) - https://rocketlaunch.live/launch/nrol-107 for info/stream",
-    "media": [],
-    "result": -1,
-    "suborbital": false,
-    "modified": "2022-12-12T14:09:17+00:00"
-  },
-  {
-    "id": 3218,
-    "cospar_id": "",
-    "sort_date": "1680307197",
-    "name": "Tranche-0 Launch 1",
-    "provider": {
-      "id": 1,
-      "name": "SpaceX",
-      "slug": "spacex"
-    },
-    "vehicle": {
-      "id": 1,
-      "name": "Falcon 9",
-      "company_id": 1,
-      "slug": "falcon-9"
-    },
-    "pad": {
-      "id": 1,
-      "name": "SLC-4E",
-      "location": {
-        "id": 60,
-        "name": "Vandenberg SFB",
-        "state": "CA",
-        "statename": "California",
-        "country": "United States",
-        "slug": "vandenberg-sfb"
-      }
-    },
-    "missions": [
-      {
-        "id": 4945,
-        "name": "Tranche-0 Launch 1",
-        "description": null
-      }
-    ],
-    "mission_description": null,
-    "launch_description": "A SpaceX Falcon 9 rocket will launch the Tranche-0 Launch 1 mission. The launch date is currently targeted for March, 2023 (UTC).",
-    "win_open": null,
-    "t0": null,
-    "win_close": null,
-    "est_date": {
-      "month": 3,
-      "day": null,
-      "year": 2023,
-      "quarter": null
-    },
-    "date_str": "Mar 2023",
-    "tags": [
-      {
-        "id": 26,
-        "text": "Navigation Satellite"
-      },
-      {
-        "id": 14,
-        "text": "Vehicle Debut"
-      }
-    ],
-    "slug": "tranche-0",
-    "weather_summary": null,
-    "weather_temp": null,
-    "weather_condition": null,
-    "weather_wind_mph": null,
-    "weather_icon": null,
-    "weather_updated": null,
-    "quicktext": "Falcon 9 - Tranche-0 Launch 1 - Mar 2023 (estimated) - https://rocketlaunch.live/launch/tranche-0 for info/stream",
-    "media": [],
-    "result": -1,
-    "suborbital": false,
-    "modified": "2023-03-01T15:57:07+00:00"
-  },
-  {
-    "id": 3224,
-    "cospar_id": "",
-    "sort_date": "1680307197",
-    "name": "\"Stronger Together\"",
-    "provider": {
-      "id": 26,
-      "name": "Rocket Lab",
-      "slug": "rocket-lab"
-    },
-    "vehicle": {
-      "id": 18,
-      "name": "Electron",
-      "company_id": 26,
-      "slug": "electron"
-    },
-    "pad": {
       "id": 12,
-      "name": "Pad 0C (Rocket Lab LC-2)",
+      "name": "U.S. Air Force",
+      "slug": "u-s-air-force"
+    },
+    "vehicle": {
+      "id": 138,
+      "name": "Thor-Delta B",
+      "company_id": 147,
+      "slug": "thor-delta-b"
+    },
+    "pad": {
+      "id": 84,
+      "name": "SLC-17B",
       "location": {
-        "id": 66,
-        "name": "Mid-Atlantic Regional Spaceport (Wallops Island)",
-        "state": "VA",
-        "statename": "Virginia",
+        "id": 62,
+        "name": "Cape Canaveral SFS",
+        "state": "FL",
+        "statename": "Florida",
         "country": "United States",
-        "slug": "mid-atlantic-regional-spaceport-wallops-island"
+        "slug": "cape-canaveral-sfs"
       }
     },
     "missions": [
       {
-        "id": 4951,
-        "name": "Capella-9 & Capella-10",
+        "id": 5028,
+        "name": "Telstar 2",
         "description": null
       }
     ],
     "mission_description": null,
-    "launch_description": "A Rocket Lab Electron rocket will launch the \"Stronger Together\" mission. The launch date is currently targeted for March, 2023 (UTC).",
+    "launch_description": "A U.S. Air Force Thor-Delta B rocket launched the Telstar 2 mission on Tuesday, May 7, 1963 at 11:38 AM (UTC).",
     "win_open": null,
-    "t0": null,
+    "t0": "1963-05-07T11:38Z",
     "win_close": null,
     "est_date": {
-      "month": 3,
+      "month": null,
       "day": null,
-      "year": 2023,
+      "year": null,
       "quarter": null
     },
-    "date_str": "Mar 2023",
+    "date_str": "May 07 1963",
     "tags": [],
-    "slug": "stronger-together",
+    "slug": "telstar-2",
     "weather_summary": null,
     "weather_temp": null,
     "weather_condition": null,
     "weather_wind_mph": null,
     "weather_icon": null,
     "weather_updated": null,
-    "quicktext": "Electron - \"Stronger Together\" - Mar 2023 (estimated) - https://rocketlaunch.live/launch/stronger-together for info/stream",
+    "quicktext": "Thor-Delta B - Telstar 2 - May 07 1963 (estimated) - https://rocketlaunch.live/launch/telstar-2 for info/stream",
     "media": [],
-    "result": -1,
+    "result": 1,
     "suborbital": false,
-    "modified": "2023-02-28T22:44:15+00:00"
+    "modified": "2023-01-02T17:57:53+00:00"
   },
   {
-    "id": 3246,
-    "cospar_id": "",
-    "sort_date": "1680307197",
-    "name": "VCLS Demo-2FB (ELaNa 43)",
+    "id": 3289,
+    "cospar_id": "1963-024",
+    "sort_date": "-206287799",
+    "name": "Tiros 7",
     "provider": {
-      "id": 91,
-      "name": "Firefly",
-      "slug": "firefly"
+      "id": 12,
+      "name": "U.S. Air Force",
+      "slug": "u-s-air-force"
     },
     "vehicle": {
-      "id": 58,
-      "name": "Alpha",
-      "company_id": 91,
-      "slug": "alpha"
+      "id": 138,
+      "name": "Thor-Delta B",
+      "company_id": 147,
+      "slug": "thor-delta-b"
+    },
+    "pad": {
+      "id": 84,
+      "name": "SLC-17B",
+      "location": {
+        "id": 62,
+        "name": "Cape Canaveral SFS",
+        "state": "FL",
+        "statename": "Florida",
+        "country": "United States",
+        "slug": "cape-canaveral-sfs"
+      }
+    },
+    "missions": [
+      {
+        "id": 5027,
+        "name": "Tiros 7",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A U.S. Air Force Thor-Delta B rocket launched the Tiros 7 mission on Wednesday, June 19, 1963 at 9:50 AM (UTC).",
+    "win_open": null,
+    "t0": "1963-06-19T09:50Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Jun 19 1963",
+    "tags": [],
+    "slug": "tiros-7",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Thor-Delta B - Tiros 7 - Jun 19 1963 (estimated) - https://rocketlaunch.live/launch/tiros-7 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2023-01-02T17:57:45+00:00"
+  },
+  {
+    "id": 3295,
+    "cospar_id": "1963-025",
+    "sort_date": "-205629754",
+    "name": "OPS 0999",
+    "provider": {
+      "id": 12,
+      "name": "U.S. Air Force",
+      "slug": "u-s-air-force"
+    },
+    "vehicle": {
+      "id": 139,
+      "name": "Thor-Agena D",
+      "company_id": 147,
+      "slug": "thor-agena-d"
     },
     "pad": {
       "id": 38,
@@ -844,56 +212,66 @@
     },
     "missions": [
       {
-        "id": 4981,
-        "name": "VCLS Demo-2FB (ELaNa 43)",
+        "id": 5040,
+        "name": "OPS 0999",
+        "description": null
+      },
+      {
+        "id": 5041,
+        "name": "Hitchhiker 1",
+        "description": null
+      },
+      {
+        "id": 5042,
+        "name": "SRV 611",
         "description": null
       }
     ],
     "mission_description": null,
-    "launch_description": "A Firefly Alpha rocket will launch the VCLS Demo-2FB (ELaNa 43) mission. The launch date is currently targeted for March, 2023 (UTC).",
+    "launch_description": "A U.S. Air Force Thor-Agena D rocket launched the OPS 0999 mission on Thursday, June 27, 1963 at 12:37 AM (UTC).",
     "win_open": null,
-    "t0": null,
+    "t0": "1963-06-27T00:37Z",
     "win_close": null,
     "est_date": {
-      "month": 3,
+      "month": null,
       "day": null,
-      "year": 2023,
+      "year": null,
       "quarter": null
     },
-    "date_str": "Mar 2023",
+    "date_str": "Jun 27 1963",
     "tags": [],
-    "slug": "vcls-demo-2fb-elana-",
+    "slug": "ops-0999",
     "weather_summary": null,
     "weather_temp": null,
     "weather_condition": null,
     "weather_wind_mph": null,
     "weather_icon": null,
     "weather_updated": null,
-    "quicktext": "Alpha - VCLS Demo-2FB (ELaNa 43) - Mar 2023 (estimated) - https://rocketlaunch.live/launch/vcls-demo-2fb-elana- for info/stream",
+    "quicktext": "Thor-Agena D - OPS 0999 - Jun 27 1963 (estimated) - https://rocketlaunch.live/launch/ops-0999 for info/stream",
     "media": [],
-    "result": -1,
+    "result": 1,
     "suborbital": false,
-    "modified": "2023-02-23T17:15:36+00:00"
+    "modified": "2023-01-02T18:10:51+00:00"
   },
   {
-    "id": 3276,
-    "cospar_id": "",
-    "sort_date": "1680307197",
-    "name": "Starlink (2-2)",
+    "id": 3288,
+    "cospar_id": "1963-031",
+    "sort_date": "-203074020",
+    "name": "Syncom 2",
     "provider": {
-      "id": 1,
-      "name": "SpaceX",
-      "slug": "spacex"
+      "id": 12,
+      "name": "U.S. Air Force",
+      "slug": "u-s-air-force"
     },
     "vehicle": {
-      "id": 1,
-      "name": "Falcon 9",
-      "company_id": 1,
-      "slug": "falcon-9"
+      "id": 138,
+      "name": "Thor-Delta B",
+      "company_id": 147,
+      "slug": "thor-delta-b"
     },
     "pad": {
-      "id": 3,
-      "name": "SLC-40",
+      "id": 90,
+      "name": "SLC-17A",
       "location": {
         "id": 62,
         "name": "Cape Canaveral SFS",
@@ -905,249 +283,56 @@
     },
     "missions": [
       {
-        "id": 5013,
-        "name": "Starlink (2-2)",
+        "id": 5026,
+        "name": "Syncom 2",
         "description": null
       }
     ],
     "mission_description": null,
-    "launch_description": "A SpaceX Falcon 9 rocket will launch the Starlink (2-2) mission. The launch date is currently targeted for March, 2023 (UTC).",
+    "launch_description": "A U.S. Air Force Thor-Delta B rocket launched the Syncom 2 mission on Friday, July 26, 1963 at 2:33 PM (UTC).",
     "win_open": null,
-    "t0": null,
+    "t0": "1963-07-26T14:33Z",
     "win_close": null,
     "est_date": {
-      "month": 3,
+      "month": null,
       "day": null,
-      "year": 2023,
+      "year": null,
       "quarter": null
     },
-    "date_str": "Mar 2023",
-    "tags": [
-      {
-        "id": 92,
-        "text": "Series: SpaceX Starlink"
-      }
-    ],
-    "slug": "starlink-2-2",
-    "weather_summary": null,
-    "weather_temp": null,
-    "weather_condition": null,
-    "weather_wind_mph": null,
-    "weather_icon": null,
-    "weather_updated": null,
-    "quicktext": "Falcon 9 - Starlink (2-2) - Mar 2023 (estimated) - https://rocketlaunch.live/launch/starlink-2-2 for info/stream",
-    "media": [],
-    "result": -1,
-    "suborbital": false,
-    "modified": "2023-02-09T14:37:41+00:00"
-  },
-  {
-    "id": 3325,
-    "cospar_id": "",
-    "sort_date": "1680307197",
-    "name": "Starlink (5-5)",
-    "provider": {
-      "id": 1,
-      "name": "SpaceX",
-      "slug": "spacex"
-    },
-    "vehicle": {
-      "id": 1,
-      "name": "Falcon 9",
-      "company_id": 1,
-      "slug": "falcon-9"
-    },
-    "pad": {
-      "id": 3,
-      "name": "SLC-40",
-      "location": {
-        "id": 62,
-        "name": "Cape Canaveral SFS",
-        "state": "FL",
-        "statename": "Florida",
-        "country": "United States",
-        "slug": "cape-canaveral-sfs"
-      }
-    },
-    "missions": [
-      {
-        "id": 5082,
-        "name": "Starlink (5-5)",
-        "description": null
-      }
-    ],
-    "mission_description": null,
-    "launch_description": "A SpaceX Falcon 9 rocket will launch the Starlink (5-5) mission. The launch date is currently targeted for March, 2023 (UTC).",
-    "win_open": null,
-    "t0": null,
-    "win_close": null,
-    "est_date": {
-      "month": 3,
-      "day": null,
-      "year": 2023,
-      "quarter": null
-    },
-    "date_str": "Mar 2023",
-    "tags": [
-      {
-        "id": 92,
-        "text": "Series: SpaceX Starlink"
-      }
-    ],
-    "slug": "starlink-5-5",
-    "weather_summary": null,
-    "weather_temp": null,
-    "weather_condition": null,
-    "weather_wind_mph": null,
-    "weather_icon": null,
-    "weather_updated": null,
-    "quicktext": "Falcon 9 - Starlink (5-5) - Mar 2023 (estimated) - https://rocketlaunch.live/launch/starlink-5-5 for info/stream",
-    "media": [],
-    "result": -1,
-    "suborbital": false,
-    "modified": "2023-02-21T14:07:08+00:00"
-  },
-  {
-    "id": 3331,
-    "cospar_id": "",
-    "sort_date": "1680307197",
-    "name": "Ionosfera-M no. 1 & 2",
-    "provider": {
-      "id": 13,
-      "name": "Roscosmos",
-      "slug": "roscosmos"
-    },
-    "vehicle": {
-      "id": 20,
-      "name": "Soyuz-2",
-      "company_id": 13,
-      "slug": "soyuz-2"
-    },
-    "pad": {
-      "id": 27,
-      "name": "Site 1S",
-      "location": {
-        "id": 36,
-        "name": "Vostochny Cosmodrome",
-        "state": null,
-        "statename": null,
-        "country": "Russia",
-        "slug": "vostochny-cosmodrome"
-      }
-    },
-    "missions": [
-      {
-        "id": 5088,
-        "name": "Ionosfera-M no. 1 & 2",
-        "description": null
-      }
-    ],
-    "mission_description": null,
-    "launch_description": "A Roscosmos Soyuz-2 rocket will launch the Ionosfera-M no. 1 & 2 mission. The launch date is currently targeted for March, 2023 (UTC).",
-    "win_open": null,
-    "t0": null,
-    "win_close": null,
-    "est_date": {
-      "month": 3,
-      "day": null,
-      "year": 2023,
-      "quarter": null
-    },
-    "date_str": "Mar 2023",
+    "date_str": "Jul 26 1963",
     "tags": [],
-    "slug": "ionosfera-m-no-1-2",
+    "slug": "syncom-2",
     "weather_summary": null,
     "weather_temp": null,
     "weather_condition": null,
     "weather_wind_mph": null,
     "weather_icon": null,
     "weather_updated": null,
-    "quicktext": "Soyuz-2 - Ionosfera-M no. 1 & 2 - Mar 2023 (estimated) - https://rocketlaunch.live/launch/ionosfera-m-no-1-2 for info/stream",
+    "quicktext": "Thor-Delta B - Syncom 2 - Jul 26 1963 (estimated) - https://rocketlaunch.live/launch/syncom-2 for info/stream",
     "media": [],
-    "result": -1,
+    "result": 1,
     "suborbital": false,
-    "modified": "2023-02-25T16:51:12+00:00"
+    "modified": "2023-01-02T17:57:39+00:00"
   },
   {
-    "id": 3333,
-    "cospar_id": "",
-    "sort_date": "1680307197",
-    "name": "\"The Beat Goes On\"",
+    "id": 3294,
+    "cospar_id": "1963-032",
+    "sort_date": "-202694374",
+    "name": "OPS 1370",
     "provider": {
-      "id": 26,
-      "name": "Rocket Lab",
-      "slug": "rocket-lab"
+      "id": 12,
+      "name": "U.S. Air Force",
+      "slug": "u-s-air-force"
     },
     "vehicle": {
-      "id": 18,
-      "name": "Electron",
-      "company_id": 26,
-      "slug": "electron"
+      "id": 139,
+      "name": "Thor-Agena D",
+      "company_id": 147,
+      "slug": "thor-agena-d"
     },
     "pad": {
-      "id": 88,
-      "name": "Pad TBD",
-      "location": {
-        "id": 20,
-        "name": "Rocket Lab Launch Complex, Mahia Peninsula",
-        "state": null,
-        "statename": null,
-        "country": "New Zealand",
-        "slug": "rocket-lab-launch-complex-mahia-peninsula"
-      }
-    },
-    "missions": [
-      {
-        "id": 5090,
-        "name": "2x Blacksky",
-        "description": null
-      }
-    ],
-    "mission_description": null,
-    "launch_description": "A Rocket Lab Electron rocket will launch the \"The Beat Goes On\" mission. The launch date is currently targeted for March, 2023 (UTC).",
-    "win_open": null,
-    "t0": null,
-    "win_close": null,
-    "est_date": {
-      "month": 3,
-      "day": null,
-      "year": 2023,
-      "quarter": null
-    },
-    "date_str": "Mar 2023",
-    "tags": [],
-    "slug": "the-beat-goes-on",
-    "weather_summary": null,
-    "weather_temp": null,
-    "weather_condition": null,
-    "weather_wind_mph": null,
-    "weather_icon": null,
-    "weather_updated": null,
-    "quicktext": "Electron - \"The Beat Goes On\" - Mar 2023 (estimated) - https://rocketlaunch.live/launch/the-beat-goes-on for info/stream",
-    "media": [],
-    "result": -1,
-    "suborbital": false,
-    "modified": "2023-03-01T00:08:57+00:00"
-  },
-  {
-    "id": 3334,
-    "cospar_id": "",
-    "sort_date": "1680307197",
-    "name": "Starlink (2-8)",
-    "provider": {
-      "id": 1,
-      "name": "SpaceX",
-      "slug": "spacex"
-    },
-    "vehicle": {
-      "id": 1,
-      "name": "Falcon 9",
-      "company_id": 1,
-      "slug": "falcon-9"
-    },
-    "pad": {
-      "id": 1,
-      "name": "SLC-4E",
+      "id": 38,
+      "name": "SLC-2W",
       "location": {
         "id": 60,
         "name": "Vandenberg SFB",
@@ -1159,337 +344,61 @@
     },
     "missions": [
       {
-        "id": 5091,
-        "name": "Starlink (2-8)",
+        "id": 5038,
+        "name": "OPS 1370",
+        "description": null
+      },
+      {
+        "id": 5039,
+        "name": "SRV 614",
         "description": null
       }
     ],
     "mission_description": null,
-    "launch_description": "A SpaceX Falcon 9 rocket will launch the Starlink (2-8) mission. The launch date is currently targeted for March, 2023 (UTC).",
+    "launch_description": "A U.S. Air Force Thor-Agena D rocket launched the OPS 1370 mission on Wednesday, July 31, 1963 at 12:00 AM (UTC).",
     "win_open": null,
-    "t0": null,
+    "t0": "1963-07-31T00:00Z",
     "win_close": null,
     "est_date": {
-      "month": 3,
+      "month": null,
       "day": null,
-      "year": 2023,
+      "year": null,
       "quarter": null
     },
-    "date_str": "Mar 2023",
-    "tags": [
-      {
-        "id": 92,
-        "text": "Series: SpaceX Starlink"
-      }
-    ],
-    "slug": "starlink-2-8",
+    "date_str": "Jul 31 1963",
+    "tags": [],
+    "slug": "ops-1370",
     "weather_summary": null,
     "weather_temp": null,
     "weather_condition": null,
     "weather_wind_mph": null,
     "weather_icon": null,
     "weather_updated": null,
-    "quicktext": "Falcon 9 - Starlink (2-8) - Mar 2023 (estimated) - https://rocketlaunch.live/launch/starlink-2-8 for info/stream",
+    "quicktext": "Thor-Agena D - OPS 1370 - Jul 31 1963 (estimated) - https://rocketlaunch.live/launch/ops-1370 for info/stream",
     "media": [],
-    "result": -1,
+    "result": 1,
     "suborbital": false,
-    "modified": "2023-03-01T01:43:49+00:00"
+    "modified": "2023-01-02T18:10:43+00:00"
   },
   {
-    "id": 3336,
-    "cospar_id": "",
-    "sort_date": "1680307197",
-    "name": "Starlink (6-2)",
+    "id": 3293,
+    "cospar_id": "1963-037",
+    "sort_date": "-197946000",
+    "name": "OPS 1353",
     "provider": {
-      "id": 1,
-      "name": "SpaceX",
-      "slug": "spacex"
+      "id": 12,
+      "name": "U.S. Air Force",
+      "slug": "u-s-air-force"
     },
     "vehicle": {
-      "id": 1,
-      "name": "Falcon 9",
-      "company_id": 1,
-      "slug": "falcon-9"
+      "id": 139,
+      "name": "Thor-Agena D",
+      "company_id": 147,
+      "slug": "thor-agena-d"
     },
     "pad": {
-      "id": 56,
-      "name": "Pad TBD",
-      "location": {
-        "id": 52,
-        "name": "Cape Canaveral / KSC TBD",
-        "state": "FL",
-        "statename": "Florida",
-        "country": "United States",
-        "slug": "cape-canaveral-ksc-tbd"
-      }
-    },
-    "missions": [
-      {
-        "id": 5093,
-        "name": "Starlink (6-2)",
-        "description": null
-      }
-    ],
-    "mission_description": null,
-    "launch_description": "A SpaceX Falcon 9 rocket will launch the Starlink (6-2) mission. The launch date is currently targeted for March, 2023 (UTC).",
-    "win_open": null,
-    "t0": null,
-    "win_close": null,
-    "est_date": {
-      "month": 3,
-      "day": null,
-      "year": 2023,
-      "quarter": null
-    },
-    "date_str": "Mar 2023",
-    "tags": [
-      {
-        "id": 92,
-        "text": "Series: SpaceX Starlink"
-      }
-    ],
-    "slug": "starlink-6-2",
-    "weather_summary": null,
-    "weather_temp": null,
-    "weather_condition": null,
-    "weather_wind_mph": null,
-    "weather_icon": null,
-    "weather_updated": null,
-    "quicktext": "Falcon 9 - Starlink (6-2) - Mar 2023 (estimated) - https://rocketlaunch.live/launch/starlink-6-2 for info/stream",
-    "media": [],
-    "result": -1,
-    "suborbital": false,
-    "modified": "2023-03-04T18:25:33+00:00"
-  },
-  {
-    "id": 219,
-    "cospar_id": "",
-    "sort_date": "1680307198",
-    "name": "NROL-68",
-    "provider": {
-      "id": 3,
-      "name": "United Launch Alliance (ULA)",
-      "slug": "united-launch-alliance-ula"
-    },
-    "vehicle": {
-      "id": 26,
-      "name": "Delta IV Heavy",
-      "company_id": 3,
-      "slug": "delta-iv-heavy"
-    },
-    "pad": {
-      "id": 13,
-      "name": "SLC-37B",
-      "location": {
-        "id": 62,
-        "name": "Cape Canaveral SFS",
-        "state": "FL",
-        "statename": "Florida",
-        "country": "United States",
-        "slug": "cape-canaveral-sfs"
-      }
-    },
-    "missions": [
-      {
-        "id": 211,
-        "name": "NROL-68",
-        "description": null
-      }
-    ],
-    "mission_description": null,
-    "launch_description": "A United Launch Alliance (ULA) Delta IV Heavy rocket will launch the NROL-68 mission. The launch date is currently targeted for Q1 2023 (UTC).",
-    "win_open": null,
-    "t0": null,
-    "win_close": null,
-    "est_date": {
-      "month": null,
-      "day": null,
-      "year": 2023,
-      "quarter": 1
-    },
-    "date_str": "Q1 2023",
-    "tags": [
-      {
-        "id": 8,
-        "text": "Classified Payload"
-      }
-    ],
-    "slug": "nrol-68",
-    "weather_summary": null,
-    "weather_temp": null,
-    "weather_condition": null,
-    "weather_wind_mph": null,
-    "weather_icon": null,
-    "weather_updated": null,
-    "quicktext": "Delta IV Heavy - NROL-68 - Q1 2023 (estimated) - https://rocketlaunch.live/launch/nrol-68 for info/stream",
-    "media": [],
-    "result": -1,
-    "suborbital": false,
-    "modified": "2022-12-10T20:32:17+00:00"
-  },
-  {
-    "id": 529,
-    "cospar_id": "",
-    "sort_date": "1680307198",
-    "name": "Starliner-1",
-    "provider": {
-      "id": 3,
-      "name": "United Launch Alliance (ULA)",
-      "slug": "united-launch-alliance-ula"
-    },
-    "vehicle": {
-      "id": 3,
-      "name": "Atlas V",
-      "company_id": 3,
-      "slug": "atlas-v"
-    },
-    "pad": {
-      "id": 4,
-      "name": "SLC-41",
-      "location": {
-        "id": 62,
-        "name": "Cape Canaveral SFS",
-        "state": "FL",
-        "statename": "Florida",
-        "country": "United States",
-        "slug": "cape-canaveral-sfs"
-      }
-    },
-    "missions": [
-      {
-        "id": 529,
-        "name": "Starliner-1",
-        "description": null
-      }
-    ],
-    "mission_description": null,
-    "launch_description": "A United Launch Alliance (ULA) Atlas V rocket will launch the Starliner-1 mission. The launch date is currently targeted for Q1 2023 (UTC).",
-    "win_open": null,
-    "t0": null,
-    "win_close": null,
-    "est_date": {
-      "month": null,
-      "day": null,
-      "year": 2023,
-      "quarter": 1
-    },
-    "date_str": "Q1 2023",
-    "tags": [
-      {
-        "id": 9,
-        "text": "Crewed"
-      },
-      {
-        "id": 17,
-        "text": "ISS Expedition"
-      },
-      {
-        "id": 22,
-        "text": "NASA Commercial Crew Program (CCP)"
-      }
-    ],
-    "slug": "starliner-1",
-    "weather_summary": null,
-    "weather_temp": null,
-    "weather_condition": null,
-    "weather_wind_mph": null,
-    "weather_icon": null,
-    "weather_updated": null,
-    "quicktext": "Atlas V - Starliner-1 - Q1 2023 (estimated) - https://rocketlaunch.live/launch/starliner-1 for info/stream",
-    "media": [],
-    "result": -1,
-    "suborbital": false,
-    "modified": "2022-10-03T20:30:05+00:00"
-  },
-  {
-    "id": 566,
-    "cospar_id": "",
-    "sort_date": "1680307198",
-    "name": "Chandrayaan-3",
-    "provider": {
-      "id": 18,
-      "name": "ISRO",
-      "slug": "isro"
-    },
-    "vehicle": {
-      "id": 19,
-      "name": "GSLV-III",
-      "company_id": 18,
-      "slug": "gslv-iii"
-    },
-    "pad": {
-      "id": 65,
-      "name": "TBD",
-      "location": {
-        "id": 67,
-        "name": "Satish Dhawan Space Centre",
-        "state": null,
-        "statename": null,
-        "country": "India",
-        "slug": "satish-dhawan-space-centre"
-      }
-    },
-    "missions": [
-      {
-        "id": 591,
-        "name": "Chandrayaan-3",
-        "description": null
-      }
-    ],
-    "mission_description": null,
-    "launch_description": "An ISRO GSLV-III rocket will launch the Chandrayaan-3 mission. The launch date is currently targeted for Q1 2023 (UTC).",
-    "win_open": null,
-    "t0": null,
-    "win_close": null,
-    "est_date": {
-      "month": null,
-      "day": null,
-      "year": 2023,
-      "quarter": 1
-    },
-    "date_str": "Q1 2023",
-    "tags": [
-      {
-        "id": 54,
-        "text": "Lunar Lander"
-      },
-      {
-        "id": 55,
-        "text": "Lunar Rover"
-      }
-    ],
-    "slug": "chandrayaan-3",
-    "weather_summary": null,
-    "weather_temp": null,
-    "weather_condition": null,
-    "weather_wind_mph": null,
-    "weather_icon": null,
-    "weather_updated": null,
-    "quicktext": "GSLV-III - Chandrayaan-3 - Q1 2023 (estimated) - https://rocketlaunch.live/launch/chandrayaan-3 for info/stream",
-    "media": [],
-    "result": -1,
-    "suborbital": false,
-    "modified": "2022-08-31T10:28:44+00:00"
-  },
-  {
-    "id": 3173,
-    "cospar_id": "",
-    "sort_date": "1680479996",
-    "name": "Transporter-7",
-    "provider": {
-      "id": 1,
-      "name": "SpaceX",
-      "slug": "spacex"
-    },
-    "vehicle": {
-      "id": 1,
-      "name": "Falcon 9",
-      "company_id": 1,
-      "slug": "falcon-9"
-    },
-    "pad": {
-      "id": 1,
-      "name": "SLC-4E",
+      "id": 38,
+      "name": "SLC-2W",
       "location": {
         "id": 60,
         "name": "Vandenberg SFB",
@@ -1501,56 +410,71 @@
     },
     "missions": [
       {
-        "id": 4899,
-        "name": "Transporter-7",
+        "id": 5034,
+        "name": "OPS 1353",
+        "description": null
+      },
+      {
+        "id": 5035,
+        "name": "Discoverer Research Package",
+        "description": null
+      },
+      {
+        "id": 5036,
+        "name": "SRV 619",
+        "description": null
+      },
+      {
+        "id": 5037,
+        "name": "SRV 620",
         "description": null
       }
     ],
     "mission_description": null,
-    "launch_description": "A SpaceX Falcon 9 rocket will launch the Transporter-7 mission. The launch date is currently targeted for April 02, 2023 (UTC).",
+    "launch_description": "A U.S. Air Force Thor-Agena D rocket launched the OPS 1353 mission on Monday, September 23, 1963 at 11:00 PM (UTC).",
     "win_open": null,
-    "t0": null,
+    "t0": "1963-09-23T23:00Z",
     "win_close": null,
     "est_date": {
-      "month": 4,
-      "day": 2,
-      "year": 2023,
+      "month": null,
+      "day": null,
+      "year": null,
       "quarter": null
     },
-    "date_str": "Apr 02",
+    "date_str": "Sep 23 1963",
     "tags": [],
-    "slug": "transporter-7",
+    "slug": "ops-1353",
     "weather_summary": null,
     "weather_temp": null,
     "weather_condition": null,
     "weather_wind_mph": null,
     "weather_icon": null,
     "weather_updated": null,
-    "quicktext": "Falcon 9 - Transporter-7 - Apr 02 (estimated) - https://rocketlaunch.live/launch/transporter-7 for info/stream",
+    "quicktext": "Thor-Agena D - OPS 1353 - Sep 23 1963 (estimated) - https://rocketlaunch.live/launch/ops-1353 for info/stream",
     "media": [],
-    "result": -1,
+    "result": 1,
     "suborbital": false,
-    "modified": "2023-03-06T19:57:04+00:00"
+    "modified": "2023-01-02T18:10:38+00:00"
   },
   {
-    "id": 645,
-    "cospar_id": "",
-    "sort_date": "1680841800",
-    "name": "Intelsat-40e",
+    "id": 3287,
+    "cospar_id": "1963-054",
+    "sort_date": "-190305000",
+    "name": "Tiros 8",
     "provider": {
-      "id": 1,
-      "name": "SpaceX",
-      "slug": "spacex"
+      "id": 12,
+      "name": "U.S. Air Force",
+      "slug": "u-s-air-force"
     },
     "vehicle": {
-      "id": 1,
-      "name": "Falcon 9",
-      "company_id": 1,
-      "slug": "falcon-9"
+      "id": 138,
+      "name": "Thor-Delta B",
+      "company_id": 147,
+      "slug": "thor-delta-b"
     },
     "pad": {
-      "id": 3,
-      "name": "SLC-40",
+      "id": 84,
+      "name": "SLC-17B",
       "location": {
         "id": 62,
         "name": "Cape Canaveral SFS",
@@ -1562,62 +486,128 @@
     },
     "missions": [
       {
-        "id": 673,
-        "name": "Intelsat-40e",
-        "description": null
-      },
-      {
-        "id": 5046,
-        "name": "TEMPO",
+        "id": 5025,
+        "name": "Tiros 8",
         "description": null
       }
     ],
     "mission_description": null,
-    "launch_description": "A SpaceX Falcon 9 rocket will launch the Intelsat-40e mission on Friday, April 7, 2023 at 4:30 AM (UTC).",
+    "launch_description": "A U.S. Air Force Thor-Delta B rocket launched the Tiros 8 mission on Saturday, December 21, 1963 at 9:30 AM (UTC).",
     "win_open": null,
-    "t0": "2023-04-07T04:30Z",
+    "t0": "1963-12-21T09:30Z",
     "win_close": null,
     "est_date": {
-      "month": 4,
-      "day": 7,
-      "year": 2023,
+      "month": null,
+      "day": null,
+      "year": null,
       "quarter": null
     },
-    "date_str": "Apr 07",
-    "tags": [
-      {
-        "id": 24,
-        "text": "Communications Satellite"
-      }
-    ],
-    "slug": "intelsat-40e",
+    "date_str": "Dec 21 1963",
+    "tags": [],
+    "slug": "tiros-8",
     "weather_summary": null,
     "weather_temp": null,
     "weather_condition": null,
     "weather_wind_mph": null,
     "weather_icon": null,
     "weather_updated": null,
-    "quicktext": "Falcon 9 - Intelsat-40e - Apr 07 (estimated) - https://rocketlaunch.live/launch/intelsat-40e for info/stream",
+    "quicktext": "Thor-Delta B - Tiros 8 - Dec 21 1963 (estimated) - https://rocketlaunch.live/launch/tiros-8 for info/stream",
     "media": [],
-    "result": -1,
+    "result": 1,
     "suborbital": false,
-    "modified": "2023-02-27T20:33:45+00:00"
+    "modified": "2023-01-02T17:57:20+00:00"
   },
   {
-    "id": 212,
-    "cospar_id": "",
-    "sort_date": "1680996300",
-    "name": "ViaSat 3 Americas",
+    "id": 3292,
+    "cospar_id": "1963-055",
+    "sort_date": "-190260858",
+    "name": "OPS 1388",
     "provider": {
-      "id": 1,
-      "name": "SpaceX",
-      "slug": "spacex"
+      "id": 12,
+      "name": "U.S. Air Force",
+      "slug": "u-s-air-force"
     },
     "vehicle": {
-      "id": 7,
-      "name": "Falcon Heavy",
-      "company_id": 1,
-      "slug": "falcon-heavy"
+      "id": 139,
+      "name": "Thor-Agena D",
+      "company_id": 147,
+      "slug": "thor-agena-d"
+    },
+    "pad": {
+      "id": 38,
+      "name": "SLC-2W",
+      "location": {
+        "id": 60,
+        "name": "Vandenberg SFB",
+        "state": "CA",
+        "statename": "California",
+        "country": "United States",
+        "slug": "vandenberg-sfb"
+      }
+    },
+    "missions": [
+      {
+        "id": 5030,
+        "name": "OPS 1388",
+        "description": null
+      },
+      {
+        "id": 5031,
+        "name": "PUNDIT II",
+        "description": null
+      },
+      {
+        "id": 5032,
+        "name": "SRV 642",
+        "description": null
+      },
+      {
+        "id": 5033,
+        "name": "LONG JOHN 1",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A U.S. Air Force Thor-Agena D rocket launched the OPS 1388 mission on Saturday, December 21, 1963 at 9:45 PM (UTC).",
+    "win_open": null,
+    "t0": "1963-12-21T21:45Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Dec 21 1963",
+    "tags": [],
+    "slug": "ops-1388",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Thor-Agena D - OPS 1388 - Dec 21 1963 (estimated) - https://rocketlaunch.live/launch/ops-1388 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2023-01-02T18:10:23+00:00"
+  },
+  {
+    "id": 494,
+    "cospar_id": "1969-059",
+    "sort_date": "-14552880",
+    "name": "Apollo 11",
+    "provider": {
+      "id": 2,
+      "name": "NASA",
+      "slug": "nasa"
+    },
+    "vehicle": {
+      "id": 68,
+      "name": "Saturn V",
+      "company_id": 2,
+      "slug": "saturn-v"
     },
     "pad": {
       "id": 2,
@@ -1633,56 +623,2521 @@
     },
     "missions": [
       {
-        "id": 202,
-        "name": "ViaSat 3 Americas",
+        "id": 477,
+        "name": "Apollo 11",
         "description": null
       }
     ],
     "mission_description": null,
-    "launch_description": "A SpaceX Falcon Heavy rocket will launch the ViaSat 3 Americas mission on Saturday, April 8, 2023 at 11:25 PM (UTC).",
-    "win_open": null,
-    "t0": "2023-04-08T23:25Z",
+    "launch_description": "A NASA Saturn V rocket launched the Apollo 11 mission on Wednesday, July 16, 1969 at 1:32 PM (UTC).",
+    "win_open": "1969-07-16T13:32Z",
+    "t0": null,
     "win_close": null,
     "est_date": {
-      "month": 4,
-      "day": 8,
-      "year": 2023,
+      "month": null,
+      "day": null,
+      "year": null,
       "quarter": null
     },
-    "date_str": "Apr 08",
+    "date_str": "Jul 16 1969",
     "tags": [
       {
-        "id": 87,
-        "text": "B1052"
+        "id": 47,
+        "text": "Lunar Exploration"
       },
       {
-        "id": 88,
-        "text": "B1053"
+        "id": 54,
+        "text": "Lunar Lander"
       },
       {
-        "id": 119,
-        "text": "B1068"
+        "id": 48,
+        "text": "Lunar Orbit"
       },
       {
-        "id": 24,
-        "text": "Communications Satellite"
-      },
-      {
-        "id": 77,
-        "text": "Series: ViaSat-3"
+        "id": 85,
+        "text": "Special Event"
       }
     ],
-    "slug": "viasat-3-2",
+    "slug": "apollo-11",
+    "weather_summary": "Humid and Partly Cloudy\nTemp: 80.11F\nWind: 1.65mph\n",
+    "weather_temp": 80,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": "wi-day-cloudy",
+    "weather_updated": "2019-07-16T12:11:12+00:00",
+    "quicktext": "Saturn V - Apollo 11 - Wed Jul 16, 1969 13:32:00 UTC (L+26 days, 09:21:08) - https://rocketlaunch.live/launch/apollo-11 for info/stream",
+    "media": [
+      {
+        "id": 454,
+        "media_url": "",
+        "youtube_vidid": "zYnF31el-ik",
+        "featured": true,
+        "ldfeatured": true,
+        "approved": true
+      }
+    ],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-08-13T02:57:26+00:00"
+  },
+  {
+    "id": 2869,
+    "cospar_id": "1969-064",
+    "sort_date": "-13730040",
+    "name": "INTELSAT III F-5",
+    "provider": {
+      "id": 12,
+      "name": "U.S. Air Force",
+      "slug": "u-s-air-force"
+    },
+    "vehicle": {
+      "id": 126,
+      "name": "Thor-Delta M",
+      "company_id": 147,
+      "slug": "thor-delta-m"
+    },
+    "pad": {
+      "id": 90,
+      "name": "SLC-17A",
+      "location": {
+        "id": 62,
+        "name": "Cape Canaveral SFS",
+        "state": "FL",
+        "statename": "Florida",
+        "country": "United States",
+        "slug": "cape-canaveral-sfs"
+      }
+    },
+    "missions": [
+      {
+        "id": 4436,
+        "name": "INTELSAT III F-5",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A U.S. Air Force Thor-Delta M rocket launched the INTELSAT III F-5 mission on Saturday, July 26, 1969 at 2:06 AM (UTC).",
+    "win_open": null,
+    "t0": "1969-07-26T02:06Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Jul 26 1969",
+    "tags": [],
+    "slug": "intelsat-iii-f-5",
     "weather_summary": null,
     "weather_temp": null,
     "weather_condition": null,
     "weather_wind_mph": null,
     "weather_icon": null,
     "weather_updated": null,
-    "quicktext": "Falcon Heavy - ViaSat 3 Americas - Apr 08 (estimated) - https://rocketlaunch.live/launch/viasat-3-2 for info/stream",
+    "quicktext": "Thor-Delta M - INTELSAT III F-5 - Jul 26 1969 (estimated) - https://rocketlaunch.live/launch/intelsat-iii-f-5 for info/stream",
     "media": [],
-    "result": -1,
+    "result": 0,
     "suborbital": false,
-    "modified": "2023-02-18T15:33:51+00:00"
+    "modified": "2022-04-20T17:41:49+00:00"
+  },
+  {
+    "id": 2872,
+    "cospar_id": "1969-101",
+    "sort_date": "-3453780",
+    "name": "Skynet IA",
+    "provider": {
+      "id": 12,
+      "name": "U.S. Air Force",
+      "slug": "u-s-air-force"
+    },
+    "vehicle": {
+      "id": 126,
+      "name": "Thor-Delta M",
+      "company_id": 147,
+      "slug": "thor-delta-m"
+    },
+    "pad": {
+      "id": 90,
+      "name": "SLC-17A",
+      "location": {
+        "id": 62,
+        "name": "Cape Canaveral SFS",
+        "state": "FL",
+        "statename": "Florida",
+        "country": "United States",
+        "slug": "cape-canaveral-sfs"
+      }
+    },
+    "missions": [
+      {
+        "id": 4439,
+        "name": "Skynet IA",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A U.S. Air Force Thor-Delta M rocket launched the Skynet IA mission on Saturday, November 22, 1969 at 12:37 AM (UTC).",
+    "win_open": null,
+    "t0": "1969-11-22T00:37Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Nov 22 1969",
+    "tags": [],
+    "slug": "skynet-ia",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Thor-Delta M - Skynet IA - Nov 22 1969 (estimated) - https://rocketlaunch.live/launch/skynet-ia for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-04-20T17:42:35+00:00"
+  },
+  {
+    "id": 2871,
+    "cospar_id": "1969-103",
+    "sort_date": "-3222601",
+    "name": "Kosmos-312",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 91,
+      "name": "Kosmos-3M",
+      "company_id": 53,
+      "slug": "kosmos-3m"
+    },
+    "pad": {
+      "id": 86,
+      "name": "LC-132/1",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4438,
+        "name": "Kosmos-312",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Kosmos-3M rocket launched the Kosmos-312 mission on Monday, November 24, 1969 at 4:49 PM (UTC).",
+    "win_open": null,
+    "t0": "1969-11-24T16:49Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Nov 24 1969",
+    "tags": [],
+    "slug": "kosmos-312",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Kosmos-3M - Kosmos-312 - Nov 24 1969 (estimated) - https://rocketlaunch.live/launch/kosmos-312 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-04-20T17:42:31+00:00"
+  },
+  {
+    "id": 2870,
+    "cospar_id": "1969-107",
+    "sort_date": "-1024440",
+    "name": "Kosmos-315",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 91,
+      "name": "Kosmos-3M",
+      "company_id": 53,
+      "slug": "kosmos-3m"
+    },
+    "pad": {
+      "id": 86,
+      "name": "LC-132/1",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4437,
+        "name": "Kosmos-315",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Kosmos-3M rocket launched the Kosmos-315 mission on Saturday, December 20, 1969 at 3:26 AM (UTC).",
+    "win_open": null,
+    "t0": "1969-12-20T03:26Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Dec 20 1969",
+    "tags": [],
+    "slug": "kosmos-315",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Kosmos-3M - Kosmos-315 - Dec 20 1969 (estimated) - https://rocketlaunch.live/launch/kosmos-315 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-04-20T17:42:27+00:00"
+  },
+  {
+    "id": 2852,
+    "cospar_id": "1970-062",
+    "sort_date": "19915860",
+    "name": "Skynet IB",
+    "provider": {
+      "id": 12,
+      "name": "U.S. Air Force",
+      "slug": "u-s-air-force"
+    },
+    "vehicle": {
+      "id": 126,
+      "name": "Thor-Delta M",
+      "company_id": 147,
+      "slug": "thor-delta-m"
+    },
+    "pad": {
+      "id": 90,
+      "name": "SLC-17A",
+      "location": {
+        "id": 62,
+        "name": "Cape Canaveral SFS",
+        "state": "FL",
+        "statename": "Florida",
+        "country": "United States",
+        "slug": "cape-canaveral-sfs"
+      }
+    },
+    "missions": [
+      {
+        "id": 4416,
+        "name": "Skynet IB",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A U.S. Air Force Thor-Delta M rocket launched the Skynet IB mission on Wednesday, August 19, 1970 at 12:11 PM (UTC).",
+    "win_open": null,
+    "t0": "1970-08-19T12:11Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Aug 19 1970",
+    "tags": [],
+    "slug": "skynet-ib",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Thor-Delta M - Skynet IB - Aug 19 1970 (estimated) - https://rocketlaunch.live/launch/skynet-ib for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-04-12T13:54:46+00:00"
+  },
+  {
+    "id": 2851,
+    "cospar_id": "1970-064",
+    "sort_date": "20010601",
+    "name": "Kosmos-358",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 91,
+      "name": "Kosmos-3M",
+      "company_id": 53,
+      "slug": "kosmos-3m"
+    },
+    "pad": {
+      "id": 86,
+      "name": "LC-132/1",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4415,
+        "name": "Kosmos-358",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Kosmos-3M rocket launched the Kosmos-358 mission on Thursday, August 20, 1970 at 2:30 PM (UTC).",
+    "win_open": null,
+    "t0": "1970-08-20T14:30Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Aug 20 1970",
+    "tags": [],
+    "slug": "kosmos-358",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Kosmos-3M - Kosmos-358 - Aug 20 1970 (estimated) - https://rocketlaunch.live/launch/kosmos-358 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-04-11T23:46:36+00:00"
+  },
+  {
+    "id": 2846,
+    "cospar_id": "1970-077",
+    "sort_date": "23444041",
+    "name": "Molniya-1",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 90,
+      "name": "Molniya",
+      "company_id": 126,
+      "slug": "molniya"
+    },
+    "pad": {
+      "id": 15,
+      "name": "LC-43/4",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4410,
+        "name": "Molniya-1",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Molniya rocket launched the Molniya-1 mission on Tuesday, September 29, 1970 at 8:14 AM (UTC).",
+    "win_open": null,
+    "t0": "1970-09-29T08:14Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Sep 29 1970",
+    "tags": [],
+    "slug": "molniya-1----------",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Molniya - Molniya-1 - Sep 29 1970 (estimated) - https://rocketlaunch.live/launch/molniya-1---------- for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-04-11T23:44:50+00:00"
+  },
+  {
+    "id": 2979,
+    "cospar_id": "1970-079",
+    "sort_date": "23797605",
+    "name": "Kosmos-367",
+    "provider": {
+      "id": 104,
+      "name": "Russian Military",
+      "slug": "russian-military"
+    },
+    "vehicle": {
+      "id": 101,
+      "name": "Tsiklon-2",
+      "company_id": 104,
+      "slug": "tsiklon-2"
+    },
+    "pad": {
+      "id": 110,
+      "name": "LC-90/19",
+      "location": {
+        "id": 50,
+        "name": "Baikonur Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Kazakhstan",
+        "slug": "baikonur-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4618,
+        "name": "Kosmos-367",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Russian Military Tsiklon-2 rocket launched the Kosmos-367 mission on Saturday, October 3, 1970 at 10:26 AM (UTC).",
+    "win_open": null,
+    "t0": "1970-10-03T10:26Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Oct 03 1970",
+    "tags": [],
+    "slug": "kosmos-367",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Tsiklon-2 - Kosmos-367 - Oct 03 1970 (estimated) - https://rocketlaunch.live/launch/kosmos-367 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:39:05+00:00"
+  },
+  {
+    "id": 2847,
+    "cospar_id": "1970-083",
+    "sort_date": "24587820",
+    "name": "Kosmos-371",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 91,
+      "name": "Kosmos-3M",
+      "company_id": 53,
+      "slug": "kosmos-3m"
+    },
+    "pad": {
+      "id": 86,
+      "name": "LC-132/1",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4411,
+        "name": "Kosmos-371",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Kosmos-3M rocket launched the Kosmos-371 mission on Monday, October 12, 1970 at 1:57 PM (UTC).",
+    "win_open": null,
+    "t0": "1970-10-12T13:57Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Oct 12 1970",
+    "tags": [],
+    "slug": "kosmos-371",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Kosmos-3M - Kosmos-371 - Oct 12 1970 (estimated) - https://rocketlaunch.live/launch/kosmos-371 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-04-11T23:45:02+00:00"
+  },
+  {
+    "id": 2848,
+    "cospar_id": "1970-086",
+    "sort_date": "24937199",
+    "name": "Kosmos-372",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 91,
+      "name": "Kosmos-3M",
+      "company_id": 53,
+      "slug": "kosmos-3m"
+    },
+    "pad": {
+      "id": 86,
+      "name": "LC-132/1",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4412,
+        "name": "Kosmos-372",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Kosmos-3M rocket launched the Kosmos-372 mission on Friday, October 16, 1970 at 2:59 PM (UTC).",
+    "win_open": null,
+    "t0": "1970-10-16T14:59Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Oct 16 1970",
+    "tags": [],
+    "slug": "kosmos-372",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Kosmos-3M - Kosmos-372 - Oct 16 1970 (estimated) - https://rocketlaunch.live/launch/kosmos-372 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-04-11T23:45:11+00:00"
+  },
+  {
+    "id": 2978,
+    "cospar_id": "1970-087",
+    "sort_date": "25249080",
+    "name": "Kosmos-373",
+    "provider": {
+      "id": 104,
+      "name": "Russian Military",
+      "slug": "russian-military"
+    },
+    "vehicle": {
+      "id": 101,
+      "name": "Tsiklon-2",
+      "company_id": 104,
+      "slug": "tsiklon-2"
+    },
+    "pad": {
+      "id": 110,
+      "name": "LC-90/19",
+      "location": {
+        "id": 50,
+        "name": "Baikonur Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Kazakhstan",
+        "slug": "baikonur-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4617,
+        "name": "Kosmos-373",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Russian Military Tsiklon-2 rocket launched the Kosmos-373 mission on Tuesday, October 20, 1970 at 5:38 AM (UTC).",
+    "win_open": null,
+    "t0": "1970-10-20T05:38Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Oct 20 1970",
+    "tags": [],
+    "slug": "kosmos-373",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Tsiklon-2 - Kosmos-373 - Oct 20 1970 (estimated) - https://rocketlaunch.live/launch/kosmos-373 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:39:01+00:00"
+  },
+  {
+    "id": 2849,
+    "cospar_id": "1970-088",
+    "sort_date": "25300539",
+    "name": "Zond 8",
+    "provider": {
+      "id": 104,
+      "name": "Russian Military",
+      "slug": "russian-military"
+    },
+    "vehicle": {
+      "id": 88,
+      "name": "Proton-K",
+      "company_id": 122,
+      "slug": "proton-k"
+    },
+    "pad": {
+      "id": 92,
+      "name": "LC-81/23",
+      "location": {
+        "id": 50,
+        "name": "Baikonur Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Kazakhstan",
+        "slug": "baikonur-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4413,
+        "name": "Zond 8",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Russian Military Proton-K rocket launched the Zond 8 mission on Tuesday, October 20, 1970 at 7:55 PM (UTC).",
+    "win_open": "1970-10-20T19:55Z",
+    "t0": null,
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Oct 20 1970",
+    "tags": [],
+    "slug": "zond-8",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Proton-K - Zond 8 - Tue Oct 20, 1970 19:55:39 UTC (L+22 days, 02:57:29) - https://rocketlaunch.live/launch/zond-8 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-09-25T11:54:36+00:00"
+  },
+  {
+    "id": 2977,
+    "cospar_id": "1970-091",
+    "sort_date": "26102211",
+    "name": "Kosmos-375",
+    "provider": {
+      "id": 104,
+      "name": "Russian Military",
+      "slug": "russian-military"
+    },
+    "vehicle": {
+      "id": 101,
+      "name": "Tsiklon-2",
+      "company_id": 104,
+      "slug": "tsiklon-2"
+    },
+    "pad": {
+      "id": 101,
+      "name": "LC-90/20",
+      "location": {
+        "id": 50,
+        "name": "Baikonur Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Kazakhstan",
+        "slug": "baikonur-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4616,
+        "name": "Kosmos-375",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Russian Military Tsiklon-2 rocket launched the Kosmos-375 mission on Friday, October 30, 1970 at 2:36 AM (UTC).",
+    "win_open": null,
+    "t0": "1970-10-30T02:36Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Oct 30 1970",
+    "tags": [],
+    "slug": "kosmos-375",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Tsiklon-2 - Kosmos-375 - Oct 30 1970 (estimated) - https://rocketlaunch.live/launch/kosmos-375 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:38:58+00:00"
+  },
+  {
+    "id": 2850,
+    "cospar_id": "1970-101",
+    "sort_date": "28568837",
+    "name": "Molniya-1",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 90,
+      "name": "Molniya",
+      "company_id": 126,
+      "slug": "molniya"
+    },
+    "pad": {
+      "id": 15,
+      "name": "LC-43/4",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4414,
+        "name": "Molniya-1",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Molniya rocket launched the Molniya-1 mission on Friday, November 27, 1970 at 3:47 PM (UTC).",
+    "win_open": null,
+    "t0": "1970-11-27T15:47Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Nov 27 1970",
+    "tags": [],
+    "slug": "molniya-1-----------",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Molniya - Molniya-1 - Nov 27 1970 (estimated) - https://rocketlaunch.live/launch/molniya-1----------- for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-04-11T23:45:30+00:00"
+  },
+  {
+    "id": 2976,
+    "cospar_id": "1970-114",
+    "sort_date": "30945002",
+    "name": "Molniya-1",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 90,
+      "name": "Molniya",
+      "company_id": 126,
+      "slug": "molniya"
+    },
+    "pad": {
+      "id": 5,
+      "name": "LC-1",
+      "location": {
+        "id": 50,
+        "name": "Baikonur Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Kazakhstan",
+        "slug": "baikonur-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4615,
+        "name": "Molniya-1",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Molniya rocket launched the Molniya-1 mission on Friday, December 25, 1970 at 3:50 AM (UTC).",
+    "win_open": null,
+    "t0": "1970-12-25T03:50Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Dec 25 1970",
+    "tags": [],
+    "slug": "molniya-1----------------",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Molniya - Molniya-1 - Dec 25 1970 (estimated) - https://rocketlaunch.live/launch/molniya-1---------------- for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:38:43+00:00"
+  },
+  {
+    "id": 2980,
+    "cospar_id": "1971-100",
+    "sort_date": "59823002",
+    "name": "Molniya-2",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 90,
+      "name": "Molniya",
+      "company_id": 126,
+      "slug": "molniya"
+    },
+    "pad": {
+      "id": 15,
+      "name": "LC-43/4",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4619,
+        "name": "Molniya-2",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Molniya rocket launched the Molniya-2 mission on Wednesday, November 24, 1971 at 9:30 AM (UTC).",
+    "win_open": null,
+    "t0": "1971-11-24T09:30Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Nov 24 1971",
+    "tags": [],
+    "slug": "molniya-2",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Molniya - Molniya-2 - Nov 24 1971 (estimated) - https://rocketlaunch.live/launch/molniya-2 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:40:58+00:00"
+  },
+  {
+    "id": 2981,
+    "cospar_id": "1971-102",
+    "sort_date": "60283800",
+    "name": "Kosmos-459",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 91,
+      "name": "Kosmos-3M",
+      "company_id": 53,
+      "slug": "kosmos-3m"
+    },
+    "pad": {
+      "id": 86,
+      "name": "LC-132/1",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4620,
+        "name": "Kosmos-459",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Kosmos-3M rocket launched the Kosmos-459 mission on Monday, November 29, 1971 at 5:30 PM (UTC).",
+    "win_open": null,
+    "t0": "1971-11-29T17:30Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Nov 29 1971",
+    "tags": [],
+    "slug": "kosmos-459",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Kosmos-3M - Kosmos-459 - Nov 29 1971 (estimated) - https://rocketlaunch.live/launch/kosmos-459 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:41:18+00:00"
+  },
+  {
+    "id": 2982,
+    "cospar_id": "1971-105",
+    "sort_date": "60543001",
+    "name": "Kosmos-461",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 91,
+      "name": "Kosmos-3M",
+      "company_id": 53,
+      "slug": "kosmos-3m"
+    },
+    "pad": {
+      "id": 86,
+      "name": "LC-132/1",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4621,
+        "name": "Kosmos-461",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Kosmos-3M rocket launched the Kosmos-461 mission on Thursday, December 2, 1971 at 5:30 PM (UTC).",
+    "win_open": null,
+    "t0": "1971-12-02T17:30Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Dec 02 1971",
+    "tags": [],
+    "slug": "kosmos-461",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Kosmos-3M - Kosmos-461 - Dec 02 1971 (estimated) - https://rocketlaunch.live/launch/kosmos-461 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:41:20+00:00"
+  },
+  {
+    "id": 2983,
+    "cospar_id": "1971-106",
+    "sort_date": "60614362",
+    "name": "Kosmos-462",
+    "provider": {
+      "id": 104,
+      "name": "Russian Military",
+      "slug": "russian-military"
+    },
+    "vehicle": {
+      "id": 101,
+      "name": "Tsiklon-2",
+      "company_id": 104,
+      "slug": "tsiklon-2"
+    },
+    "pad": {
+      "id": 101,
+      "name": "LC-90/20",
+      "location": {
+        "id": 50,
+        "name": "Baikonur Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Kazakhstan",
+        "slug": "baikonur-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4622,
+        "name": "Kosmos-462",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Russian Military Tsiklon-2 rocket launched the Kosmos-462 mission on Friday, December 3, 1971 at 1:19 PM (UTC).",
+    "win_open": null,
+    "t0": "1971-12-03T13:19Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Dec 03 1971",
+    "tags": [],
+    "slug": "kosmos-462",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Tsiklon-2 - Kosmos-462 - Dec 03 1971 (estimated) - https://rocketlaunch.live/launch/kosmos-462 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:41:23+00:00"
+  },
+  {
+    "id": 2984,
+    "cospar_id": "1971-115",
+    "sort_date": "62031012",
+    "name": "Molniya-1",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 90,
+      "name": "Molniya",
+      "company_id": 126,
+      "slug": "molniya"
+    },
+    "pad": {
+      "id": 15,
+      "name": "LC-43/4",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4623,
+        "name": "Molniya-1",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Molniya rocket launched the Molniya-1 mission on Sunday, December 19, 1971 at 10:50 PM (UTC).",
+    "win_open": null,
+    "t0": "1971-12-19T22:50Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Dec 19 1971",
+    "tags": [],
+    "slug": "molniya-1-----------------",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Molniya - Molniya-1 - Dec 19 1971 (estimated) - https://rocketlaunch.live/launch/molniya-1----------------- for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:41:28+00:00"
+  },
+  {
+    "id": 2985,
+    "cospar_id": "1971-117",
+    "sort_date": "62508598",
+    "name": "Kosmos-469",
+    "provider": {
+      "id": 104,
+      "name": "Russian Military",
+      "slug": "russian-military"
+    },
+    "vehicle": {
+      "id": 101,
+      "name": "Tsiklon-2",
+      "company_id": 104,
+      "slug": "tsiklon-2"
+    },
+    "pad": {
+      "id": 110,
+      "name": "LC-90/19",
+      "location": {
+        "id": 50,
+        "name": "Baikonur Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Kazakhstan",
+        "slug": "baikonur-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4624,
+        "name": "Kosmos-469",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Russian Military Tsiklon-2 rocket launched the Kosmos-469 mission on Saturday, December 25, 1971 at 11:29 AM (UTC).",
+    "win_open": null,
+    "t0": "1971-12-25T11:29Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Dec 25 1971",
+    "tags": [],
+    "slug": "kosmos-469",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Tsiklon-2 - Kosmos-469 - Dec 25 1971 (estimated) - https://rocketlaunch.live/launch/kosmos-469 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:41:32+00:00"
+  },
+  {
+    "id": 2989,
+    "cospar_id": "1972-066",
+    "sort_date": "83241380",
+    "name": "Kosmos-516",
+    "provider": {
+      "id": 104,
+      "name": "Russian Military",
+      "slug": "russian-military"
+    },
+    "vehicle": {
+      "id": 101,
+      "name": "Tsiklon-2",
+      "company_id": 104,
+      "slug": "tsiklon-2"
+    },
+    "pad": {
+      "id": 110,
+      "name": "LC-90/19",
+      "location": {
+        "id": 50,
+        "name": "Baikonur Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Kazakhstan",
+        "slug": "baikonur-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4631,
+        "name": "Kosmos-516",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Russian Military Tsiklon-2 rocket launched the Kosmos-516 mission on Monday, August 21, 1972 at 10:36 AM (UTC).",
+    "win_open": null,
+    "t0": "1972-08-21T10:36Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Aug 21 1972",
+    "tags": [],
+    "slug": "kosmos-516",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Tsiklon-2 - Kosmos-516 - Aug 21 1972 (estimated) - https://rocketlaunch.live/launch/kosmos-516 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:43:13+00:00"
+  },
+  {
+    "id": 2988,
+    "cospar_id": "1972-088",
+    "sort_date": "89602440",
+    "name": "Kosmos-536",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 91,
+      "name": "Kosmos-3M",
+      "company_id": 53,
+      "slug": "kosmos-3m"
+    },
+    "pad": {
+      "id": 86,
+      "name": "LC-132/1",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4630,
+        "name": "Kosmos-536",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Kosmos-3M rocket launched the Kosmos-536 mission on Friday, November 3, 1972 at 1:34 AM (UTC).",
+    "win_open": null,
+    "t0": "1972-11-03T01:34Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Nov 03 1972",
+    "tags": [],
+    "slug": "kosmos-536",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Kosmos-3M - Kosmos-536 - Nov 03 1972 (estimated) - https://rocketlaunch.live/launch/kosmos-536 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:43:03+00:00"
+  },
+  {
+    "id": 2987,
+    "cospar_id": "1972-095",
+    "sort_date": "92119197",
+    "name": "Molniya-1",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 90,
+      "name": "Molniya",
+      "company_id": 126,
+      "slug": "molniya"
+    },
+    "pad": {
+      "id": 5,
+      "name": "LC-1",
+      "location": {
+        "id": 50,
+        "name": "Baikonur Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Kazakhstan",
+        "slug": "baikonur-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4629,
+        "name": "Molniya-1",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Molniya rocket launched the Molniya-1 mission on Saturday, December 2, 1972 at 4:39 AM (UTC).",
+    "win_open": null,
+    "t0": "1972-12-02T04:39Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Dec 02 1972",
+    "tags": [],
+    "slug": "molniya-1------------------",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Molniya - Molniya-1 - Dec 02 1972 (estimated) - https://rocketlaunch.live/launch/molniya-1------------------ for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:42:36+00:00"
+  },
+  {
+    "id": 2986,
+    "cospar_id": "1972-096",
+    "sort_date": "92554380",
+    "name": "America",
+    "provider": {
+      "id": 2,
+      "name": "NASA",
+      "slug": "nasa"
+    },
+    "vehicle": {
+      "id": 68,
+      "name": "Saturn V",
+      "company_id": 2,
+      "slug": "saturn-v"
+    },
+    "pad": {
+      "id": 2,
+      "name": "LC-39A",
+      "location": {
+        "id": 61,
+        "name": "Kennedy Space Center",
+        "state": "FL",
+        "statename": "Florida",
+        "country": "United States",
+        "slug": "kennedy-space-center"
+      }
+    },
+    "missions": [
+      {
+        "id": 4625,
+        "name": "America",
+        "description": null
+      },
+      {
+        "id": 4626,
+        "name": "Challenger",
+        "description": null
+      },
+      {
+        "id": 4627,
+        "name": "LRV-3",
+        "description": null
+      },
+      {
+        "id": 4628,
+        "name": "Apollo 17 ALSEP",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A NASA Saturn V rocket launched the America mission on Thursday, December 7, 1972 at 5:33 AM (UTC).",
+    "win_open": null,
+    "t0": "1972-12-07T05:33Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Dec 07 1972",
+    "tags": [
+      {
+        "id": 9,
+        "text": "Crewed"
+      }
+    ],
+    "slug": "apollo-17",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Saturn V - America - Dec 07 1972 (estimated) - https://rocketlaunch.live/launch/apollo-17 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:42:27+00:00"
+  },
+  {
+    "id": 2993,
+    "cospar_id": "1973-066",
+    "sort_date": "117464701",
+    "name": "Kosmos-587",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 12,
+      "name": "Soyuz-U",
+      "company_id": 13,
+      "slug": "soyuz-u"
+    },
+    "pad": {
+      "id": 33,
+      "name": "LC-43/3",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4635,
+        "name": "Kosmos-587",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Soyuz-U rocket launched the Kosmos-587 mission on Friday, September 21, 1973 at 1:05 PM (UTC).",
+    "win_open": null,
+    "t0": "1973-09-21T13:05Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Sep 21 1973",
+    "tags": [],
+    "slug": "kosmos-587",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Soyuz-U - Kosmos-587 - Sep 21 1973 (estimated) - https://rocketlaunch.live/launch/kosmos-587 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:44:38+00:00"
+  },
+  {
+    "id": 2992,
+    "cospar_id": "1973-083",
+    "sort_date": "120939899",
+    "name": "Kosmos-605",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 12,
+      "name": "Soyuz-U",
+      "company_id": 13,
+      "slug": "soyuz-u"
+    },
+    "pad": {
+      "id": 33,
+      "name": "LC-43/3",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4634,
+        "name": "Kosmos-605",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Soyuz-U rocket launched the Kosmos-605 mission on Wednesday, October 31, 1973 at 6:24 PM (UTC).",
+    "win_open": null,
+    "t0": "1973-10-31T18:24Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Oct 31 1973",
+    "tags": [],
+    "slug": "kosmos-605",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Soyuz-U - Kosmos-605 - Oct 31 1973 (estimated) - https://rocketlaunch.live/launch/kosmos-605 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:44:31+00:00"
+  },
+  {
+    "id": 2991,
+    "cospar_id": "1973-089",
+    "sort_date": "122157602",
+    "name": "Molniya-1",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 90,
+      "name": "Molniya",
+      "company_id": 126,
+      "slug": "molniya"
+    },
+    "pad": {
+      "id": 5,
+      "name": "LC-1",
+      "location": {
+        "id": 50,
+        "name": "Baikonur Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Kazakhstan",
+        "slug": "baikonur-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4633,
+        "name": "Molniya-1",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Molniya rocket launched the Molniya-1 mission on Wednesday, November 14, 1973 at 8:40 PM (UTC).",
+    "win_open": null,
+    "t0": "1973-11-14T20:40Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Nov 14 1973",
+    "tags": [],
+    "slug": "molniya-1-------------------",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Molniya - Molniya-1 - Nov 14 1973 (estimated) - https://rocketlaunch.live/launch/molniya-1------------------- for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:44:24+00:00"
+  },
+  {
+    "id": 2990,
+    "cospar_id": "1973-108",
+    "sort_date": "125871598",
+    "name": "Kosmos-626",
+    "provider": {
+      "id": 104,
+      "name": "Russian Military",
+      "slug": "russian-military"
+    },
+    "vehicle": {
+      "id": 101,
+      "name": "Tsiklon-2",
+      "company_id": 104,
+      "slug": "tsiklon-2"
+    },
+    "pad": {
+      "id": 110,
+      "name": "LC-90/19",
+      "location": {
+        "id": 50,
+        "name": "Baikonur Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Kazakhstan",
+        "slug": "baikonur-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4632,
+        "name": "Kosmos-626",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Russian Military Tsiklon-2 rocket launched the Kosmos-626 mission on Thursday, December 27, 1973 at 8:19 PM (UTC).",
+    "win_open": null,
+    "t0": "1973-12-27T20:19Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Dec 27 1973",
+    "tags": [],
+    "slug": "kosmos-626",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Tsiklon-2 - Kosmos-626 - Dec 27 1973 (estimated) - https://rocketlaunch.live/launch/kosmos-626 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:44:07+00:00"
+  },
+  {
+    "id": 3000,
+    "cospar_id": "1974-061",
+    "sort_date": "144979320",
+    "name": "Kosmos-670",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 12,
+      "name": "Soyuz-U",
+      "company_id": 13,
+      "slug": "soyuz-u"
+    },
+    "pad": {
+      "id": 5,
+      "name": "LC-1",
+      "location": {
+        "id": 50,
+        "name": "Baikonur Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Kazakhstan",
+        "slug": "baikonur-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4642,
+        "name": "Kosmos-670",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Soyuz-U rocket launched the Kosmos-670 mission on Tuesday, August 6, 1974 at 12:02 AM (UTC).",
+    "win_open": null,
+    "t0": "1974-08-06T00:02Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Aug 06 1974",
+    "tags": [],
+    "slug": "kosmos-670",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Soyuz-U - Kosmos-670 - Aug 06 1974 (estimated) - https://rocketlaunch.live/launch/kosmos-670 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:45:49+00:00"
+  },
+  {
+    "id": 2999,
+    "cospar_id": "1974-080",
+    "sort_date": "151696799",
+    "name": "Kosmos-690",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 12,
+      "name": "Soyuz-U",
+      "company_id": 13,
+      "slug": "soyuz-u"
+    },
+    "pad": {
+      "id": 15,
+      "name": "LC-43/4",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4641,
+        "name": "Kosmos-690",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Soyuz-U rocket launched the Kosmos-690 mission on Tuesday, October 22, 1974 at 5:59 PM (UTC).",
+    "win_open": null,
+    "t0": "1974-10-22T17:59Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Oct 22 1974",
+    "tags": [],
+    "slug": "kosmos-690",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Soyuz-U - Kosmos-690 - Oct 22 1974 (estimated) - https://rocketlaunch.live/launch/kosmos-690 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:45:32+00:00"
+  },
+  {
+    "id": 2998,
+    "cospar_id": "1974-096",
+    "sort_date": "155209200",
+    "name": "Soyuz-16",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 12,
+      "name": "Soyuz-U",
+      "company_id": 13,
+      "slug": "soyuz-u"
+    },
+    "pad": {
+      "id": 5,
+      "name": "LC-1",
+      "location": {
+        "id": 50,
+        "name": "Baikonur Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Kazakhstan",
+        "slug": "baikonur-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4640,
+        "name": "Soyuz-16",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Soyuz-U rocket launched the Soyuz-16 mission on Monday, December 2, 1974 at 9:40 AM (UTC).",
+    "win_open": null,
+    "t0": "1974-12-02T09:40Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Dec 02 1974",
+    "tags": [],
+    "slug": "soyuz-16",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Soyuz-U - Soyuz-16 - Dec 02 1974 (estimated) - https://rocketlaunch.live/launch/soyuz-16 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:45:18+00:00"
+  },
+  {
+    "id": 2997,
+    "cospar_id": "1974-098",
+    "sort_date": "156173400",
+    "name": "Kosmos-697",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 12,
+      "name": "Soyuz-U",
+      "company_id": 13,
+      "slug": "soyuz-u"
+    },
+    "pad": {
+      "id": 33,
+      "name": "LC-43/3",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4639,
+        "name": "Kosmos-697",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Soyuz-U rocket launched the Kosmos-697 mission on Friday, December 13, 1974 at 1:30 PM (UTC).",
+    "win_open": null,
+    "t0": "1974-12-13T13:30Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Dec 13 1974",
+    "tags": [],
+    "slug": "kosmos-697",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Soyuz-U - Kosmos-697 - Dec 13 1974 (estimated) - https://rocketlaunch.live/launch/kosmos-697 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:45:15+00:00"
+  },
+  {
+    "id": 2996,
+    "cospar_id": "1974-100",
+    "sort_date": "156607919",
+    "name": "Kosmos-698",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 91,
+      "name": "Kosmos-3M",
+      "company_id": 53,
+      "slug": "kosmos-3m"
+    },
+    "pad": {
+      "id": 86,
+      "name": "LC-132/1",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4638,
+        "name": "Kosmos-698",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Kosmos-3M rocket launched the Kosmos-698 mission on Wednesday, December 18, 1974 at 2:11 PM (UTC).",
+    "win_open": null,
+    "t0": "1974-12-18T14:11Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Dec 18 1974",
+    "tags": [],
+    "slug": "kosmos-698",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Kosmos-3M - Kosmos-698 - Dec 18 1974 (estimated) - https://rocketlaunch.live/launch/kosmos-698 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:45:13+00:00"
+  },
+  {
+    "id": 2995,
+    "cospar_id": "1974-103",
+    "sort_date": "157114800",
+    "name": "Kosmos-699",
+    "provider": {
+      "id": 104,
+      "name": "Russian Military",
+      "slug": "russian-military"
+    },
+    "vehicle": {
+      "id": 101,
+      "name": "Tsiklon-2",
+      "company_id": 104,
+      "slug": "tsiklon-2"
+    },
+    "pad": {
+      "id": 101,
+      "name": "LC-90/20",
+      "location": {
+        "id": 50,
+        "name": "Baikonur Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Kazakhstan",
+        "slug": "baikonur-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4637,
+        "name": "Kosmos-699",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Russian Military Tsiklon-2 rocket launched the Kosmos-699 mission on Tuesday, December 24, 1974 at 11:00 AM (UTC).",
+    "win_open": null,
+    "t0": "1974-12-24T11:00Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Dec 24 1974",
+    "tags": [],
+    "slug": "kosmos-699",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Tsiklon-2 - Kosmos-699 - Dec 24 1974 (estimated) - https://rocketlaunch.live/launch/kosmos-699 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:45:03+00:00"
+  },
+  {
+    "id": 2994,
+    "cospar_id": "1974-105",
+    "sort_date": "157291199",
+    "name": "Kosmos-700",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 91,
+      "name": "Kosmos-3M",
+      "company_id": 53,
+      "slug": "kosmos-3m"
+    },
+    "pad": {
+      "id": 86,
+      "name": "LC-132/1",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4636,
+        "name": "Kosmos-700",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Kosmos-3M rocket launched the Kosmos-700 mission on Thursday, December 26, 1974 at 11:59 AM (UTC).",
+    "win_open": null,
+    "t0": "1974-12-26T11:59Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Dec 26 1974",
+    "tags": [],
+    "slug": "kosmos-700",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Kosmos-3M - Kosmos-700 - Dec 26 1974 (estimated) - https://rocketlaunch.live/launch/kosmos-700 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-06-07T16:44:58+00:00"
+  },
+  {
+    "id": 3195,
+    "cospar_id": "1975-062",
+    "sort_date": "173667367",
+    "name": "Kosmos-749",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 91,
+      "name": "Kosmos-3M",
+      "company_id": 53,
+      "slug": "kosmos-3m"
+    },
+    "pad": {
+      "id": 86,
+      "name": "LC-132/1",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4922,
+        "name": "Kosmos-749",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Kosmos-3M rocket launched the Kosmos-749 mission on Friday, July 4, 1975 at 12:56 AM (UTC).",
+    "win_open": null,
+    "t0": "1975-07-04T00:56Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Jul 04 1975",
+    "tags": [],
+    "slug": "kosmos-749",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Kosmos-3M - Kosmos-749 - Jul 04 1975 (estimated) - https://rocketlaunch.live/launch/kosmos-749 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-08-19T17:48:15+00:00"
+  },
+  {
+    "id": 3194,
+    "cospar_id": "1975-065",
+    "sort_date": "174658800",
+    "name": "Soyuz-19",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 12,
+      "name": "Soyuz-U",
+      "company_id": 13,
+      "slug": "soyuz-u"
+    },
+    "pad": {
+      "id": 5,
+      "name": "LC-1",
+      "location": {
+        "id": 50,
+        "name": "Baikonur Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Kazakhstan",
+        "slug": "baikonur-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4921,
+        "name": "Soyuz-19",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Soyuz-U rocket launched the Soyuz-19 mission on Tuesday, July 15, 1975 at 12:20 PM (UTC).",
+    "win_open": null,
+    "t0": "1975-07-15T12:20Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Jul 15 1975",
+    "tags": [],
+    "slug": "soyuz-19",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Soyuz-U - Soyuz-19 - Jul 15 1975 (estimated) - https://rocketlaunch.live/launch/soyuz-19 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-08-19T17:48:12+00:00"
+  },
+  {
+    "id": 3193,
+    "cospar_id": "1975-069",
+    "sort_date": "175460401",
+    "name": "Kosmos-752",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 91,
+      "name": "Kosmos-3M",
+      "company_id": 53,
+      "slug": "kosmos-3m"
+    },
+    "pad": {
+      "id": 86,
+      "name": "LC-132/1",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4920,
+        "name": "Kosmos-752",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Kosmos-3M rocket launched the Kosmos-752 mission on Thursday, July 24, 1975 at 7:00 PM (UTC).",
+    "win_open": null,
+    "t0": "1975-07-24T19:00Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Jul 24 1975",
+    "tags": [],
+    "slug": "kosmos-752",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Kosmos-3M - Kosmos-752 - Jul 24 1975 (estimated) - https://rocketlaunch.live/launch/kosmos-752 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-08-19T17:48:09+00:00"
+  },
+  {
+    "id": 3192,
+    "cospar_id": "1975-074",
+    "sort_date": "177254961",
+    "name": "Kosmos-755",
+    "provider": {
+      "id": 13,
+      "name": "Roscosmos",
+      "slug": "roscosmos"
+    },
+    "vehicle": {
+      "id": 91,
+      "name": "Kosmos-3M",
+      "company_id": 53,
+      "slug": "kosmos-3m"
+    },
+    "pad": {
+      "id": 86,
+      "name": "LC-132/1",
+      "location": {
+        "id": 65,
+        "name": "Plesetsk Cosmodrome",
+        "state": null,
+        "statename": null,
+        "country": "Russia",
+        "slug": "plesetsk-cosmodrome"
+      }
+    },
+    "missions": [
+      {
+        "id": 4919,
+        "name": "Kosmos-755",
+        "description": null
+      }
+    ],
+    "mission_description": null,
+    "launch_description": "A Roscosmos Kosmos-3M rocket launched the Kosmos-755 mission on Thursday, August 14, 1975 at 1:29 PM (UTC).",
+    "win_open": null,
+    "t0": "1975-08-14T13:29Z",
+    "win_close": null,
+    "est_date": {
+      "month": null,
+      "day": null,
+      "year": null,
+      "quarter": null
+    },
+    "date_str": "Aug 14 1975",
+    "tags": [],
+    "slug": "kosmos-755",
+    "weather_summary": null,
+    "weather_temp": null,
+    "weather_condition": null,
+    "weather_wind_mph": null,
+    "weather_icon": null,
+    "weather_updated": null,
+    "quicktext": "Kosmos-3M - Kosmos-755 - Aug 14 1975 (estimated) - https://rocketlaunch.live/launch/kosmos-755 for info/stream",
+    "media": [],
+    "result": 1,
+    "suborbital": false,
+    "modified": "2022-08-19T17:48:04+00:00"
   }
 ]

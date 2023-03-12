@@ -4,6 +4,7 @@ import {withContext} from '../../withContext';
 import * as stateActions from '../../redux/stateActions';
 import popup from '../../redux/reducers/popup';
 import {Link} from 'react-router-dom';
+import GraphIndex from './histograph/graphindex';
 
 function Container(props) {
   const launchIndex = props.launchIndex;
@@ -64,16 +65,16 @@ function Container(props) {
   return (
     <div className="mapScreen">
       <svg id="worldMap">
-        <Worldmapmarks launchIndex={launchIndex} />
+        <Worldmapmarks />
       </svg>
       {props.popupIsOpen && (
         <div className="popup">
-          {props.site_name === 'Kennedy Space Center' ||
-          props.site_name === 'Cape Canaveral SFS' ||
-          props.site_name === 'Cape Canaveral / KSC TBD' ? (
+          {props.site_name === "Kennedy Space Center" ||
+          props.site_name === "Cape Canaveral SFS" ||
+          props.site_name === "Cape Canaveral / KSC TBD" ? (
             <>
               <div className="popHead">
-                <h2> {'Cape Canaveral / Kennedy Space Center'}</h2>
+                <h2> {"Cape Canaveral/Kennedy Space Center"}</h2>
                 <div>
                   <button onClick={() => props.togglePopup()}>Close</button>
                 </div>
@@ -99,7 +100,8 @@ function Container(props) {
                             <td className="linkTd">
                               <a
                                 target="_blank"
-                                href={findUrl(launch.quicktext)} rel="noreferrer"
+                                href={findUrl(launch.quicktext)}
+                                rel="noreferrer"
                               >
                                 {launch.name}
                               </a>
@@ -145,7 +147,11 @@ function Container(props) {
                         <tr>
                           <td>{launch.provider.name}</td>
                           <td className="linkTd">
-                            <a target="_blank" href={findUrl(launch.quicktext)} rel="noreferrer">
+                            <a
+                              target="_blank"
+                              href={findUrl(launch.quicktext)}
+                              rel="noreferrer"
+                            >
                               {launch.name}
                             </a>
                             {/* <Link to={`/launchdetails/${launch.id}`}>
@@ -169,7 +175,6 @@ function Container(props) {
       )}
       <div className="dateRangeSelect">
         <button onClick={() => props.changeDateRange([-220906800, 410245200])}>
-
           1963-1984
         </button>
         <button onClick={() => props.changeDateRange([410245201, 1072933200])}>
@@ -178,7 +183,9 @@ function Container(props) {
         <button onClick={() => props.changeDateRange([1072933201, 4102452000])}>
           2004+
         </button>
-        <div>{props.timeLineDateStart}</div>
+      </div>
+      <div>
+        <GraphIndex /> 
       </div>
     </div>
   );
@@ -190,6 +197,7 @@ const mapStateToProps = (state) => ({
   site_name: state.popup.site_name,
   timeLineDateStart: state.container.timeLineDateStart,
   timeLineDateEnd: state.container.timeLineDateEnd,
+  launchIndex: state.container.launchIndex,
 });
 const mapDispatchToProps = (dispatch) => ({
   togglePopup: () => dispatch(stateActions.togglePopup(true)),
