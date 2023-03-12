@@ -41,63 +41,66 @@ function formatDate(unixTimestamp) {
 }
 
 function App(props) {
-  const [loadingLaunches, setLoadingLaunches] = useState(true);
+  //const [loadingLaunches, setLoadingLaunches] = useState(true);
   useEffect(() => {
 //i think all this gets replaced with just get_launches(props.timeLineDateStart,props.timeLineDateEnd)
-    const myHeaders = new Headers();
-    myHeaders.append("Authorization", `Bearer ${import.meta.env.VITE_API_KEY}`);
-    const requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      redirect: "follow",
-    };
+  get_launches(props.timeLineDateStart,props.timeLineDateEnd)
 
-    async function fetchLaunchData() {
-      try {
-        setLoadingLaunches(true);
-        const dataAsPageArray = [];
 
-        for (let pages = 1; pages < 3; pages++) {
-          try {
-            const response = await fetch(
-              `https://fdo.rocketlaunch.live/json/launches?after_date=${formatDate(
-                props.timeLineDateStart
-              )}&before_date=${formatDate(
-                props.timeLineDateEnd
-              )}&page=${pages}`,
-              requestOptions
-            );
-            if (!response.ok) {
-              throw new Error("Network response was not ok");
-            }
-            const result = await response.json();
-            if (pages === result.last_page) {
-              break;
-            }
-            dataAsPageArray.push({ pages, data: result.result });
-          } catch (error) {
-            console.error(error);
-            break;
-          }
-        }
+// const myHeaders = new Headers();
+    // myHeaders.append("Authorization", `Bearer ${import.meta.env.VITE_API_KEY}`);
+    // const requestOptions = {
+    //   method: "GET",
+    //   headers: myHeaders,
+    //   redirect: "follow",
+    // };
 
-        const flatarray = dataAsPageArray.flatMap((obj) => obj.data);
-        console.log("flatArray", flatarray)
-        props.populateLaunchArray(flatarray)
-        props.populateLaunchIndex(convertToLaunchIndex(flatarray));
-        setLoadingLaunches(false);
+    // async function fetchLaunchData() {
+    //   try {
+    //     setLoadingLaunches(true);
+    //     const dataAsPageArray = [];
 
-      } catch (error) {
-        console.error(error);
-      }
-    }
+    //     for (let pages = 1; pages < 3; pages++) {
+    //       try {
+    //         const response = await fetch(
+    //           `https://fdo.rocketlaunch.live/json/launches?after_date=${formatDate(
+    //             props.timeLineDateStart
+    //           )}&before_date=${formatDate(
+    //             props.timeLineDateEnd
+    //           )}&page=${pages}`,
+    //           requestOptions
+    //         );
+    //         if (!response.ok) {
+    //           throw new Error("Network response was not ok");
+    //         }
+    //         const result = await response.json();
+    //         if (pages === result.last_page) {
+    //           break;
+    //         }
+    //         dataAsPageArray.push({ pages, data: result.result });
+    //       } catch (error) {
+    //         console.error(error);
+    //         break;
+    //       }
+    //     }
+
+    //     const flatarray = dataAsPageArray.flatMap((obj) => obj.data);
+    //     console.log("flatArray", flatarray)
+    //     props.populateLaunchArray(flatarray)
+    //     props.populateLaunchIndex(convertToLaunchIndex(flatarray));
+    //     setLoadingLaunches(false);
+
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // }
 
     //fetchLaunchData();
   }, [props.timeLineDateStart]);
   return (
     <div className="App">
       <Header />
-      {props.fetchingLaunchSites || props.fetchingGeoData || loadingLaunches? (//changed to fetchingLaunches
+      {props.fetchingLaunchSites || props.fetchingGeoData || props.fetchingLaunches? (//changed to fetchingLaunches
         <h1 className="loading">Loading...</h1>
       ) : (
         <>

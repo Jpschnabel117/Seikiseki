@@ -1,5 +1,5 @@
-import * as stateActions from './redux/stateActions';
-const url = 'http://localhost:3000'; // probaly put in env
+import * as stateActions from "./redux/stateActions";
+const url = "http://localhost:3000"; // probaly put in env
 let store;
 class Client {
   static init(data) {
@@ -38,21 +38,31 @@ class Client {
       });
   }
 
-
   //make this vvvv
-  async get_launches(startDate,endDate) {
+  async get_launches(startDate, endDate) {
     store.dispatch(stateActions.toggleFetchingLaunches(true));
     const requestOptions = {
       method: "POST",
       body: JSON.stringify({ startDate, endDate }),
       redirect: "follow",
     };
-    const res = fetch(`${url}/getLaunchSites`, requestOptions);//change to correct route, use start and end dates.
+    const res = fetch(`${url}/getLaunchSites`, requestOptions); //change to correct route, use start and end dates.
     res
       .then((data) => data.json())
       .then((json) => {
-        const launchIndex = json;
+        const launchArray = json;
+        const launchIndex = {};
+        launchArray.forEach((launch) => {
+          if (launch.launch_site) {
+            const padLocationName = launch.launch_site;
+            if (!launchIndex[padLocationName]) {
+              launchIndex[padLocationName] = [];
+            }
+            launchIndex[padLocationName].push(launch);
+          }
+        });
         store.dispatch(stateActions.toggleFetchingLaunches(false));
+        store.dispatch(stateActions.populateLaunchArray({ launchArray }));
         store.dispatch(stateActions.populateLaunchIndex({ launchIndex }));
       });
   }
