@@ -1,19 +1,17 @@
-import React, {useEffect, useState, useRef} from 'react';
-import * as d3 from 'd3';
-import {connect} from 'react-redux';
-import {withContext} from '../../withContext';
-import Launchsitemarks from './Launchsitemarks';
-import {Link} from 'react-router-dom';
+import React, { useEffect, useState, useRef } from "react";
+import * as d3 from "d3";
+import { connect } from "react-redux";
+import { withContext } from "../../withContext";
+import Launchsitemarks from "./Launchsitemarks";
+import { Link } from "react-router-dom";
 
 function WorldMapMarks(props) {
-  const {worldGeoData, locations, launchIndex} = props;
+  const { worldGeoData, locations, launchIndex } = props;
   const launchSiteData = locations;
 
   const projection = d3.geoEquirectangular();
   const path = d3.geoPath(projection);
   const graticule = d3.geoGraticule();
-
-  // sizing the launch sites by launches in time
 
   // ---------------------------------------------------------------
 
@@ -30,8 +28,7 @@ function WorldMapMarks(props) {
         //   );
         // }}
       >
-
-        <path className="sphere" d={path({type: 'Sphere'})} />
+        <path className="sphere" d={path({ type: "Sphere" })} />
         <path className="graticules" d={path(graticule())} />
         {worldGeoData.features?.map((feature) => (
           <path className="wMapFeature" d={path(feature)} />
@@ -42,28 +39,11 @@ function WorldMapMarks(props) {
             let siteLaunches = null;
             let radius = 5;
 
-            if (launchIndex[site.location_name]) { //
+            if (launchIndex[site.location_name]) {
               siteLaunches = launchIndex[site.location_name];
 
-              if (
-                site.location_name === 'Cape Canaveral / KSC TBD' ||
-                site.location_name === 'Cape Canaveral SFS' ||
-                site.location_name === 'Kennedy Space Center'
-              ) {
-                let lengthSum = 0;
-                if (launchIndex['Cape Canaveral / KSC TBD']) {
-                  lengthSum += launchIndex['Cape Canaveral / KSC TBD'].length;
-                }
-                if (launchIndex['Cape Canaveral SFS']) {
-                  lengthSum += launchIndex['Cape Canaveral SFS'].length;
-                }
-                if (launchIndex['Kennedy Space Center']) {
-                  lengthSum += launchIndex['Kennedy Space Center'].length;
-                }
-                radius += lengthSum * 1.1;
-              } else {
-                radius = radius + siteLaunches.length * 1.1;
-              }
+              radius = radius + siteLaunches.length * 1.1;
+
               if (radius > 30) {
                 radius = 30;
               }

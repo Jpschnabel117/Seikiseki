@@ -14,26 +14,6 @@ function Container(props) {
     return url;
   }
 
-  function combineFlsites() {
-    const array1 = launchIndex['Cape Canaveral SFS'];
-    const array2 = launchIndex['Kennedy Space Center'];
-    const array3 = launchIndex['Cape Canaveral / KSC TBD'];
-
-    const flLaunches = [];
-
-    if (array1) {
-      flLaunches.push(...array1);
-    }
-    if (array2) {
-      flLaunches.push(...array2);
-    }
-    if (array3) {
-      flLaunches.push(...array3);
-    }
-
-    flLaunches.sort((a, b) => parseInt(a.sort_date) - parseInt(b.sort_date));
-    return flLaunches;
-  }
 
   function launchStatus(value) {
     let result;
@@ -69,61 +49,6 @@ function Container(props) {
       </svg>
       {props.popupIsOpen && (
         <div className="popup">
-          {props.site_name === "Kennedy Space Center" ||
-          props.site_name === "Cape Canaveral SFS" ||
-          props.site_name === "Cape Canaveral / KSC TBD" ? (
-            <>
-              <div className="popHead">
-                <h2> {"Cape Canaveral/Kennedy Space Center"}</h2>
-                <div>
-                  <button onClick={() => props.togglePopup()}>Close</button>
-                </div>
-              </div>
-              <div className="popBody">
-                {combineFlsites() ? (
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Provider</th>
-                        <th>Mission</th>
-                        <th>Vehicle</th>
-                        <th>Date</th>
-                        <th>Result</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <>
-                        {/* here */}
-                        {combineFlsites()?.map((launch) => (
-                          <tr>
-                            <td>{launch.provider.name}</td>
-                            <td className="linkTd">
-                              <a
-                                target="_blank"
-                                href={findUrl(launch.quicktext)}
-                                rel="noreferrer"
-                              >
-                                {launch.name}
-                              </a>
-                              {/* <Link to={`/launchdetails/${launch.id}`}>
-                                {launch.name}
-                              </Link> */}
-                            </td>
-                            <td>{launch.vehicle.name}</td>
-                            <td>{launch.date_str}</td>
-                            <td>{launchStatus(launch.result)}</td>
-                          </tr>
-                        ))}
-                      </>
-                    </tbody>
-                  </table>
-                ) : (
-                  <p>No Launches in Selected Time Frame</p>
-                )}
-              </div>
-            </>
-          ) : (
-            <>
               <div className="popHead">
                 <h2>{props.site_name}</h2>
                 <div>
@@ -158,7 +83,7 @@ function Container(props) {
                               {launch.name}
                             </Link> */}
                           </td>
-                          <td>{launch.vehicle.name}</td>
+                          <td>{launch.rocket_name}</td>
                           <td>{launch.date_str}</td>
                           <td>{launchStatus(launch.result)}</td>
                         </tr>
@@ -169,8 +94,6 @@ function Container(props) {
                   <p>No Launches in Selected Time Frame</p>
                 )}
               </div>
-            </>
-          )}
         </div>
       )}
       <div className="dateRangeSelect">
