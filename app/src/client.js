@@ -43,7 +43,8 @@ class Client {
   async get_launches(startDate,endDate) {
     store.dispatch(stateActions.toggleFetchingLaunches(true));
     const requestOptions = {
-      method: "GET",
+      method: "POST",
+      body: JSON.stringify({ startDate, endDate }),
       redirect: "follow",
     };
     const res = fetch(`${url}/getLaunchSites`, requestOptions);//change to correct route, use start and end dates.
