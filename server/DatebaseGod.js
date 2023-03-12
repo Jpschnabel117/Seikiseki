@@ -51,7 +51,7 @@ async function populateLaunchTableData() {
           const obj = {
             'id': launch.id,
             'sort_date': launch['sort_date'],
-            'rocket_name': launch['name'],
+            'launch_name': launch['name'],
             'launch_site': launch['pad']['location']['name'],
             'provider': launch['provider']['name'],
             'vehicle': launch['vehicle']['name'],
@@ -61,18 +61,18 @@ async function populateLaunchTableData() {
           };
 
 
-          const {id, sort_date, rocket_name, launch_site,
+          const {id, sort_date, launch_name, launch_site,
             provider, vehicle, date_str, quicktext, result} = obj;
           const sql = `INSERT INTO LaunchData(
-                  id, sort_date, rocket_name, 
+                  id, sort_date, launch_name, 
                   launch_site, prov, vehicle, 
                   date_str, quicktext, result) 
-                  VALUES('${id}','${sort_date}','${rocket_name}', 
+                  VALUES('${id}','${sort_date}','${launch_name}', 
                   '${launch_site}','${provider}','${vehicle}', 
                   '${date_str}','${quicktext}', '${result}')
               ON DUPLICATE KEY UPDATE 
                   sort_date = '${sort_date}', 
-                  rocket_name = '${rocket_name}', 
+                  launch_name = '${launch_name}', 
                   launch_site = '${launch_site}', 
                   prov = '${provider}', 
                   vehicle = '${vehicle}', 

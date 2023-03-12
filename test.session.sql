@@ -29,7 +29,7 @@ CREATE TABLE Watching (
 CREATE TABLE LaunchData(
     id INT PRIMARY KEY,
     sort_date INT(9),
-    rocket_name VARCHAR(255),
+    launch_name VARCHAR(255),
     launch_site VARCHAR(255),
     prov VARCHAR(255),
     vehicle VARCHAR(255),
@@ -37,6 +37,17 @@ CREATE TABLE LaunchData(
     quicktext VARCHAR(255),
     result int(1)
 )
+-- @block
+DROP TABLE LaunchData;
+
+-- @block
+SELECT *
+FROM LaunchData
+WHERE UNIX_TIMESTAMP(STR_TO_DATE(date_str, '%b %d %Y')) >= -214797509
+  AND UNIX_TIMESTAMP(STR_TO_DATE(date_str, '%b %d %Y')) <= 156736709;
+
+
+
 
 
 -- @block
@@ -51,10 +62,6 @@ VALUES (1, 41);
 -- @block
 DROP TABLE Watching;
 DROP TABLE Launches;
--- @block
-DROP TABLE LaunchData;
-
-
 
 
 -- @block

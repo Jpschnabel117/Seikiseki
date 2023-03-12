@@ -108,20 +108,21 @@ app.get('/serverSideProps', cors(corsOptions), (req, res) => {
 
 
 app.post('/getLaunchData', cors(corsOptions), (req, res) => {
+  console.log(req);
   const {startDate, endDate} = req.body;
   const sql = `
-        SELECT *
-        FROM LaunchData
-        WHERE sort_date >= UNIX_TIMESTAMP('1970-01-01 00:00:01') + (${startDate} / 1000) 
-        AND sort_date <= UNIX_TIMESTAMP('1970-01-01 00:00:01') + (${endDate} / 1000)
-        `;
+    SELECT *
+    FROM LaunchData
+    WHERE UNIX_TIMESTAMP(STR_TO_DATE(date_str, '%b %d %Y')) >= ?
+    AND UNIX_TIMESTAMP(STR_TO_DATE(date_str, '%b %d %Y')) <= ?`;
 
-  connection.query(sql, function(errback, resback, fields) {
+  connection.query(sql, [startDate, endDate], function(errback, resback, fields) {
     if (errback) {
       console.log(errback);
-      res.status(404);
+      res.status(404).send({error: 'Failed to retrieve data.'});
+    } else {
+      res.send(JSON.stringify(resback));
     }
-    res.send(JSON.stringify(resback));
   });
 });
 
