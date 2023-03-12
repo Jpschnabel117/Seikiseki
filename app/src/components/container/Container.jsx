@@ -74,7 +74,7 @@ function Container(props) {
           props.site_name === "Cape Canaveral / KSC TBD" ? (
             <>
               <div className="popHead">
-                <h2> {"Cape Canaveral / Kennedy Space Center"}</h2>
+                <h2> {"Cape Canaveral/Kennedy Space Center"}</h2>
                 <div>
                   <button onClick={() => props.togglePopup()}>Close</button>
                 </div>
