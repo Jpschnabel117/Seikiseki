@@ -16,7 +16,7 @@ export const Marks = ({
         width={xScale(d.x1) - xScale(d.x0)}
         height={innerHeight - yScale(d.y)}
       >
-        <title>{tooltipFormat(d.y)}</title>
+        <title>{tooltipFormat(d.x0)} launches: {d.y}</title>
       </rect>
     </>
   ));

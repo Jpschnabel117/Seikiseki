@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import localLaunchData from "../../../assets/launchtestdata.json";
-import { connect } from "react-redux";
-import { withContext } from "../../../withContext"; 
 
-function useData(props) {
+
+
+export const useData = (launches) => {
+  
   const [data, setData] = useState(null);
-  console.log("index", launchIndex)
 
   useEffect(() => {
+    console.log("yoyo");
     let graphData = [];
 
     localLaunchData.forEach((element) => {
@@ -17,7 +18,7 @@ function useData(props) {
       d["Launch Date"] = new Date(Number(element.sort_date) * 1000);
       return graphData.push(d);
     });
-    console.log(graphData);
+    console.log("graphData",graphData);
 
     setData(graphData);
   }, []);
@@ -25,10 +26,4 @@ function useData(props) {
   return data;
 }
 
-const mapStateToProps = (state) => ({
-  launchIndex: state.container.launchIndex,
-});
 
-const useDataContainer = withContext(connect(mapStateToProps)(useData));
-
-export default useDataContainer;

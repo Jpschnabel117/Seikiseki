@@ -185,7 +185,7 @@ function Container(props) {
         </button>
       </div>
       <div>
-        <GraphIndex />
+        <GraphIndex /> 
       </div>
     </div>
   );

@@ -46,3 +46,9 @@ export const populateLaunchIndex = (data) => {
     payload: { data },
   };
 };
+export const populateLaunchArray = (data) => {
+  return {
+    type: "FILL_LAUNCH_ARRAY",
+    payload: { data },
+  };
+};

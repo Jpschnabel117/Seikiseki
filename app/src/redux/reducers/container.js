@@ -12,11 +12,23 @@ const initialState = {
   timeLineDateEnd: 410245200, // Jan 01 1983
   brushTimeStart: -220906799, // Jan 01 1963 ---v one year
   brushTimeEnd: -189370800, // Jan 01 1964
-  launchIndex: "test",
+  launchIndex: {},
+  launchArray: [],
 };
 
 const container = (state = initialState, action) => {
   switch (action.type) {
+    case "FILL_LAUNCH_ARRAY": {
+      const { data } = action.payload;
+      const launchArray = data;
+      console.log("data:", data);
+      const newState = Object.assign(
+        {},
+        { ...state },
+        { launchArray: launchArray }
+      );
+      return newState;
+    }
     case "FILL_LAUNCH_INDEX": {
       const { data } = action.payload;
       const launchIndex = data;

@@ -11,7 +11,6 @@ import { connect } from "react-redux";
 import { withContext } from "../withContext";
 import localLaunchData from "../assets/launchtestdata.json";
 import LaunchDetailsPage from "../pages/launchdetailspage";
-import GraphIndex from './container/histograph/graphindex';
 import Client from "../client";
 import { populateLaunchIndex } from "../redux/stateActions";
 
@@ -58,7 +57,7 @@ function App(props) {
         setLoadingLaunches(true);
         const dataAsPageArray = [];
 
-        for (let pages = 1; pages < 4; pages++) {
+        for (let pages = 1; pages < 3; pages++) {
           try {
             const response = await fetch(
               `https://fdo.rocketlaunch.live/json/launches?after_date=${formatDate(
@@ -83,7 +82,8 @@ function App(props) {
         }
 
         const flatarray = dataAsPageArray.flatMap((obj) => obj.data);
-
+        console.log("flatArray", flatarray)
+        props.populateLaunchArray(flatarray)
         props.populateLaunchIndex(convertToLaunchIndex(flatarray));
         setLoadingLaunches(false);
 
@@ -97,7 +97,7 @@ function App(props) {
   return (
     <div className="App">
       <Header />
-      {props.fetchingLaunchSites || props.fetchingGeoData  ? (//changed to fetchingLaunches
+      {props.fetchingLaunchSites || props.fetchingGeoData || loadingLaunches? (//changed to fetchingLaunches
         <h1 className="loading">Loading...</h1>
       ) : (
         <>
@@ -126,11 +126,14 @@ const mapStateToProps = (state) => ({
   timeLineDateStart: state.container.timeLineDateStart,
   timeLineDateEnd: state.container.timeLineDateEnd,
   launchIndex: state.container.launchIndex,
+  launchArray: state.container.launchArray
 });
 
 const mapDispatchToProps = (dispatch) => ({
   populateLaunchIndex: (data) =>
     dispatch(stateActions.populateLaunchIndex(data)),
+  populateLaunchArray: (data) =>
+    dispatch(stateActions.populateLaunchArray(data)),
 });
 
 const AppContainer = withContext(
