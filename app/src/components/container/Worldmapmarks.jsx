@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 function WorldMapMarks(props) {
   const { worldGeoData, locations, launchIndex } = props;
   const launchSiteData = locations;
+  console.log(launchIndex)
 
   const projection = d3.geoEquirectangular();
   const path = d3.geoPath(projection);
@@ -53,7 +54,7 @@ function WorldMapMarks(props) {
 
             return (
               <Launchsitemarks
-                key={site.name}
+                key={site.location_name}
                 cx={x}
                 cy={y}
                 r={radius}

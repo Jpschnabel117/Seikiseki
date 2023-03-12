@@ -19,8 +19,8 @@ import { populateLaunchIndex } from "../redux/stateActions";
 function convertToLaunchIndex(unformated) {
   const launchIndex = {};
   unformated.forEach((launch) => {
-    if (launch.pad && launch.pad.location && launch.pad.location.name) {
-      const padLocationName = launch.pad.location.name;
+    if (launch.site_name) {
+      const padLocationName = launch.launch;
       if (!launchIndex[padLocationName]) {
         launchIndex[padLocationName] = [];
       }
@@ -43,7 +43,7 @@ function App(props) {
   useEffect(() => {
 //i think all this gets replaced with just get_launches(props.timeLineDateStart,props.timeLineDateEnd)
   props.client.get_launches(props.timeLineDateStart,props.timeLineDateEnd)
-
+    console.log(props.launchIndex)
 
 // const myHeaders = new Headers();
     // myHeaders.append("Authorization", `Bearer ${import.meta.env.VITE_API_KEY}`);

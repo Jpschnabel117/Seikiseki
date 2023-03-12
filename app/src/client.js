@@ -57,19 +57,20 @@ class Client {
       .then((json) => {
         console.log(json)
         const launchArray = json;
-        const launchIndex = {};
+        let launchIndexNew = {};
         launchArray.forEach((launch) => {
           if (launch.launch_site) {
             const padLocationName = launch.launch_site;
-            if (!launchIndex[padLocationName]) {
-              launchIndex[padLocationName] = [];
+            if (!launchIndexNew[padLocationName]) {
+              launchIndexNew[padLocationName] = [];
             }
-            launchIndex[padLocationName].push(launch);
+            launchIndexNew[padLocationName].push(launch);
           }
         });
+        console.log(launchIndexNew)
         store.dispatch(stateActions.toggleFetchingLaunches(false));
         store.dispatch(stateActions.populateLaunchArray({ launchArray }));
-        store.dispatch(stateActions.populateLaunchIndex({ launchIndex }));
+        store.dispatch(stateActions.populateLaunchIndex( launchIndexNew ));
       });
   }
 }
