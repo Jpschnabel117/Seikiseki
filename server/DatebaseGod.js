@@ -100,15 +100,15 @@ async function populateLaunchTableData() {
 
 
 populateLaunches = async () => {
-  const options= (page) = {
+  const options= (page) =>({
     method: 'GET',
-    url: `https://fdo.rocketlaunch.live/json/locations?page=#{page}`,
+    url: `https://fdo.rocketlaunch.live/json/locations?page=${page}`,
     headers: {
       Authorization: `Bearer ${process.env.api_key}`,
     },
-  };
-  for (let i = 0; i <= 2; i++) {
-    request(options(i), function(error, response) {
+  });
+  for (let page = 0; page <= 2; page++) {
+    request(options(page), function(error, response) {
       if (error) throw new Error(error);
       const data = JSON.parse(response.body);
       const result = data.result;
@@ -118,28 +118,40 @@ populateLaunches = async () => {
         if (!latitude) latitude = 0.0;
         if (!utcOffset) utcOffset= 0;
         if (!country) {
-          country = {code: 'NA'};
+          country = {code: '00'};
         }
-        if (result[i]['state']['name'] == 'Florida') {
-          name = 'Cape Caraveral/Kennedy Space Center';
+        console.log(name);
+        try {
+          if (result[i]['state']['name'] == 'Florida') {
+            name = 'Cape Caraveral/Kennedy Space Center';
+          }
+        } catch (error) {
         }
-        console.log(country);
         const sql = `INSERT INTO Launches(location_name, country, 
-        longitude, latitude, utcOffset) VALUES 
+        longitude, latitude, utc_offset) VALUES 
         ('${name}','${country.code}','${longitude}',
         '${latitude}','${utcOffset}')`;
         // ON DUPLICATE KEY UPDATE location_name='${name}'   ....etc
         connection.query(sql, function(err, result) {
           if (err) {
-            console.error(err);
-            return res.status(500).send('Internal Server Error');
+            // console.error(err);
           }
-          console.log('1 record inserted');
+          // console.log('1 record inserted');
         });
       }
-      res.status(200).send('Success');
     });
   }
 };
 
-populateLaunchTableData();
+
+const args = process.argv.slice(2);
+
+// Call the `populateLaunchTableData` function by default
+if (args.length === 0 || args[0] === 'populateLaunchTableData') {
+  populateLaunchTableData();
+} else if (args[0] === 'populateLaunches') {
+  populateLaunches();
+} else {
+  console.error(`Invalid command: ${args[0]}`);
+}
+
