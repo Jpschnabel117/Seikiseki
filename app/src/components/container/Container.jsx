@@ -76,20 +76,20 @@ function Container(props) {
                 <tbody>
                   {launchIndex[props.site_name]?.map((launch) => (
                     <tr>
-                      <td>{launch.provider.name}</td>
+                      <td>{launch.prov}</td>
                       <td className="linkTd">
                         <a
                           target="_blank"
                           href={findUrl(launch.quicktext)}
                           rel="noreferrer"
                         >
-                          {launch.name}
+                          {launch.launch_name}
                         </a>
                         {/* <Link to={`/launchdetails/${launch.id}`}>
                               {launch.name}
                             </Link> */}
                       </td>
-                      <td>{launch.rocket_name}</td>
+                      <td>{launch.vehicle}</td>
                       <td>{launch.date_str}</td>
                       <td>{launchStatus(launch.result)}</td>
                     </tr>
@@ -103,12 +103,13 @@ function Container(props) {
         </div>
       )}
       <div className="dateRangeSelect">
-        <select onChange={(event) => handleDateRangeChange(event.target.value)}>
+      {/*fix this later*/}
+        {/* <select onChange={(event) => handleDateRangeChange(event.target.value)}>
           <option value="-220906800,410245200">1963-1984</option>
           <option value="410245201,1072933200">1984-2004</option>
           <option value="1072933201,4102452000">2004+</option>
-        </select>
-        {/* <button onClick={() => props.changeDateRange([-220906800, 410245200])}>
+        </select> */}
+        <button onClick={() => props.changeDateRange([-220906800, 410245200])}>
           1963-1984
         </button>
         <button onClick={() => props.changeDateRange([410245201, 1072933200])}>
@@ -116,7 +117,7 @@ function Container(props) {
         </button>
         <button onClick={() => props.changeDateRange([1072933201, 4102452000])}>
           2004+
-        </button> */}
+        </button>
       </div>
       <div>
         <GraphIndex />

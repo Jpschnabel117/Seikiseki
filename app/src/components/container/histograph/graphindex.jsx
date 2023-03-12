@@ -23,10 +23,10 @@ const margin = { top: 20, right: 30, bottom: 65, left: 90 };
 const xAxisLabelOffset = 80;
 const yAxisLabelOffset = 45;
 
-function convertLaunchArrayToGraphData(array) {
+function convertLaunchArrayToGraphData(object) {
   let graphData = [];
-
-  array.forEach((element) => {
+ console.log("here",object.launchArray)
+  object.launchArray.forEach((element) => {
     let d = {};
     d["Launches"] = 1;
     d["Launch Date"] = new Date(Number(element.sort_date) * 1000);
