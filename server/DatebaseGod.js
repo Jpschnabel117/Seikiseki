@@ -28,35 +28,38 @@ async function populateLaunchTableData() {
       Authorization: `Bearer ${process.env.api_key}`,
     },
   });
-  const last_page = 100;
+  let last_page = 100;
 
   let page = 1;
 
   const rid = setInterval(() => {
-    if (page == 3) {
+    if (page >= last_page) {
       clearInterval(rid);
     }
     request(options(page), async (err, results) => {
       try {
         console.log(page);
         data= JSON.parse(results.body);
+        last_page=data['last_page'];
         for (const launch of data['result']) {
-          console.log(launch.id);
-          if (launch['pad.location.statename']=='Florida') {
-            launch['pad.location.name'] =
+          console.log(launch['id']);
+          if (launch['pad']['location']['statename'] == 'Florida') {
+            console.log('mutating location name');
+            launch['pad']['location']['name'] =
             'Cape Canaveral/Kennedy Space Center';
           }
           const obj = {
             'id': launch.id,
             'sort_date': launch['sort_date'],
             'rocket_name': launch['name'],
-            'launch_site': launch['pad.location.name'],
-            'provider': launch['provider.name'],
-            'vehicle': launch['vehicle.name'],
+            'launch_site': launch['pad']['location']['name'],
+            'provider': launch['provider']['name'],
+            'vehicle': launch['vehicle']['name'],
             'date_str': launch['date_str'],
             'quicktext': launch['quicktext'],
             'result': launch['result'],
           };
+
 
           const {id, sort_date, rocket_name, launch_site,
             provider, vehicle, date_str, quicktext, result} = obj;
@@ -92,7 +95,7 @@ async function populateLaunchTableData() {
 
       page++;
     });
-  }, (5000));
+  }, (3000));
 };
 
 

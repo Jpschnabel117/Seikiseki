@@ -107,7 +107,23 @@ app.get('/serverSideProps', cors(corsOptions), (req, res) => {
 });
 
 
+app.post('/getLaunchData', cors(corsOptions), (req, res) => {
+  const {startDate, endDate} = req.body;
+  const sql = `
+        SELECT *
+        FROM LaunchData
+        WHERE sort_date >= UNIX_TIMESTAMP('1970-01-01 00:00:01') + (${startDate} / 1000) 
+        AND sort_date <= UNIX_TIMESTAMP('1970-01-01 00:00:01') + (${endDate} / 1000)
+        `;
 
+  connection.query(sql, function(errback, resback, fields) {
+    if (errback) {
+      console.log(errback);
+      res.status(404);
+    }
+    res.send(JSON.stringify(resback));
+  });
+});
 
 
 app.get('/', cors(corsOptions), (req, res) => {

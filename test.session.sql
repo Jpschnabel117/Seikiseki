@@ -31,12 +31,16 @@ CREATE TABLE LaunchData(
     sort_date INT(9),
     rocket_name VARCHAR(255),
     launch_site VARCHAR(255),
-    provider VARCHAR(255),
+    prov VARCHAR(255),
     vehicle VARCHAR(255),
     date_str VARCHAR(12),
     quicktext VARCHAR(255),
     result int(1)
 )
+
+
+-- @block
+SELECT * FROM LaunchData;
 
 -- @block 
 INSERT INTO Users(email, pass, bio, country)
@@ -47,7 +51,8 @@ VALUES (1, 41);
 -- @block
 DROP TABLE Watching;
 DROP TABLE Launches;
-
+-- @block
+DROP TABLE LaunchData;
 
 
 
