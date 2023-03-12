@@ -120,6 +120,9 @@ populateLaunches = async () => {
         if (!country) {
           country = {code: 'NA'};
         }
+        if (result[i]['state']['name'] == 'Florida') {
+          name = 'Cape Caraveral/Kennedy Space Center';
+        }
         console.log(country);
         const sql = `INSERT INTO Launches(location_name, country, 
         longitude, latitude, utcOffset) VALUES 

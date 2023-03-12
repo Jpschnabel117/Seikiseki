@@ -5,6 +5,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const mysql = require('mysql2');
+const bodyParser = require('body-parser');
 const request = require('request');
 require('dotenv').config(); // Load environment variables
 
@@ -28,12 +29,12 @@ const corsOptions = {
   optionsSuccessStatus: 200,
 };
 
+app.use(bodyParser.json());
 // Middleware to log the current time for every incoming request
 app.use((req, res, next) => {
   console.log('Time: ', Date.now());
   next();
 });
-
 // Enable preflight requests for all routes
 app.options('/', cors(corsOptions));
 
@@ -106,10 +107,11 @@ app.get('/serverSideProps', cors(corsOptions), (req, res) => {
   }
 });
 
-
 app.post('/getLaunchData', cors(corsOptions), (req, res) => {
-  console.log(req);
   const {startDate, endDate} = req.body;
+  console.log(req.body);
+  console.log('startDate:', startDate);
+  console.log('endDate:', endDate);
   const sql = `
     SELECT *
     FROM LaunchData
