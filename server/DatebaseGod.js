@@ -43,7 +43,6 @@ async function populateLaunchTableData() {
         for (const launch of data['result']) {
           console.log(launch.id);
           if (launch['pad.location.statename']=='Florida') {
-            console.log('wassupnigga');
             launch['pad.location.name'] =
             'Cape Canaveral/Kennedy Space Center';
           }
@@ -62,13 +61,21 @@ async function populateLaunchTableData() {
           const {id, sort_date, rocket_name, launch_site,
             provider, vehicle, date_str, quicktext, result} = obj;
           const sql = `INSERT INTO LaunchData(
-                      id, sort_date, rocket_name, 
-                      launch_site, prov, vehicle, 
-                      date_str, quicktext, result) 
-                      VALUES('${id}','${sort_date}','${rocket_name}', 
-                      '${launch_site}','${provider}','${vehicle}', 
-                      '${date_str}','${quicktext}', '${result}')`;
-          console.log(sql);
+                  id, sort_date, rocket_name, 
+                  launch_site, prov, vehicle, 
+                  date_str, quicktext, result) 
+                  VALUES('${id}','${sort_date}','${rocket_name}', 
+                  '${launch_site}','${provider}','${vehicle}', 
+                  '${date_str}','${quicktext}', '${result}')
+              ON DUPLICATE KEY UPDATE 
+                  sort_date = '${sort_date}', 
+                  rocket_name = '${rocket_name}', 
+                  launch_site = '${launch_site}', 
+                  prov = '${provider}', 
+                  vehicle = '${vehicle}', 
+                  date_str = '${date_str}', 
+                  quicktext = '${quicktext}', 
+                  result = '${result}'`;
           connection.query(sql, function(err, result) {
             if (err) {
               console.error(err);
