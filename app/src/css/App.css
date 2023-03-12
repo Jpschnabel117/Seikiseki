@@ -338,3 +338,28 @@ p {
   font-size: 2.3em;
   fill: #635f5d;
 }
+
+.dateRangeSelect {
+  display: flex;
+  align-items: center;
+}
+
+select {
+  font-size: 16px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+select:hover,
+select:focus {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+option {
+  background-color: #fff;
+  color: #333;
+}

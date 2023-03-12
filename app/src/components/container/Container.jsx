@@ -42,6 +42,12 @@ function Container(props) {
     return result;
   }
 
+  function handleDateRangeChange(value) {
+    const dateRange = value.split(",").map(Number);
+    props.changeDateRange(dateRange);
+  }
+
+  
   return (
     <div className="mapScreen">
       <svg id="worldMap">
@@ -49,55 +55,60 @@ function Container(props) {
       </svg>
       {props.popupIsOpen && (
         <div className="popup">
-              <div className="popHead">
-                <h2>{props.site_name}</h2>
-                <div>
-                  <button onClick={() => props.togglePopup()}>Close</button>
-                </div>
-              </div>
-              <div className="popBody">
-                {launchIndex[props.site_name] ? (
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Provider</th>
-                        <th>Mission</th>
-                        <th>Vehicle</th>
-                        <th>Date</th>
-                        <th>Result</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {launchIndex[props.site_name]?.map((launch) => (
-                        <tr>
-                          <td>{launch.provider.name}</td>
-                          <td className="linkTd">
-                            <a
-                              target="_blank"
-                              href={findUrl(launch.quicktext)}
-                              rel="noreferrer"
-                            >
-                              {launch.name}
-                            </a>
-                            {/* <Link to={`/launchdetails/${launch.id}`}>
+          <div className="popHead">
+            <h2>{props.site_name}</h2>
+            <div>
+              <button onClick={() => props.togglePopup()}>Close</button>
+            </div>
+          </div>
+          <div className="popBody">
+            {launchIndex[props.site_name] ? (
+              <table>
+                <thead>
+                  <tr>
+                    <th>Provider</th>
+                    <th>Mission</th>
+                    <th>Vehicle</th>
+                    <th>Date</th>
+                    <th>Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {launchIndex[props.site_name]?.map((launch) => (
+                    <tr>
+                      <td>{launch.provider.name}</td>
+                      <td className="linkTd">
+                        <a
+                          target="_blank"
+                          href={findUrl(launch.quicktext)}
+                          rel="noreferrer"
+                        >
+                          {launch.name}
+                        </a>
+                        {/* <Link to={`/launchdetails/${launch.id}`}>
                               {launch.name}
                             </Link> */}
-                          </td>
-                          <td>{launch.rocket_name}</td>
-                          <td>{launch.date_str}</td>
-                          <td>{launchStatus(launch.result)}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                ) : (
-                  <p>No Launches in Selected Time Frame</p>
-                )}
-              </div>
+                      </td>
+                      <td>{launch.rocket_name}</td>
+                      <td>{launch.date_str}</td>
+                      <td>{launchStatus(launch.result)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <p>No Launches in Selected Time Frame</p>
+            )}
+          </div>
         </div>
       )}
       <div className="dateRangeSelect">
-        <button onClick={() => props.changeDateRange([-220906800, 410245200])}>
+        <select onChange={(event) => handleDateRangeChange(event.target.value)}>
+          <option value="-220906800,410245200">1963-1984</option>
+          <option value="410245201,1072933200">1984-2004</option>
+          <option value="1072933201,4102452000">2004+</option>
+        </select>
+        {/* <button onClick={() => props.changeDateRange([-220906800, 410245200])}>
           1963-1984
         </button>
         <button onClick={() => props.changeDateRange([410245201, 1072933200])}>
@@ -105,10 +116,10 @@ function Container(props) {
         </button>
         <button onClick={() => props.changeDateRange([1072933201, 4102452000])}>
           2004+
-        </button>
+        </button> */}
       </div>
       <div>
-        <GraphIndex /> 
+        <GraphIndex />
       </div>
     </div>
   );
