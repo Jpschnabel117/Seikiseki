@@ -50,6 +50,7 @@ function Container(props) {
   
   return (
     <div className="mapScreen">
+      <span className='copyright'>Data by RocketLaunch.Live</span>
       <svg id="worldMap">
         <Worldmapmarks />
       </svg>
@@ -103,7 +104,7 @@ function Container(props) {
         </div>
       )}
       <div className="dateRangeSelect">
-      {/*fix this later*/}
+        {/*fix this later*/}
         {/* <select onChange={(event) => handleDateRangeChange(event.target.value)}>
           <option value="-220906800,410245200">1963-1984</option>
           <option value="410245201,1072933200">1984-2004</option>

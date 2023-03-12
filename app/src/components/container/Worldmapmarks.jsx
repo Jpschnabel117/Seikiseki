@@ -46,7 +46,7 @@ function WorldMapMarks(props) {
               radius = radius + siteLaunches.length * 1.1;
 
               if (radius > 30) {
-                radius = 30;
+                radius = 30; //make good scale
               }
             } else {
               radius = 0;

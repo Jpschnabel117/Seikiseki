@@ -363,3 +363,7 @@ option {
   background-color: #fff;
   color: #333;
 }
+
+.copyright{
+  opacity: 0.3;
+}
