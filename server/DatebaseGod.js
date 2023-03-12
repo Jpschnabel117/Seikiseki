@@ -28,60 +28,64 @@ async function populateLaunchTableData() {
       Authorization: `Bearer ${process.env.api_key}`,
     },
   });
-  const dataarray = [];
   const last_page = 100;
 
+  let page = 1;
 
-  for (let page = 1; page <= 3; page++) {
-    setInterval(() => {
-      request(options(page), async (err, results) => {
-        try {
-          console.log(page);
-          data= JSON.parse(results.body);
-          for (const launch of data['result']) {
-            console.log(launch.id);
-            const obj = {
-              'id': launch.id,
-              'sort_date': launch['sort_date'],
-              'rocket_name': launch['name'],
-              'provider': launch['provider.name'],
-              'vehicle': launch['vehicle.name'],
-              'date_str': launch['date_str'],
-              'quicktext': launch['quicktext'],
-              'result': launch['result'],
-            };
-            dataarray.push(obj);
+  const rid = setInterval(() => {
+    if (page == 3) {
+      clearInterval(rid);
+    }
+    request(options(page), async (err, results) => {
+      try {
+        console.log(page);
+        data= JSON.parse(results.body);
+        for (const launch of data['result']) {
+          console.log(launch.id);
+          if (launch['pad.location.statename']=='Florida') {
+            console.log('wassupnigga');
+            launch['pad.location.name'] =
+            'Cape Canaveral/Kennedy Space Center';
           }
-        } catch (error) {
-          console.error('Error parsing JSON:', error);
-          console.error('Response body:', results.body);
-          throw new Error('Error parsing JSON');
+          const obj = {
+            'id': launch.id,
+            'sort_date': launch['sort_date'],
+            'rocket_name': launch['name'],
+            'launch_site': launch['pad.location.name'],
+            'provider': launch['provider.name'],
+            'vehicle': launch['vehicle.name'],
+            'date_str': launch['date_str'],
+            'quicktext': launch['quicktext'],
+            'result': launch['result'],
+          };
+
+          const {id, sort_date, rocket_name, launch_site,
+            provider, vehicle, date_str, quicktext, result} = obj;
+          const sql = `INSERT INTO LaunchData(
+                      id, sort_date, rocket_name, 
+                      launch_site, prov, vehicle, 
+                      date_str, quicktext, result) 
+                      VALUES('${id}','${sort_date}','${rocket_name}', 
+                      '${launch_site}','${provider}','${vehicle}', 
+                      '${date_str}','${quicktext}', '${result}')`;
+          console.log(sql);
+          connection.query(sql, function(err, result) {
+            if (err) {
+              console.error(err);
+            }
+            console.log('1 record inserted');
+          });
         }
-      }, (10000));
-    });
-  }
-
-
-  for (i in dataarray) {
-    const {id, sort_date, rocket_name,
-      provider, vehicle, date_str, quicktext, result} = i;
-    const sql = `INSERT INTO LaunchData(
-      id, sort_date, rocket_name, 
-      launch_site, prov, vehicle, 
-      date_str, quicktext, result) 
-      VALUES('${id}','${sort_date}','${rocket_name}',
-        '${provider}','${vehicle}', '${date_str}',
-         '${quicktext}', '${result}')`;
-
-
-    connection.query(sql, function(err, result) {
-      if (err) {
-        console.error(err);
-        return res.status(500).send('Internal Server Error');
+      } catch (error) {
+        console.error('Error parsing JSON:', error);
+        console.error('Response body:', results.body);
+        throw new Error('Error parsing JSON');
       }
-      console.log('1 record inserted');
+
+
+      page++;
     });
-  }
+  }, (5000));
 };
 
 
