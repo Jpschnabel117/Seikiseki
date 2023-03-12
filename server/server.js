@@ -107,26 +107,36 @@ app.get('/serverSideProps', cors(corsOptions), (req, res) => {
   }
 });
 
-app.post('/getLaunchData', cors(corsOptions), (req, res) => {
-  const {startDate, endDate} = req.body;
-  console.log(req.body);
-  console.log('startDate:', startDate);
-  console.log('endDate:', endDate);
+app.get("/getLaunchData", cors(corsOptions), (req, res) => {
+
+  const { startDate, endDate } = req.query;
+  console.log("startDate:", startDate);
+  console.log("endDate:", endDate);
+
+  
   const sql = `
-    SELECT *
+    SELECT *, date_str
     FROM LaunchData
     WHERE UNIX_TIMESTAMP(STR_TO_DATE(date_str, '%b %d %Y')) >= ?
     AND UNIX_TIMESTAMP(STR_TO_DATE(date_str, '%b %d %Y')) <= ?`;
 
-  connection.query(sql, [startDate, endDate], function(errback, resback, fields) {
-    if (errback) {
-      console.log(errback);
-      res.status(404).send({error: 'Failed to retrieve data.'});
-    } else {
-      res.send(JSON.stringify(resback));
+  connection.query(
+    sql,
+    [Number(startDate), Number(endDate)],
+    function (err, result, fields) {
+      if (err) {
+        console.log(err);
+        res.status(404).send({ error: "Failed to retrieve data." });
+      } else {
+        res.header("Content-Type", "application/json");
+        res.json(result);
+      }
     }
-  });
+  );
 });
+
+
+
 
 
 app.get('/', cors(corsOptions), (req, res) => {
