@@ -14,9 +14,7 @@ import LaunchDetailsPage from "../pages/launchdetailspage";
 import Client from "../client";
 import { populateLaunchIndex } from "../redux/stateActions";
 
-const launchDataArr = localLaunchData;
 // change this to launches when going to api
-console.log(launchDataArr);
 
 function convertToLaunchIndex(unformated) {
   const launchIndex = {};
@@ -44,7 +42,7 @@ function App(props) {
   //const [loadingLaunches, setLoadingLaunches] = useState(true);
   useEffect(() => {
 //i think all this gets replaced with just get_launches(props.timeLineDateStart,props.timeLineDateEnd)
-  get_launches(props.timeLineDateStart,props.timeLineDateEnd)
+  props.client.get_launches(props.timeLineDateStart,props.timeLineDateEnd)
 
 
 // const myHeaders = new Headers();

@@ -8,7 +8,6 @@ export const Marks = ({
 }) => {
   return binnedData.map((d) => (
     <>
-      {console.log(d)}
       <rect
         className="histo mark"
         x={xScale(d.x0)}
