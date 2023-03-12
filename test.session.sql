@@ -2,9 +2,25 @@
 -- @block
 DROP TABLE Watching;
 DROP TABLE Launches;
-DROP TABLE LaunchData;
 DROP TABLE Users;
 
+
+-- @block
+DROP TABLE Launches;
+-- @block
+DROP TABLE LaunchData;
+
+
+
+
+-- @block
+CREATE TABLE Users(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    pass VARCHAR(255) NOT NULL,
+    bio TEXT,
+    country VARCHAR(2)
+);
 -- @block
 CREATE TABLE Launches(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -14,7 +30,6 @@ CREATE TABLE Launches(
     latitude FLOAT,
     utc_offset INT(1)
 );
-
 -- @block
 CREATE TABLE Watching (
     user_id INT,
@@ -23,7 +38,6 @@ CREATE TABLE Watching (
     FOREIGN KEY (user_id) REFERENCES Users(id),
     FOREIGN KEY (launch_id) REFERENCES Launches(id)
 );
-
 -- @block
 CREATE TABLE LaunchData(
     id INT PRIMARY KEY,
@@ -37,14 +51,6 @@ CREATE TABLE LaunchData(
     result int(1)
 )
 
--- @block
-CREATE TABLE Users(
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    pass VARCHAR(255) NOT NULL,
-    bio TEXT,
-    country VARCHAR(2)
-);
 -- @block 
 INSERT INTO Users(email, pass, bio, country)
 VALUES ("test", "pass", "testing bio", "US");

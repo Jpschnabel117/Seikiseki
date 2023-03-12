@@ -123,7 +123,7 @@ populateLaunches = async () => {
         console.log(name);
         try {
           if (result[i]['state']['name'] == 'Florida') {
-            name = 'Cape Caraveral/Kennedy Space Center';
+            name = 'Cape Canaveral/Kennedy Space Center';
           }
         } catch (error) {
         }
