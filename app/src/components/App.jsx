@@ -14,15 +14,13 @@ import LaunchDetailsPage from "../pages/launchdetailspage";
 import Client from "../client";
 import { populateLaunchIndex } from "../redux/stateActions";
 
-const launchDataArr = localLaunchData;
 // change this to launches when going to api
-console.log(launchDataArr);
 
 function convertToLaunchIndex(unformated) {
   const launchIndex = {};
   unformated.forEach((launch) => {
-    if (launch.pad && launch.pad.location && launch.pad.location.name) {
-      const padLocationName = launch.pad.location.name;
+    if (launch.site_name) {
+      const padLocationName = launch.launch;
       if (!launchIndex[padLocationName]) {
         launchIndex[padLocationName] = [];
       }
@@ -44,8 +42,8 @@ function App(props) {
   //const [loadingLaunches, setLoadingLaunches] = useState(true);
   useEffect(() => {
 //i think all this gets replaced with just get_launches(props.timeLineDateStart,props.timeLineDateEnd)
-  get_launches(props.timeLineDateStart,props.timeLineDateEnd)
-
+  props.client.get_launches(props.timeLineDateStart,props.timeLineDateEnd)
+    console.log(props.launchIndex)
 
 // const myHeaders = new Headers();
     // myHeaders.append("Authorization", `Bearer ${import.meta.env.VITE_API_KEY}`);

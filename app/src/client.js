@@ -18,6 +18,7 @@ class Client {
       .then((json) => {
         const { worldMapData } = json;
         store.dispatch(stateActions.toggleFetchingWorldGeoData(false));
+        
         store.dispatch(stateActions.populateWorldMapData({ worldMapData }));
       });
   }
@@ -33,6 +34,7 @@ class Client {
       .then((data) => data.json())
       .then((json) => {
         const locations = json;
+        console.log(locations);
         store.dispatch(stateActions.toggleFetchingLaunchSites(false));
         store.dispatch(stateActions.fillLocationData({ locations }));
       });
@@ -40,30 +42,35 @@ class Client {
 
   //make this vvvv
   async get_launches(startDate, endDate) {
+    console.log(JSON.stringify({ startDate, endDate }));
     store.dispatch(stateActions.toggleFetchingLaunches(true));
     const requestOptions = {
-      method: "POST",
-      body: JSON.stringify({ startDate, endDate }),
+      method: "GET",
       redirect: "follow",
     };
-    const res = fetch(`${url}/getLaunchSites`, requestOptions); //change to correct route, use start and end dates.
+    const res = fetch(
+      `${url}/getLaunchData?startDate=${startDate}&endDate=${endDate}`,
+      requestOptions
+    ); //change to correct route, use start and end dates.
     res
       .then((data) => data.json())
       .then((json) => {
+        console.log(json)
         const launchArray = json;
-        const launchIndex = {};
+        let launchIndexNew = {};
         launchArray.forEach((launch) => {
           if (launch.launch_site) {
             const padLocationName = launch.launch_site;
-            if (!launchIndex[padLocationName]) {
-              launchIndex[padLocationName] = [];
+            if (!launchIndexNew[padLocationName]) {
+              launchIndexNew[padLocationName] = [];
             }
-            launchIndex[padLocationName].push(launch);
+            launchIndexNew[padLocationName].push(launch);
           }
         });
+        console.log(launchIndexNew)
         store.dispatch(stateActions.toggleFetchingLaunches(false));
         store.dispatch(stateActions.populateLaunchArray({ launchArray }));
-        store.dispatch(stateActions.populateLaunchIndex({ launchIndex }));
+        store.dispatch(stateActions.populateLaunchIndex( launchIndexNew ));
       });
   }
 }

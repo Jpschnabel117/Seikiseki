@@ -5,7 +5,6 @@ import { useState, useEffect, useContext } from "react";
 import localLaunchData from "../assets/launchtestdata.json";
 let data = localLaunchData;
 //-----
-console.log("launch data: ", data);
 
 function LaunchDetailsPage() {
   const { launchId } = useParams();
