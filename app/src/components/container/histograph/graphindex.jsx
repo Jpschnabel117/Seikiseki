@@ -19,13 +19,13 @@ import localLaunchData from "../../../assets/launchtestdata.json";
 
 const width = 960;
 const height = 500;
-const margin = { top: 20, right: 30, bottom: 65, left: 90 };
-const xAxisLabelOffset = 80;
-const yAxisLabelOffset = 45;
+const margin = { top: 0, right: 30, bottom:20, left: 60 };
+const xAxisLabelOffset = 54;
+const yAxisLabelOffset = 30;
 
 function convertLaunchArrayToGraphData(object) {
   let graphData = [];
- console.log("here",object.launchArray)
+  console.log("here", object.launchArray);
   object.launchArray.forEach((element) => {
     let d = {};
     d["Launches"] = 1;
@@ -38,6 +38,7 @@ function convertLaunchArrayToGraphData(object) {
 }
 
 const GraphIndex = (props) => {
+  const width = 960
   let data = convertLaunchArrayToGraphData(props.launchArray);
 
   const xValue = (d) => d["Launch Date"];
@@ -46,7 +47,7 @@ const GraphIndex = (props) => {
   const yValue = (d) => d["Launches"];
   const yAxisLabel = "Launches";
 
-  const innerHeight = height - margin.top - margin.bottom;
+  const innerHeight = props.height - margin.top - margin.bottom;
   const innerWidth = width - margin.left - margin.right;
 
   const xAxisTickFormat = timeFormat("%Y");
@@ -73,46 +74,47 @@ const GraphIndex = (props) => {
     .range([innerHeight, 0]);
 
   return (
-    <svg width={width} height={height}>
-        <g transform={`translate(${margin.left},${margin.top})`}>
-          <AxisBottom
-            xScale={xScale}
-            innerHeight={innerHeight}
-            tickFormat={xAxisTickFormat}
-            tickOffset={5}
-          />
-          <text
-            className="histo axis-label"
-            textAnchor="middle"
-            transform={`translate(${-yAxisLabelOffset},${
-              innerHeight / 2
-            }) rotate(-90)`}
-          >
-            {yAxisLabel}
-          </text>
-          <AxisLeft yScale={yScale} innerWidth={innerWidth} tickOffset={5} />
-          <text
-            className="histo axis-label"
-            x={innerWidth / 2}
-            y={innerHeight + xAxisLabelOffset}
-            textAnchor="middle"
-          >
-            {xAxisLabel}
-          </text>
-          <Marks
-            binnedData={binnedData}
-            xScale={xScale}
-            yScale={yScale}
-            innerHeight={innerHeight}
-          />
-        </g>
-    </svg>
+    <>
+      <rect width={width} height={height} fill="#f9f9f9"></rect>
+      <g transform={`translate(${margin.left},${margin.top})`}>
+        <AxisBottom
+          xScale={xScale}
+          innerHeight={innerHeight}
+          tickFormat={xAxisTickFormat}
+          tickOffset={5}
+        />
+        <text
+          className="histo axis-label"
+          textAnchor="middle"
+          transform={`translate(${-yAxisLabelOffset},${
+            innerHeight / 2
+          }) rotate(-90)`}
+        >
+          {yAxisLabel}
+        </text>
+        <AxisLeft yScale={yScale} innerWidth={innerWidth} tickOffset={5} />
+        <text
+          className="histo axis-label"
+          x={innerWidth / 2}
+          y={innerHeight + xAxisLabelOffset}
+          textAnchor="middle"
+        >
+          {xAxisLabel}
+        </text>
+        <Marks
+          binnedData={binnedData}
+          xScale={xScale}
+          yScale={yScale}
+          innerHeight={innerHeight}
+        />
+      </g>
+    </>
   );
 };
 
 const mapStateToProps = (state) => ({
   launchArray: state.container.launchArray,
-  isFetchingLaunches: state.container.isFetchingLaunches
+  isFetchingLaunches: state.container.isFetchingLaunches,
 });
 
 const GraphIndexContainer = withContext(connect(mapStateToProps)(GraphIndex));

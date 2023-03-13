@@ -180,8 +180,8 @@ nav button {
 .worldMapMarks .wMapFeature {
   width: 100%;
   height: 100%;
-  fill: #ffffff;
-  stroke: #c0c0bb;
+  fill: #444444;
+  stroke: #c0c0bb69;
 }
 
 .worldMapMarks .site {
@@ -201,8 +201,6 @@ nav button {
 }
 
 #worldMap {
-  width: 950px;
-  height: 480px;
   margin: 1%;
   top: 0;
   left: 0;
@@ -212,8 +210,10 @@ nav button {
   border: 2px solid #0b040400;
   border-radius: 8px;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
-  padding: 16px;
+ 
 }
+
+
 
 /* .overlay {
   width: 98%;
@@ -251,8 +251,9 @@ li:hover {
 
 /* table styles */
 table {
-  display: inline-block;
+  display: block;
   max-height: 60vh;
+  max-width: 80vw;
 }
 
 th,
@@ -260,6 +261,9 @@ td {
   text-align: left;
   padding: 8px;
   border-bottom: 1px solid #ddd;
+}
+
+tbody{
 }
 
 th {
@@ -326,18 +330,27 @@ p {
 .histo pre {
   font-size: 7em;
 }
+.histo line{
+  opacity: 0.1;
+
+}
 .histo.tick line {
-  stroke: #c0c0bb;
+  
+  stroke: #000000;
 }
 .histo.tick text {
-  fill: #635f5d;
+  font-size: 0.5em;
+  fill: #606060;
 }
 .histo.mark {
   fill: #137b80;
 }
 .histo.axis-label {
-  font-size: 2.3em;
+  font-size: 1em;
   fill: #635f5d;
+}
+.histo.graticule{
+  fill: #000000;
 }
 
 .dateRangeSelect {
@@ -367,4 +380,5 @@ option {
 
 .copyright{
   opacity: 0.3;
+  color: #000000;
 }

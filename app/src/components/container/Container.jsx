@@ -1,12 +1,15 @@
-import Worldmapmarks from './Worldmapmarks';
-import {connect} from 'react-redux';
-import {withContext} from '../../withContext';
-import * as stateActions from '../../redux/stateActions';
-import popup from '../../redux/reducers/popup';
-import {Link} from 'react-router-dom';
-import GraphIndex from './histograph/graphindex';
+import Worldmapmarks from "./Worldmapmarks";
+import { connect } from "react-redux";
+import { withContext } from "../../withContext";
+import * as stateActions from "../../redux/stateActions";
+import popup from "../../redux/reducers/popup";
+import { Link } from "react-router-dom";
+import GraphIndex from "./histograph/graphindex";
 
 function Container(props) {
+  const width = 960;
+  const height = 500;
+  const dateHistogramSize = 0.2;
   const launchIndex = props.launchIndex;
 
   function findUrl(slug) {
@@ -14,28 +17,27 @@ function Container(props) {
     return url;
   }
 
-
   function launchStatus(value) {
     let result;
 
     switch (value) {
       case -1:
-        result = 'Not Set';
+        result = "Not Set";
         break;
       case 0:
-        result = 'Failure';
+        result = "Failure";
         break;
       case 1:
-        result = 'Success';
+        result = "Success";
         break;
       case 2:
-        result = 'Partial Failure';
+        result = "Partial Failure";
         break;
       case 3:
-        result = 'In-Flight Abort';
+        result = "In-Flight Abort";
         break;
       default:
-        result = 'Invalid value';
+        result = "Invalid value";
         break;
     }
 
@@ -47,15 +49,20 @@ function Container(props) {
     props.changeDateRange(dateRange);
   }
 
-  
   return (
     <div className="mapScreen">
       <span className="copyright">Data by RocketLaunch.Live</span>
-      <div>
-        <svg id="worldMap">
-          <Worldmapmarks />
-        </svg>
-      </div>
+
+      <svg width={width} height={height} id="worldMap">
+        <Worldmapmarks width={width} height={height} />
+        <g
+          transform={`translate(0,${
+            height - dateHistogramSize * height 
+          })`}
+        >
+          <GraphIndex height={dateHistogramSize * height} width={width} />
+        </g>
+      </svg>
 
       {props.popupIsOpen && (
         <div className="popup">
@@ -123,9 +130,7 @@ function Container(props) {
           2004+
         </button>
       </div>
-      <div>
-        <GraphIndex />
-      </div>
+      <div></div>
     </div>
   );
 }
@@ -140,11 +145,10 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   togglePopup: () => dispatch(stateActions.togglePopup(true)),
-  changeDateRange: (data) =>
-    dispatch(stateActions.changeDateRange(data)),
+  changeDateRange: (data) => dispatch(stateActions.changeDateRange(data)),
 });
 const ContainerContainer = withContext(
-    connect(mapStateToProps, mapDispatchToProps)(Container),
+  connect(mapStateToProps, mapDispatchToProps)(Container)
 );
 
 export default ContainerContainer;

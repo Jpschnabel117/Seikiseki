@@ -10,9 +10,11 @@ function WorldMapMarks(props) {
   const launchSiteData = locations;
   console.log(launchIndex)
 
-  const projection = d3.geoEquirectangular();
+  const projection = d3.geoNaturalEarth1();
   const path = d3.geoPath(projection);
   const graticule = d3.geoGraticule();
+
+
 
   // ---------------------------------------------------------------
 

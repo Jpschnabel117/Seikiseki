@@ -11,7 +11,7 @@ export const AxisBottom = ({
       key={tickValue}
       transform={`translate(${xScale(tickValue)},0)`}
     >
-      <line className="histo" y2={innerHeight} />
+      <line className="histo graticule" y2={innerHeight} />
       <text
         className="histo"
         style={{ textAnchor: "middle" }}

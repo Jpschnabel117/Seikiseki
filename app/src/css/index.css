@@ -12,6 +12,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  background-color: #f9f9f9;
+   /* background: linear-gradient(180deg, #2A475E 0%, #1B2838 80%) */
 }
 
 a {
@@ -30,7 +32,7 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
-  background: linear-gradient(180deg, #2A475E 0%, #1B2838 80%)
+ 
 }
 
 h1 {
