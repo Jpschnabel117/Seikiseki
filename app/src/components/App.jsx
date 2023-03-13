@@ -10,7 +10,6 @@ import { Route, Routes } from "react-router-dom";
 import { connect } from "react-redux";
 import { withContext } from "../withContext";
 import localLaunchData from "../assets/launchtestdata.json";
-import LaunchDetailsPage from "../pages/launchdetailspage";
 import Client from "../client";
 import { populateLaunchIndex } from "../redux/stateActions";
 
@@ -33,10 +32,6 @@ function App(props) {
         <>
           <Routes>
             <Route path="/" element={<Container />} />
-            <Route
-              path="/launchdetails/:launchId"
-              element={<LaunchDetailsPage />}
-            />
             <Route path="/profile" element={<Profilepage />} />
           </Routes>
         </>

@@ -120,6 +120,7 @@ function Container(props) {
                             >
                               {launch.launch_name}
                             </a>
+
                           </td>
                           <td>{launch.vehicle}</td>
                           <td>{launch.date_str}</td>
