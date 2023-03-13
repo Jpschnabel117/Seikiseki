@@ -16,27 +16,7 @@ import { populateLaunchIndex } from "../redux/stateActions";
 
 // change this to launches when going to api
 
-function convertToLaunchIndex(unformated) {
-  const launchIndex = {};
-  unformated.forEach((launch) => {
-    if (launch.site_name) {
-      const padLocationName = launch.launch;
-      if (!launchIndex[padLocationName]) {
-        launchIndex[padLocationName] = [];
-      }
-      launchIndex[padLocationName].push(launch);
-    }
-  });
-  return launchIndex;
-}
 
-function formatDate(unixTimestamp) {
-  const date = new Date(unixTimestamp * 1000);
-  const year = date.getFullYear();
-  const month = (date.getMonth() + 1).toString().padStart(2, "0");
-  const day = date.getDate().toString().padStart(2, "0");
-  return `${year}-${month}-${day}`;
-}
 
 function App(props) {
   useEffect(() => {
@@ -77,6 +57,7 @@ const mapStateToProps = (state) => ({
   timeLineDateEnd: state.container.timeLineDateEnd,
   launchIndex: state.container.launchIndex,
   launchArray: state.container.launchArray,
+  launchIndexBrushed: state.container.launchIndexBrushed,
 });
 
 const mapDispatchToProps = (dispatch) => ({

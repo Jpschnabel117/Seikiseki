@@ -5,12 +5,26 @@ import * as stateActions from "../../redux/stateActions";
 import popup from "../../redux/reducers/popup";
 import { Link } from "react-router-dom";
 import GraphIndex from "./histograph/graphindex";
+import { useState } from "react";
 
 function Container(props) {
   const width = 960;
   const height = 500;
   const dateHistogramSize = 0.2;
   const launchIndex = props.launchIndex;
+  const [brushExtent, setBrushExtent] = useState([]);
+
+  function brushCheck(array, start, end) {
+    let counter = 0;
+    for (let i = 0; i < array.length; i++) {
+      const sortDate = array[i].sort_date;
+
+      if (sortDate < start || sortDate > end) {
+        counter++;
+      }
+    }
+    return counter;
+  }
 
   function findUrl(slug) {
     const url = slug.match(/https?:\/\/[^\s]+/)[0];
@@ -54,13 +68,18 @@ function Container(props) {
       <span className="copyright">Data by RocketLaunch.Live</span>
 
       <svg width={width} height={height} id="worldMap">
-        <Worldmapmarks width={width} height={height} />
-        <g
-          transform={`translate(0,${
-            height - dateHistogramSize * height 
-          })`}
-        >
-          <GraphIndex height={dateHistogramSize * height} width={width} />
+        <Worldmapmarks
+          width={width}
+          height={height}
+          brushExtent={brushExtent}
+          brushCheck={brushCheck}
+        />
+        <g transform={`translate(0,${height - dateHistogramSize * height})`}>
+          <GraphIndex
+            height={dateHistogramSize * height}
+            width={width}
+            setBrushExtent={setBrushExtent}
+          />
         </g>
       </svg>
 
@@ -86,24 +105,30 @@ function Container(props) {
                 </thead>
                 <tbody>
                   {launchIndex[props.site_name]?.map((launch) => (
-                    <tr>
-                      <td>{launch.prov}</td>
-                      <td className="linkTd">
-                        <a
-                          target="_blank"
-                          href={findUrl(launch.quicktext)}
-                          rel="noreferrer"
-                        >
-                          {launch.launch_name}
-                        </a>
-                        {/* <Link to={`/launchdetails/${launch.id}`}>
+                    <>
+                      {launch.sort_date < brushExtent[0] || launch.sort_date > brushExtent[1] ? (
+                        <></>
+                      ) : (
+                        <tr>
+                          <td>{launch.prov}</td>
+                          <td className="linkTd">
+                            <a
+                              target="_blank"
+                              href={findUrl(launch.quicktext)}
+                              rel="noreferrer"
+                            >
+                              {launch.launch_name}
+                            </a>
+                            {/* <Link to={`/launchdetails/${launch.id}`}>
                               {launch.name}
                             </Link> */}
-                      </td>
-                      <td>{launch.vehicle}</td>
-                      <td>{launch.date_str}</td>
-                      <td>{launchStatus(launch.result)}</td>
-                    </tr>
+                          </td>
+                          <td>{launch.vehicle}</td>
+                          <td>{launch.date_str}</td>
+                          <td>{launchStatus(launch.result)}</td>
+                        </tr>
+                      )}
+                    </>
                   ))}
                 </tbody>
               </table>
@@ -121,10 +146,10 @@ function Container(props) {
           <option value="1072933201,4102452000">2004+</option>
         </select> */}
         <button onClick={() => props.changeDateRange([-220906800, 410245200])}>
-          1963-1984
+          1963-1982
         </button>
         <button onClick={() => props.changeDateRange([410245201, 1072933200])}>
-          1984-2004
+          1982-2004
         </button>
         <button onClick={() => props.changeDateRange([1072933201, 4102452000])}>
           2004+

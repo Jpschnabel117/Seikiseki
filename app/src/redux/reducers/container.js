@@ -12,6 +12,7 @@ const initialState = {
   timeLineDateEnd: 410245200, // Jan 01 1983
   brushTimeStart: -220906799, // Jan 01 1963 ---v one year
   brushTimeEnd: -189370800, // Jan 01 1964
+  launchIndexBrushed:{},
   launchIndex: {},
   launchArray: [],
 };
@@ -32,11 +33,21 @@ const container = (state = initialState, action) => {
     case "FILL_LAUNCH_INDEX": {
       const { data } = action.payload;
       const launchIndex = data;
-      console.log("data:", data);
       const newState = Object.assign(
         {},
         { ...state },
         { launchIndex: launchIndex }
+      );
+      return newState;
+    }
+    case "FILL_LAUNCH_INDEX_BRUSHED": {
+      const { data } = action.payload;
+      const launchIndexBrushed = data;
+      console.log("brushedIndex:", data);
+      const newState = Object.assign(
+        {},
+        { ...state },
+        { launchIndexBrushed: launchIndexBrushed }
       );
       return newState;
     }
@@ -102,6 +113,15 @@ const container = (state = initialState, action) => {
         {},
         { ...state },
         { timeLineDateStart: data[0], timeLineDateEnd: data[1] }
+      );
+      return newState;
+    }
+    case "CHANGE_BRUSH_RANGE": {
+      const { data } = action.payload;
+      const newState = Object.assign(
+        {},
+        { ...state },
+        { brushTimeStart: data[0], brushTimeEnd: data[1] }
       );
       return newState;
     }

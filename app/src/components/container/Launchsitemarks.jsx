@@ -8,13 +8,14 @@ import { scaleSqrt } from "d3";
 function LaunchSiteMarks(props) {
   const { cx, cy, r, site, launches } = props;
   let radius = r;
-
   let color = "#0000006b";
   if (launches) {
     color = "#a34a4a6b";
   }
+  
   return (
-    <>
+    <> 
+    {}
       <circle
         className="site"
         cx={cx}
@@ -36,6 +37,7 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   togglePopup: (site_name) => dispatch(stateActions.togglePopup(site_name)),
+
 });
 const LaunchSiteMarksContainer = withContext(
   connect(mapStateToProps, mapDispatchToProps)(LaunchSiteMarks)

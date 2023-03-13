@@ -1,5 +1,7 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
+import * as stateActions from "../../../redux/stateActions"
 import {
+  select,
   scaleLinear,
   scaleTime,
   max,
@@ -8,7 +10,10 @@ import {
   bin,
   timeMonths,
   sum,
+  brushX,
+  selection,
 } from "d3";
+import * as d3 from "d3";
 import { useData } from "./useData";
 import { AxisBottom } from "./AxisBottom";
 import { AxisLeft } from "./AxisLeft";
@@ -19,7 +24,7 @@ import localLaunchData from "../../../assets/launchtestdata.json";
 
 const width = 960;
 const height = 500;
-const margin = { top: 0, right: 30, bottom:20, left: 60 };
+const margin = { top: 0, right: 30, bottom: 20, left: 60 };
 const xAxisLabelOffset = 54;
 const yAxisLabelOffset = 30;
 
@@ -32,13 +37,20 @@ function convertLaunchArrayToGraphData(object) {
     d["Launch Date"] = new Date(Number(element.sort_date) * 1000);
     return graphData.push(d);
   });
-  console.log("graphData", graphData);
 
   return graphData;
 }
 
+function dateToUnixTimestamp(dateString) {
+  const date = new Date(dateString);
+  const timestampInSeconds = Math.floor(date.getTime() / 1000);
+  return timestampInSeconds;
+}
+let timestamps;
+
 const GraphIndex = (props) => {
-  const width = 960
+  const brushRef = useRef();
+  const width = 960;
   let data = convertLaunchArrayToGraphData(props.launchArray);
 
   const xValue = (d) => d["Launch Date"];
@@ -73,6 +85,19 @@ const GraphIndex = (props) => {
     .domain([0, max(binnedData, (d) => d.y)])
     .range([innerHeight, 0]);
 
+  useEffect(() => {
+    const brush = brushX().extent([
+      [0, 0],
+      [innerWidth, innerHeight],
+    ]);
+    brush(select(brushRef.current));
+    brush.on("brush end", (event) => {
+      let dates = event.selection.map(xScale.invert);
+      timestamps = dates.map((date) => Math.floor(date.getTime() / 1000));
+      props.setBrushExtent(timestamps)
+      //props.changeBrushRange(timestamps);
+    });
+  }, [innerWidth, innerHeight]);
   return (
     <>
       <rect width={width} height={height} fill="#f9f9f9"></rect>
@@ -107,6 +132,7 @@ const GraphIndex = (props) => {
           yScale={yScale}
           innerHeight={innerHeight}
         />
+        <g ref={brushRef} />
       </g>
     </>
   );
@@ -115,8 +141,17 @@ const GraphIndex = (props) => {
 const mapStateToProps = (state) => ({
   launchArray: state.container.launchArray,
   isFetchingLaunches: state.container.isFetchingLaunches,
+  brushTimeStart: state.container.brushTimeStart,
+  brushTimeEnd: state.container.brushTimeEnd,
+  launchIndexBrushed: state.container.launchIndexBrushed,
 });
-
-const GraphIndexContainer = withContext(connect(mapStateToProps)(GraphIndex));
+const mapDispatchToProps = (dispatch) => ({
+  populateLaunchIndexBrushed: (data) =>
+    dispatch(stateActions.populateLaunchIndexBrushed(data)),
+  changeBrushRange: (data) => dispatch(stateActions.changeBrushRange(data)),
+});
+const GraphIndexContainer = withContext(
+  connect(mapStateToProps, mapDispatchToProps)(GraphIndex)
+);
 
 export default GraphIndexContainer;

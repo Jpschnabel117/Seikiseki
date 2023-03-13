@@ -40,9 +40,21 @@ export const changeDateRange = (data) => {
     payload: { data },
   };
 };
+export const changeBrushRange = (data) => {
+  return {
+    type: "CHANGE_BRUSH_RANGE",
+    payload: { data },
+  };
+};
 export const populateLaunchIndex = (data) => {
   return {
     type: "FILL_LAUNCH_INDEX",
+    payload: { data },
+  };
+};
+export const populateLaunchIndexBrushed = (data) => {
+  return {
+    type: "FILL_LAUNCH_INDEX_BRUSHED",
     payload: { data },
   };
 };

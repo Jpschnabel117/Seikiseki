@@ -6,15 +6,13 @@ import Launchsitemarks from "./Launchsitemarks";
 import { Link } from "react-router-dom";
 
 function WorldMapMarks(props) {
-  const { worldGeoData, locations, launchIndex } = props;
+  const { worldGeoData, locations, launchIndex, brushCheck } = props;
   const launchSiteData = locations;
-  console.log(launchIndex)
+  console.log(launchIndex);
 
   const projection = d3.geoNaturalEarth1();
   const path = d3.geoPath(projection);
   const graticule = d3.geoGraticule();
-
-
 
   // ---------------------------------------------------------------
 
@@ -43,9 +41,19 @@ function WorldMapMarks(props) {
             let radius = 5;
 
             if (launchIndex[site.location_name]) {
-              siteLaunches = launchIndex[site.location_name];
+              console.log(props.brushExtent);
+              let reduce = brushCheck(
+                launchIndex[site.location_name],
+                props.brushExtent[0],
+                props.brushExtent[1]
+              );
 
-              radius = radius + siteLaunches.length * 1.1;
+              siteLaunches = launchIndex[site.location_name];
+              if (siteLaunches.length - reduce === 0) {
+                radius = 0;
+              } else {
+                radius = radius + (siteLaunches.length - reduce) * 1.1;
+              }
 
               if (radius > 30) {
                 radius = 30; //make good scale
@@ -62,6 +70,8 @@ function WorldMapMarks(props) {
                 r={radius}
                 site={site}
                 launches={siteLaunches}
+                brushCheck={brushCheck}
+                brushExtent={props.brushExtent}
               />
             );
           }
@@ -76,6 +86,8 @@ const mapStateToProps = (state) => ({
   worldGeoData: state.container.worldGeoData,
   locations: state.container.locations,
   launchIndex: state.container.launchIndex,
+  brushTimeStart: state.container.brushTimeStart,
+  brushTimeEnd: state.container.brushTimeEnd,
 });
 
 const WorldMapContainer = withContext(connect(mapStateToProps)(WorldMapMarks));
