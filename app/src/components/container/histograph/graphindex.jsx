@@ -27,7 +27,7 @@ const height = 500;
 const margin = { top: 0, right: 30, bottom: 20, left: 60 };
 const xAxisLabelOffset = 54;
 const yAxisLabelOffset = 30;
-
+const xAxisTickFormat = timeFormat("%Y");
 function convertLaunchArrayToGraphData(object) {
   let graphData = [];
   console.log("here", object.launchArray);
@@ -52,7 +52,6 @@ const GraphIndex = (props) => {
   const brushRef = useRef();
   const width = 960;
   let data = convertLaunchArrayToGraphData(props.launchArray);
-
   const xValue = (d) => d["Launch Date"];
   const xAxisLabel = "Time";
 
@@ -62,7 +61,7 @@ const GraphIndex = (props) => {
   const innerHeight = props.height - margin.top - margin.bottom;
   const innerWidth = width - margin.left - margin.right;
 
-  const xAxisTickFormat = timeFormat("%Y");
+  
 
   const xScale = scaleTime()
     .domain(extent(data, xValue))

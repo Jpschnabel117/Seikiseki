@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { withContext } from "../../withContext";
 import Launchsitemarks from "./Launchsitemarks";
 import { Link } from "react-router-dom";
+import WorldFeaturesMemoized from "./worldFeaturesMemoized";
 
 function WorldMapMarks(props) {
   const { worldGeoData, locations, launchIndex, brushCheck } = props;
@@ -13,6 +14,9 @@ function WorldMapMarks(props) {
   const projection = d3.geoNaturalEarth1();
   const path = d3.geoPath(projection);
   const graticule = d3.geoGraticule();
+
+
+
 
   // ---------------------------------------------------------------
 
@@ -31,9 +35,7 @@ function WorldMapMarks(props) {
       >
         <path className="sphere" d={path({ type: "Sphere" })} />
         <path className="graticules" d={path(graticule())} />
-        {worldGeoData.features?.map((feature) => (
-          <path className="wMapFeature" d={path(feature)} />
-        ))}
+        <WorldFeaturesMemoized worldGeoData={worldGeoData} path={path}/>
         {launchSiteData?.map((site) => {
           if (site.longitude !== 0 || site.latitude !== 0) {
             const [x, y] = projection([site.longitude, site.latitude]);
