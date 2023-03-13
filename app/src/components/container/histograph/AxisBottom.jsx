@@ -15,7 +15,7 @@ export const AxisBottom = ({
       <text
         className="histo"
         style={{ textAnchor: "middle" }}
-        dy=".71em"
+        dy=".7em"
         y={innerHeight + tickOffset}
       >
         {tickFormat(tickValue)}

@@ -23,7 +23,7 @@ import { withContext } from "../../../withContext";
 import localLaunchData from "../../../assets/launchtestdata.json";
 
 const height = 500;
-const margin = { top: 0, right: 30, bottom: 20, left: 60 };
+const margin = { top: 0, right: 30, bottom: 40, left: 60 };
 const xAxisLabelOffset = 54;
 const yAxisLabelOffset = 30;
 const xAxisTickFormat = timeFormat("%Y");

@@ -63,10 +63,11 @@ function Container(props) {
     props.changeDateRange(dateRange);
   }
 
+  const currentTime = Math.floor(Date.now() / 1000);
+
   return (
     <div className="mapScreen">
       <span className="copyright">Data by RocketLaunch.Live</span>
-
       <svg width={width} height={height} id="worldMap">
         <Worldmapmarks
           width={width}
@@ -82,7 +83,6 @@ function Container(props) {
           />
         </g>
       </svg>
-
       {props.popupIsOpen && (
         <div className="popup">
           <div className="popHead">
@@ -106,7 +106,8 @@ function Container(props) {
                 <tbody>
                   {launchIndex[props.site_name]?.map((launch) => (
                     <>
-                      {launch.sort_date < brushExtent[0] || launch.sort_date > brushExtent[1] ? (
+                      {launch.sort_date < brushExtent[0] ||
+                      launch.sort_date > brushExtent[1] ? (
                         <></>
                       ) : (
                         <tr>
@@ -119,9 +120,6 @@ function Container(props) {
                             >
                               {launch.launch_name}
                             </a>
-                            {/* <Link to={`/launchdetails/${launch.id}`}>
-                              {launch.name}
-                            </Link> */}
                           </td>
                           <td>{launch.vehicle}</td>
                           <td>{launch.date_str}</td>
@@ -145,17 +143,18 @@ function Container(props) {
           <option value="410245201,1072933200">1984-2004</option>
           <option value="1072933201,4102452000">2004+</option>
         </select> */}
-        <button onClick={() => props.changeDateRange([-220906800, 410245200])}>
-          1963-1982
+        <button onClick={() => props.changeDateRange([-220906800, 631169999])}>
+          1963-1990
         </button>
-        <button onClick={() => props.changeDateRange([410245201, 1072933200])}>
-          1982-2004
+        <button onClick={() => props.changeDateRange([631170000, currentTime - 1000])}>
+          1990-Present
         </button>
-        <button onClick={() => props.changeDateRange([1072933201, 4102452000])}>
-          2004+
+        <button onClick={() => props.changeDateRange([currentTime, 4102452000])}>
+          Future
         </button>
       </div>
       <div></div>
+      1072933201
     </div>
   );
 }
