@@ -22,7 +22,6 @@ const container = (state = initialState, action) => {
     case "FILL_LAUNCH_ARRAY": {
       const { data } = action.payload;
       const launchArray = data;
-      console.log("data:", data);
       const newState = Object.assign(
         {},
         { ...state },
@@ -43,7 +42,6 @@ const container = (state = initialState, action) => {
     case "FILL_LAUNCH_INDEX_BRUSHED": {
       const { data } = action.payload;
       const launchIndexBrushed = data;
-      console.log("brushedIndex:", data);
       const newState = Object.assign(
         {},
         { ...state },

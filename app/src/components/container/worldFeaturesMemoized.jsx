@@ -8,7 +8,6 @@ function WorldFeaturesMemoized(props) {
     return props.worldGeoData.features.map((feature) => {
       return (
         <>
-          {console.log("pathing")}
           <path className="wMapFeature" d={props.path(feature)} />
         </>
       );

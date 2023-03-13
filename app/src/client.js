@@ -34,7 +34,6 @@ class Client {
       .then((data) => data.json())
       .then((json) => {
         const locations = json;
-        console.log(locations);
         store.dispatch(stateActions.toggleFetchingLaunchSites(false));
         store.dispatch(stateActions.fillLocationData({ locations }));
       });
@@ -42,7 +41,6 @@ class Client {
 
   //make this vvvv
   async get_launches(startDate, endDate) {
-    console.log(JSON.stringify({ startDate, endDate }));
     store.dispatch(stateActions.toggleFetchingLaunches(true));
     const requestOptions = {
       method: "GET",
@@ -55,7 +53,6 @@ class Client {
     res
       .then((data) => data.json())
       .then((json) => {
-        console.log(json)
         const launchArray = json;
         let launchIndexNew = {};
         launchArray.forEach((launch) => {
@@ -67,7 +64,6 @@ class Client {
             launchIndexNew[padLocationName].push(launch);
           }
         });
-        console.log(launchIndexNew)
         store.dispatch(stateActions.toggleFetchingLaunches(false));
         store.dispatch(stateActions.populateLaunchArray({ launchArray }));
         store.dispatch(stateActions.populateLaunchIndex( launchIndexNew ));

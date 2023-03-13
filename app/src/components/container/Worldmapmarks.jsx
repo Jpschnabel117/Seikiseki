@@ -9,7 +9,6 @@ import WorldFeaturesMemoized from "./worldFeaturesMemoized";
 function WorldMapMarks(props) {
   const { worldGeoData, locations, launchIndex, brushCheck } = props;
   const launchSiteData = locations;
-  console.log(launchIndex);
 
   const projection = d3.geoNaturalEarth1();
   const path = d3.geoPath(projection);
@@ -43,7 +42,6 @@ function WorldMapMarks(props) {
             let radius = 5;
 
             if (launchIndex[site.location_name]) {
-              console.log(props.brushExtent);
               let reduce = brushCheck(
                 launchIndex[site.location_name],
                 props.brushExtent[0],
@@ -57,8 +55,8 @@ function WorldMapMarks(props) {
                 radius = radius + (siteLaunches.length - reduce) * 1.1;
               }
 
-              if (radius > 30) {
-                radius = 30; //make good scale
+              if (radius > 50) {
+                radius = 50; //make good scale
               }
             } else {
               radius = 0;

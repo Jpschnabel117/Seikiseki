@@ -22,7 +22,6 @@ import { connect } from "react-redux";
 import { withContext } from "../../../withContext";
 import localLaunchData from "../../../assets/launchtestdata.json";
 
-const width = 960;
 const height = 500;
 const margin = { top: 0, right: 30, bottom: 20, left: 60 };
 const xAxisLabelOffset = 54;
@@ -30,7 +29,6 @@ const yAxisLabelOffset = 30;
 const xAxisTickFormat = timeFormat("%Y");
 function convertLaunchArrayToGraphData(object) {
   let graphData = [];
-  console.log("here", object.launchArray);
   object.launchArray.forEach((element) => {
     let d = {};
     d["Launches"] = 1;
@@ -41,11 +39,7 @@ function convertLaunchArrayToGraphData(object) {
   return graphData;
 }
 
-function dateToUnixTimestamp(dateString) {
-  const date = new Date(dateString);
-  const timestampInSeconds = Math.floor(date.getTime() / 1000);
-  return timestampInSeconds;
-}
+
 let timestamps;
 
 const GraphIndex = (props) => {

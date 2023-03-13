@@ -21,7 +21,6 @@ import { populateLaunchIndex } from "../redux/stateActions";
 function App(props) {
   useEffect(() => {
     props.client.get_launches(props.timeLineDateStart, props.timeLineDateEnd);
-    console.log(props.launchIndex);
   }, [props.timeLineDateStart]);
   return (
     <div className="App">
