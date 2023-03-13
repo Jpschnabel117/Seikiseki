@@ -1,6 +1,6 @@
 /* eslint-disable require-jsdoc */
 const apiKey = import.meta.env.VITE_API_KEY;
-import * as stateActions from '../redux/stateActions'
+import * as stateActions from "../redux/stateActions";
 import { useState, useEffect } from "react";
 import "../css/App.css";
 import Header from "./header/Header";
@@ -39,66 +39,16 @@ function formatDate(unixTimestamp) {
 }
 
 function App(props) {
-  //const [loadingLaunches, setLoadingLaunches] = useState(true);
   useEffect(() => {
-//i think all this gets replaced with just get_launches(props.timeLineDateStart,props.timeLineDateEnd)
-  props.client.get_launches(props.timeLineDateStart,props.timeLineDateEnd)
-    console.log(props.launchIndex)
-
-// const myHeaders = new Headers();
-    // myHeaders.append("Authorization", `Bearer ${import.meta.env.VITE_API_KEY}`);
-    // const requestOptions = {
-    //   method: "GET",
-    //   headers: myHeaders,
-    //   redirect: "follow",
-    // };
-
-    // async function fetchLaunchData() {
-    //   try {
-    //     setLoadingLaunches(true);
-    //     const dataAsPageArray = [];
-
-    //     for (let pages = 1; pages < 3; pages++) {
-    //       try {
-    //         const response = await fetch(
-    //           `https://fdo.rocketlaunch.live/json/launches?after_date=${formatDate(
-    //             props.timeLineDateStart
-    //           )}&before_date=${formatDate(
-    //             props.timeLineDateEnd
-    //           )}&page=${pages}`,
-    //           requestOptions
-    //         );
-    //         if (!response.ok) {
-    //           throw new Error("Network response was not ok");
-    //         }
-    //         const result = await response.json();
-    //         if (pages === result.last_page) {
-    //           break;
-    //         }
-    //         dataAsPageArray.push({ pages, data: result.result });
-    //       } catch (error) {
-    //         console.error(error);
-    //         break;
-    //       }
-    //     }
-
-    //     const flatarray = dataAsPageArray.flatMap((obj) => obj.data);
-    //     console.log("flatArray", flatarray)
-    //     props.populateLaunchArray(flatarray)
-    //     props.populateLaunchIndex(convertToLaunchIndex(flatarray));
-    //     setLoadingLaunches(false);
-
-    //   } catch (error) {
-    //     console.error(error);
-    //   }
-    // }
-
-    //fetchLaunchData();
+    props.client.get_launches(props.timeLineDateStart, props.timeLineDateEnd);
+    console.log(props.launchIndex);
   }, [props.timeLineDateStart]);
   return (
     <div className="App">
       <Header />
-      {props.fetchingLaunchSites || props.fetchingGeoData || props.fetchingLaunches? (//changed to fetchingLaunches
+      {props.fetchingLaunchSites ||
+      props.fetchingGeoData ||
+      props.fetchingLaunches ? (
         <h1 className="loading">Loading...</h1>
       ) : (
         <>
@@ -110,7 +60,6 @@ function App(props) {
             />
             <Route path="/profile" element={<Profilepage />} />
           </Routes>
-          
         </>
       )}
     </div>
@@ -127,7 +76,7 @@ const mapStateToProps = (state) => ({
   timeLineDateStart: state.container.timeLineDateStart,
   timeLineDateEnd: state.container.timeLineDateEnd,
   launchIndex: state.container.launchIndex,
-  launchArray: state.container.launchArray
+  launchArray: state.container.launchArray,
 });
 
 const mapDispatchToProps = (dispatch) => ({

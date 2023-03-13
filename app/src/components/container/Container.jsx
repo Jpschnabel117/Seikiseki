@@ -50,10 +50,13 @@ function Container(props) {
   
   return (
     <div className="mapScreen">
-      <span className='copyright'>Data by RocketLaunch.Live</span>
-      <svg id="worldMap">
-        <Worldmapmarks />
-      </svg>
+      <span className="copyright">Data by RocketLaunch.Live</span>
+      <div>
+        <svg id="worldMap">
+          <Worldmapmarks />
+        </svg>
+      </div>
+
       {props.popupIsOpen && (
         <div className="popup">
           <div className="popHead">

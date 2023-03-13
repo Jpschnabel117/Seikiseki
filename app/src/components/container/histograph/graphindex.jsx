@@ -49,7 +49,7 @@ const GraphIndex = (props) => {
   const innerHeight = height - margin.top - margin.bottom;
   const innerWidth = width - margin.left - margin.right;
 
-  const xAxisTickFormat = timeFormat("%b %Y: ");
+  const xAxisTickFormat = timeFormat("%Y");
 
   const xScale = scaleTime()
     .domain(extent(data, xValue))
@@ -103,7 +103,6 @@ const GraphIndex = (props) => {
             binnedData={binnedData}
             xScale={xScale}
             yScale={yScale}
-            tooltipFormat={xAxisTickFormat}
             innerHeight={innerHeight}
           />
         </g>
