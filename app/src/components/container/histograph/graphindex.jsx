@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import * as stateActions from "../../../redux/stateActions"
+import * as stateActions from "../../../redux/stateActions";
 import {
   select,
   scaleLinear,
@@ -43,9 +43,11 @@ function convertLaunchArrayToGraphData(object) {
 let timestamps;
 
 const GraphIndex = (props) => {
+
   const brushRef = useRef();
   const width = 960;
   let data = convertLaunchArrayToGraphData(props.launchArray);
+  console.log(data);
   const xValue = (d) => d["Launch Date"];
   const xAxisLabel = "Time";
 
@@ -55,12 +57,9 @@ const GraphIndex = (props) => {
   const innerHeight = props.height - margin.top - margin.bottom;
   const innerWidth = width - margin.left - margin.right;
 
-  
-
   const xScale = scaleTime()
     .domain(extent(data, xValue))
-    .range([0, innerWidth])
-    .nice();
+    .range([0, innerWidth]);
 
   const [start, stop] = xScale.domain();
 
@@ -87,7 +86,7 @@ const GraphIndex = (props) => {
     brush.on("brush end", (event) => {
       let dates = event.selection.map(xScale.invert);
       timestamps = dates.map((date) => Math.floor(date.getTime() / 1000));
-      props.setBrushExtent(timestamps)
+      props.setBrushExtent(timestamps);
       //props.changeBrushRange(timestamps);
     });
   }, [innerWidth, innerHeight]);
@@ -125,7 +124,11 @@ const GraphIndex = (props) => {
           yScale={yScale}
           innerHeight={innerHeight}
         />
-        <g ref={brushRef} />
+        <g ref={brushRef}>
+          <title>
+          
+          </title>
+        </g>
       </g>
     </>
   );

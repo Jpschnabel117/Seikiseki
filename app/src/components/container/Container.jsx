@@ -120,7 +120,6 @@ function Container(props) {
                             >
                               {launch.launch_name}
                             </a>
-
                           </td>
                           <td>{launch.vehicle}</td>
                           <td>{launch.date_str}</td>
@@ -147,15 +146,13 @@ function Container(props) {
         <button onClick={() => props.changeDateRange([-220906800, 631169999])}>
           1963-1990
         </button>
-        <button onClick={() => props.changeDateRange([631170000, currentTime - 1000])}>
+        <button onClick={() => props.changeDateRange([631170000, currentTime])}>
           1990-Present
         </button>
         <button onClick={() => props.changeDateRange([currentTime, 4102452000])}>
           Future
         </button>
       </div>
-      <div></div>
-      1072933201
     </div>
   );
 }
