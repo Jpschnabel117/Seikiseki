@@ -26,6 +26,10 @@ When you first open the Seikiseki Website, it will display a world map with circ
 
 Clicking on any of the launch circles on the map will display a table with all of the launches at that location for the selected date range. The table includes a link to the RocketLaunch.Live webpage for each launch. 
 
+### Quirks
+
+- Currently data before the 90s from the rocketLaunch API is not fully fleshed out, Because of that i have split the before 1990 and after, as two options for the graph. 
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
