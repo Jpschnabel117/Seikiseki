@@ -1,11 +1,12 @@
 import Worldmapmarks from './Worldmapmarks';
-import {connect} from 'react-redux';
-import {withContext} from '../../withContext';
+import React from 'react';
+import { connect } from 'react-redux';
+import { withContext } from '../../withContext';
 import * as stateActions from '../../redux/stateActions';
 import popup from '../../redux/reducers/popup';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import GraphIndex from './histograph/graphindex';
-import {useState} from 'react';
+import { useState } from 'react';
 
 function Container(props) {
   const width = 960;
@@ -13,6 +14,9 @@ function Container(props) {
   const dateHistogramSize = 0.2;
   const launchIndex = props.launchIndex;
   const [brushExtent, setBrushExtent] = useState([]);
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   function brushCheck(array, start, end) {
     let counter = 0;
@@ -58,10 +62,16 @@ function Container(props) {
     return result;
   }
 
-  function handleDateRangeChange(value) {
-    const dateRange = value.split(',').map(Number);
-    props.changeDateRange(dateRange);
-  }
+  const handleDateSubmit = () => {
+    if (!startDate || !endDate) {
+      setErrorMessage('  Please fill out both start and end dates.');
+      return;
+    }
+    const startTimestamp = new Date(startDate).getTime() / 1000;
+    const endTimestamp = new Date(endDate).getTime() / 1000;
+    props.changeDateRange([startTimestamp, endTimestamp]);
+    setErrorMessage('');
+  };
 
   const currentTime = Math.floor(Date.now() / 1000);
 
@@ -137,20 +147,27 @@ function Container(props) {
         </div>
       )}
       <div className="dateRangeSelect">
-        {/* fix this later*/}
-        {/* <select onChange={(event) => handleDateRangeChange(event.target.value)}>
-          <option value="-220906800,410245200">1963-1984</option>
-          <option value="410245201,1072933200">1984-2004</option>
-          <option value="1072933201,4102452000">2004+</option>
-        </select> */}
-        <button onClick={() => props.changeDateRange([-220906800, 631169999])}>
-          1963-1990
-        </button>
-        <button onClick={() => props.changeDateRange([631170000, currentTime])}>
-          1990-Present
-        </button>
-        <button onClick={() => props.changeDateRange([currentTime, 4102452000])}>
-          Future
+        <div className='dateinputs'>
+          <label>
+            Start Date:
+            <input
+              type="date"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+            />
+          </label>
+          <label>
+            End Date:
+            <input
+              type="date"
+              value={endDate}
+              onChange={(e) => setEndDate(e.target.value)}
+            />
+          </label>
+        </div>
+        <button onClick={handleDateSubmit}>
+          Submit
+          {errorMessage && <span style={{ color: 'red' }}>{errorMessage}</span>}
         </button>
       </div>
     </div>
@@ -170,7 +187,7 @@ const mapDispatchToProps = (dispatch) => ({
   changeDateRange: (data) => dispatch(stateActions.changeDateRange(data)),
 });
 const ContainerContainer = withContext(
-    connect(mapStateToProps, mapDispatchToProps)(Container),
+  connect(mapStateToProps, mapDispatchToProps)(Container)
 );
 
 export default ContainerContainer;

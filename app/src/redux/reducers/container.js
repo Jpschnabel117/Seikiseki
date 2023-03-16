@@ -9,7 +9,7 @@ const initialState = {
   countries: {},
   worldGeoData: {},
   timeLineDateStart: -220906800, // Jan 01 1963
-  timeLineDateEnd: 410245200, // Jan 01 1983
+  timeLineDateEnd: 4102452000, // Jan 01 1983
   brushTimeStart: -220906799, // Jan 01 1963 ---v one year
   brushTimeEnd: -189370800, // Jan 01 1964
   launchIndexBrushed: {},

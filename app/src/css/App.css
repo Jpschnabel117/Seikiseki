@@ -349,9 +349,22 @@ p {
 
 .dateRangeSelect {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   width: 50vw;
   align-items: center;
+}
+
+.dateRangeSelect label{
+  color: #1b2838;
+  margin-bottom: 0.5em;
+}
+
+.dateinputs{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: end;
 }
 
 select {
