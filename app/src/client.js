@@ -1,6 +1,5 @@
-import * as stateActions from './redux/stateActions';
-const url = 'https://localhost:3000'; // probaly put in env
-// 'https://3.144.11.85'
+import * as stateActions from "./redux/stateActions";
+const url = "https://seikiseki.duckdns.org"; // probaly put in env
 let store;
 class Client {
   static init(data) {
