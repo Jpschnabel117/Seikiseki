@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, {useMemo} from 'react';
 
 function WorldFeaturesMemoized(props) {
   // compute some value based on props

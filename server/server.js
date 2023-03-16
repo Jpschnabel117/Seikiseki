@@ -6,7 +6,7 @@ const app = express();
 const cors = require('cors');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
-const request = require('request');
+// const request = require('request');
 require('dotenv').config(); // Load environment variables
 
 const connection = mysql.createConnection({
@@ -16,6 +16,7 @@ const connection = mysql.createConnection({
   host: process.env.host,
   port: process.env.port,
 });
+
 
 connection.connect(function(err) {
   if (err) throw err;
@@ -43,14 +44,17 @@ app.post('/addUser', cors(corsOptions), (req, res, next) => {
   const {data} = req.body;
   const {email, pass, bio, country} = data;
   // do basic validation here
-  connection.query(`INSERT INTO Users(email,pass, bio, country) VALUES ('${email}', '${pass}', '${bio}'), '${country}'`, (err, result, fields) => {
-    if (err) {
-      res.status(404).send(err);
-      throw err;
-    }
-    console.log(result, fields);
-    res.status(200).send('User Added');
-  });
+  connection.query(
+      `INSERT INTO Users(email,pass, bio, country) VALUES ('${email}', '${pass}', '${bio}'), '${country}'`,
+      (err, result, fields) => {
+        if (err) {
+          res.status(404).send(err);
+          throw err;
+        }
+        console.log(result, fields);
+        res.status(200).send('User Added');
+      },
+  );
   next();
 });
 
@@ -97,9 +101,11 @@ app.get('/getLaunchSites', cors(corsOptions), (req, res) => {
   });
 });
 
-
 app.get('/serverSideProps', cors(corsOptions), (req, res) => {
-  const sendBackData = {worldMapData: require('./assets/worldMapRawData.json'), svg: './assets/wrld-bp-1-svg.svg'};
+  const sendBackData = {
+    worldMapData: require('./assets/worldMapRawData.json'),
+    svg: './assets/wrld-bp-1-svg.svg',
+  };
   try {
     res.status(200).send(JSON.stringify(sendBackData));
   } catch (error) {
@@ -107,13 +113,11 @@ app.get('/serverSideProps', cors(corsOptions), (req, res) => {
   }
 });
 
-app.get("/getLaunchData", cors(corsOptions), (req, res) => {
+app.get('/getLaunchData', cors(corsOptions), (req, res) => {
+  const {startDate, endDate} = req.query;
+  console.log('startDate:', startDate);
+  console.log('endDate:', endDate);
 
-  const { startDate, endDate } = req.query;
-  console.log("startDate:", startDate);
-  console.log("endDate:", endDate);
-
-  
   const sql = `
     SELECT *, date_str
     FROM LaunchData
@@ -121,23 +125,19 @@ app.get("/getLaunchData", cors(corsOptions), (req, res) => {
     AND UNIX_TIMESTAMP(STR_TO_DATE(date_str, '%b %d %Y')) <= ?`;
 
   connection.query(
-    sql,
-    [Number(startDate), Number(endDate)],
-    function (err, result, fields) {
-      if (err) {
-        console.log(err);
-        res.status(404).send({ error: "Failed to retrieve data." });
-      } else {
-        res.header("Content-Type", "application/json");
-        res.json(result);
-      }
-    }
+      sql,
+      [Number(startDate), Number(endDate)],
+      function(err, result, fields) {
+        if (err) {
+          console.log(err);
+          res.status(404).send({error: 'Failed to retrieve data.'});
+        } else {
+          res.header('Content-Type', 'application/json');
+          res.json(result);
+        }
+      },
   );
 });
-
-
-
-
 
 app.get('/', cors(corsOptions), (req, res) => {
   console.log('Received response');

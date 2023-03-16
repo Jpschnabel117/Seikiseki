@@ -9,4 +9,3 @@ export function withContext(Component) {
     </Context.Consumer>
   );
 }
-

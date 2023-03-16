@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 export const AxisBottom = ({
   xScale,
   innerHeight,
@@ -14,7 +14,7 @@ export const AxisBottom = ({
       <line className="histo graticule" y2={innerHeight} />
       <text
         className="histo"
-        style={{ textAnchor: "middle" }}
+        style={{textAnchor: 'middle'}}
         dy=".7em"
         y={innerHeight + tickOffset}
       >

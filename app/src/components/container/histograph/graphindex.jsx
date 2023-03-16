@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from "react";
-import * as stateActions from "../../../redux/stateActions";
+import React, {useRef, useEffect} from 'react';
+import * as stateActions from '../../../redux/stateActions';
 import {
   select,
   scaleLinear,
@@ -12,27 +12,27 @@ import {
   sum,
   brushX,
   selection,
-} from "d3";
-import * as d3 from "d3";
-import { useData } from "./useData";
-import { AxisBottom } from "./AxisBottom";
-import { AxisLeft } from "./AxisLeft";
-import { Marks } from "./Marks";
-import { connect } from "react-redux";
-import { withContext } from "../../../withContext";
-import localLaunchData from "../../../assets/launchtestdata.json";
+} from 'd3';
+import * as d3 from 'd3';
+import {useData} from './useData';
+import {AxisBottom} from './AxisBottom';
+import {AxisLeft} from './AxisLeft';
+import {Marks} from './Marks';
+import {connect} from 'react-redux';
+import {withContext} from '../../../withContext';
+import localLaunchData from '../../../assets/launchtestdata.json';
 
 const height = 500;
-const margin = { top: 0, right: 30, bottom: 40, left: 60 };
+const margin = {top: 0, right: 30, bottom: 40, left: 60};
 const xAxisLabelOffset = 54;
 const yAxisLabelOffset = 30;
-const xAxisTickFormat = timeFormat("%Y");
+const xAxisTickFormat = timeFormat('%Y');
 function convertLaunchArrayToGraphData(object) {
-  let graphData = [];
+  const graphData = [];
   object.launchArray.forEach((element) => {
-    let d = {};
-    d["Launches"] = 1;
-    d["Launch Date"] = new Date(Number(element.sort_date) * 1000);
+    const d = {};
+    d['Launches'] = 1;
+    d['Launch Date'] = new Date(Number(element.sort_date) * 1000);
     return graphData.push(d);
   });
 
@@ -43,39 +43,38 @@ function convertLaunchArrayToGraphData(object) {
 let timestamps;
 
 const GraphIndex = (props) => {
-
   const brushRef = useRef();
   const width = 960;
-  let data = convertLaunchArrayToGraphData(props.launchArray);
+  const data = convertLaunchArrayToGraphData(props.launchArray);
   console.log(data);
-  const xValue = (d) => d["Launch Date"];
-  const xAxisLabel = "Time";
+  const xValue = (d) => d['Launch Date'];
+  const xAxisLabel = 'Time';
 
-  const yValue = (d) => d["Launches"];
-  const yAxisLabel = "Launches";
+  const yValue = (d) => d['Launches'];
+  const yAxisLabel = 'Launches';
 
   const innerHeight = props.height - margin.top - margin.bottom;
   const innerWidth = width - margin.left - margin.right;
 
   const xScale = scaleTime()
-    .domain(extent(data, xValue))
-    .range([0, innerWidth]);
+      .domain(extent(data, xValue))
+      .range([0, innerWidth]);
 
   const [start, stop] = xScale.domain();
 
   const binnedData = bin()
-    .value(xValue)
-    .domain(xScale.domain())
-    .thresholds(timeMonths(start, stop))(data)
-    .map((array) => ({
-      y: sum(array, yValue),
-      x0: array.x0,
-      x1: array.x1,
-    }));
+      .value(xValue)
+      .domain(xScale.domain())
+      .thresholds(timeMonths(start, stop))(data)
+      .map((array) => ({
+        y: sum(array, yValue),
+        x0: array.x0,
+        x1: array.x1,
+      }));
 
   const yScale = scaleLinear()
-    .domain([0, max(binnedData, (d) => d.y)])
-    .range([innerHeight, 0]);
+      .domain([0, max(binnedData, (d) => d.y)])
+      .range([innerHeight, 0]);
 
   useEffect(() => {
     const brush = brushX().extent([
@@ -83,11 +82,11 @@ const GraphIndex = (props) => {
       [innerWidth, innerHeight],
     ]);
     brush(select(brushRef.current));
-    brush.on("brush end", (event) => {
-      let dates = event.selection.map(xScale.invert);
+    brush.on('brush end', (event) => {
+      const dates = event.selection.map(xScale.invert);
       timestamps = dates.map((date) => Math.floor(date.getTime() / 1000));
       props.setBrushExtent(timestamps);
-      //props.changeBrushRange(timestamps);
+      // props.changeBrushRange(timestamps);
     });
   }, [innerWidth, innerHeight]);
   return (
@@ -126,7 +125,7 @@ const GraphIndex = (props) => {
         />
         <g ref={brushRef}>
           <title>
-          
+
           </title>
         </g>
       </g>
@@ -147,7 +146,7 @@ const mapDispatchToProps = (dispatch) => ({
   changeBrushRange: (data) => dispatch(stateActions.changeBrushRange(data)),
 });
 const GraphIndexContainer = withContext(
-  connect(mapStateToProps, mapDispatchToProps)(GraphIndex)
+    connect(mapStateToProps, mapDispatchToProps)(GraphIndex),
 );
 
 export default GraphIndexContainer;

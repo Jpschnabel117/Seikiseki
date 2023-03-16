@@ -1,20 +1,18 @@
-import React, { useEffect, useState, useRef } from "react";
-import * as d3 from "d3";
-import { connect } from "react-redux";
-import { withContext } from "../../withContext";
-import Launchsitemarks from "./Launchsitemarks";
-import { Link } from "react-router-dom";
-import WorldFeaturesMemoized from "./worldFeaturesMemoized";
+import React, {useEffect, useState, useRef} from 'react';
+import * as d3 from 'd3';
+import {connect} from 'react-redux';
+import {withContext} from '../../withContext';
+import Launchsitemarks from './Launchsitemarks';
+import {Link} from 'react-router-dom';
+import WorldFeaturesMemoized from './worldFeaturesMemoized';
 
 function WorldMapMarks(props) {
-  const { worldGeoData, locations, launchIndex, brushCheck } = props;
+  const {worldGeoData, locations, launchIndex, brushCheck} = props;
   const launchSiteData = locations;
 
   const projection = d3.geoNaturalEarth1();
   const path = d3.geoPath(projection);
   const graticule = d3.geoGraticule();
-
-
 
 
   // ---------------------------------------------------------------
@@ -32,7 +30,7 @@ function WorldMapMarks(props) {
         //   );
         // }}
       >
-        <path className="sphere" d={path({ type: "Sphere" })} />
+        <path className="sphere" d={path({type: 'Sphere'})} />
         <path className="graticules" d={path(graticule())} />
         <WorldFeaturesMemoized worldGeoData={worldGeoData} path={path}/>
         {launchSiteData?.map((site) => {
@@ -42,10 +40,10 @@ function WorldMapMarks(props) {
             let radius = 5;
 
             if (launchIndex[site.location_name]) {
-              let reduce = brushCheck(
-                launchIndex[site.location_name],
-                props.brushExtent[0],
-                props.brushExtent[1]
+              const reduce = brushCheck(
+                  launchIndex[site.location_name],
+                  props.brushExtent[0],
+                  props.brushExtent[1],
               );
 
               siteLaunches = launchIndex[site.location_name];
@@ -56,7 +54,7 @@ function WorldMapMarks(props) {
               }
 
               if (radius > 50) {
-                radius = 50; //make good scale
+                radius = 50; // make good scale
               }
             } else {
               radius = 0;

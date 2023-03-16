@@ -1,7 +1,7 @@
-import React from "react";
-import { timeFormat } from "d3";
-export const Marks = ({ binnedData, xScale, yScale, innerHeight }) => {
-  const tooltipFormat = timeFormat("%b %Y: ");
+import React from 'react';
+import {timeFormat} from 'd3';
+export const Marks = ({binnedData, xScale, yScale, innerHeight}) => {
+  const tooltipFormat = timeFormat('%b %Y: ');
   return binnedData.map((d) => (
     <>
       <rect

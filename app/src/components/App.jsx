@@ -1,26 +1,25 @@
 /* eslint-disable require-jsdoc */
-const apiKey = import.meta.env.VITE_API_KEY;
-import * as stateActions from "../redux/stateActions";
-import { useState, useEffect } from "react";
-import "../css/App.css";
-import Header from "./header/Header";
-import Container from "./container/Container";
-import Profilepage from "../pages/profilepage";
-import { Route, Routes } from "react-router-dom";
-import { connect } from "react-redux";
-import { withContext } from "../withContext";
-import localLaunchData from "../assets/launchtestdata.json";
-import Client from "../client";
-import { populateLaunchIndex } from "../redux/stateActions";
+// const apiKey = import.meta.env.VITE_API_KEY;
+import * as stateActions from '../redux/stateActions';
+import {useEffect} from 'react';
+import '../css/App.css';
+import Header from './header/Header';
+import Container from './container/Container';
+import Profilepage from '../pages/profilepage';
+import {Route, Routes} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {withContext} from '../withContext';
+// import localLaunchData from '../assets/launchtestdata.json';
+// import Client from '../client';
+// import {populateLaunchIndex} from '../redux/stateActions';
 
 // change this to launches when going to api
-
 
 
 function App(props) {
   useEffect(() => {
     props.client.get_launches(props.timeLineDateStart, props.timeLineDateEnd);
-  }, [props.timeLineDateStart,props.timeLineDateEnd]);
+  }, [props.timeLineDateStart, props.timeLineDateEnd]);
   return (
     <div className="App">
       <Header />
@@ -62,7 +61,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const AppContainer = withContext(
-  connect(mapStateToProps, mapDispatchToProps)(App)
+    connect(mapStateToProps, mapDispatchToProps)(App),
 );
 
 export default AppContainer;

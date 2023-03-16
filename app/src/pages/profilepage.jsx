@@ -1,7 +1,7 @@
 const Profilepage = () => {
   return (
     <div className="profilePageMain">
-      <div class="card">
+      <div className="card">
         <h2>Placeholder Launch Name</h2>
 
         <p>
@@ -14,7 +14,7 @@ const Profilepage = () => {
           <strong>Launch Location:</strong> Placeholder Location
         </p>
 
-        <a href="#" class="button">
+        <a href="#" className="button">
           Learn More
         </a>
       </div>

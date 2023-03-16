@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import MyHubMenu from "./Myhubmenu";
+import {Link} from 'react-router-dom';
+import MyHubMenu from './Myhubmenu';
 
 function Header() {
   return (
@@ -12,8 +12,7 @@ function Header() {
         <button>Login</button>
         <button>Sign Up</button>
       </div>
-      <MyHubMenu/>
-      
+      <MyHubMenu />
     </nav>
   );
 }

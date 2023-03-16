@@ -1,5 +1,6 @@
-import * as stateActions from "./redux/stateActions";
-const url = "https://3.144.11.85"; // probaly put in env
+import * as stateActions from './redux/stateActions';
+const url = 'https://localhost:3000'; // probaly put in env
+// 'https://3.144.11.85'
 let store;
 class Client {
   static init(data) {
@@ -9,65 +10,65 @@ class Client {
   async get_server_side_props() {
     store.dispatch(stateActions.toggleFetchingWorldGeoData(true));
     const requestOptions = {
-      method: "GET",
-      redirect: "follow",
+      method: 'GET',
+      redirect: 'follow',
     };
     const res = fetch(`${url}/serverSideProps`, requestOptions);
     res
-      .then((data) => data.json())
-      .then((json) => {
-        const { worldMapData } = json;
-        store.dispatch(stateActions.toggleFetchingWorldGeoData(false));
-        
-        store.dispatch(stateActions.populateWorldMapData({ worldMapData }));
-      });
+        .then((data) => data.json())
+        .then((json) => {
+          const {worldMapData} = json;
+          store.dispatch(stateActions.toggleFetchingWorldGeoData(false));
+
+          store.dispatch(stateActions.populateWorldMapData({worldMapData}));
+        });
   }
 
   async get_launch_sites() {
     store.dispatch(stateActions.toggleFetchingLaunchSites(true));
     const requestOptions = {
-      method: "GET",
-      redirect: "follow",
+      method: 'GET',
+      redirect: 'follow',
     };
     const res = fetch(`${url}/getLaunchSites`, requestOptions);
     res
-      .then((data) => data.json())
-      .then((json) => {
-        const locations = json;
-        store.dispatch(stateActions.toggleFetchingLaunchSites(false));
-        store.dispatch(stateActions.fillLocationData({ locations }));
-      });
+        .then((data) => data.json())
+        .then((json) => {
+          const locations = json;
+          store.dispatch(stateActions.toggleFetchingLaunchSites(false));
+          store.dispatch(stateActions.fillLocationData({locations}));
+        });
   }
 
-  //make this vvvv
+  // make this vvvv
   async get_launches(startDate, endDate) {
     store.dispatch(stateActions.toggleFetchingLaunches(true));
     const requestOptions = {
-      method: "GET",
-      redirect: "follow",
+      method: 'GET',
+      redirect: 'follow',
     };
     const res = fetch(
-      `${url}/getLaunchData?startDate=${startDate}&endDate=${endDate}`,
-      requestOptions
-    ); //change to correct route, use start and end dates.
+        `${url}/getLaunchData?startDate=${startDate}&endDate=${endDate}`,
+        requestOptions,
+    ); // change to correct route, use start and end dates.
     res
-      .then((data) => data.json())
-      .then((json) => {
-        const launchArray = json;
-        let launchIndexNew = {};
-        launchArray.forEach((launch) => {
-          if (launch.launch_site) {
-            const padLocationName = launch.launch_site;
-            if (!launchIndexNew[padLocationName]) {
-              launchIndexNew[padLocationName] = [];
+        .then((data) => data.json())
+        .then((json) => {
+          const launchArray = json;
+          const launchIndexNew = {};
+          launchArray.forEach((launch) => {
+            if (launch.launch_site) {
+              const padLocationName = launch.launch_site;
+              if (!launchIndexNew[padLocationName]) {
+                launchIndexNew[padLocationName] = [];
+              }
+              launchIndexNew[padLocationName].push(launch);
             }
-            launchIndexNew[padLocationName].push(launch);
-          }
+          });
+          store.dispatch(stateActions.toggleFetchingLaunches(false));
+          store.dispatch(stateActions.populateLaunchArray({launchArray}));
+          store.dispatch(stateActions.populateLaunchIndex( launchIndexNew ));
         });
-        store.dispatch(stateActions.toggleFetchingLaunches(false));
-        store.dispatch(stateActions.populateLaunchArray({ launchArray }));
-        store.dispatch(stateActions.populateLaunchIndex( launchIndexNew ));
-      });
   }
 }
 export default Client;

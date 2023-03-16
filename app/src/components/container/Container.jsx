@@ -1,11 +1,11 @@
-import Worldmapmarks from "./Worldmapmarks";
-import { connect } from "react-redux";
-import { withContext } from "../../withContext";
-import * as stateActions from "../../redux/stateActions";
-import popup from "../../redux/reducers/popup";
-import { Link } from "react-router-dom";
-import GraphIndex from "./histograph/graphindex";
-import { useState } from "react";
+import Worldmapmarks from './Worldmapmarks';
+import {connect} from 'react-redux';
+import {withContext} from '../../withContext';
+import * as stateActions from '../../redux/stateActions';
+import popup from '../../redux/reducers/popup';
+import {Link} from 'react-router-dom';
+import GraphIndex from './histograph/graphindex';
+import {useState} from 'react';
 
 function Container(props) {
   const width = 960;
@@ -36,22 +36,22 @@ function Container(props) {
 
     switch (value) {
       case -1:
-        result = "Not Set";
+        result = 'Not Set';
         break;
       case 0:
-        result = "Failure";
+        result = 'Failure';
         break;
       case 1:
-        result = "Success";
+        result = 'Success';
         break;
       case 2:
-        result = "Partial Failure";
+        result = 'Partial Failure';
         break;
       case 3:
-        result = "In-Flight Abort";
+        result = 'In-Flight Abort';
         break;
       default:
-        result = "Invalid value";
+        result = 'Invalid value';
         break;
     }
 
@@ -59,7 +59,7 @@ function Container(props) {
   }
 
   function handleDateRangeChange(value) {
-    const dateRange = value.split(",").map(Number);
+    const dateRange = value.split(',').map(Number);
     props.changeDateRange(dateRange);
   }
 
@@ -137,7 +137,7 @@ function Container(props) {
         </div>
       )}
       <div className="dateRangeSelect">
-        {/*fix this later*/}
+        {/* fix this later*/}
         {/* <select onChange={(event) => handleDateRangeChange(event.target.value)}>
           <option value="-220906800,410245200">1963-1984</option>
           <option value="410245201,1072933200">1984-2004</option>
@@ -170,7 +170,7 @@ const mapDispatchToProps = (dispatch) => ({
   changeDateRange: (data) => dispatch(stateActions.changeDateRange(data)),
 });
 const ContainerContainer = withContext(
-  connect(mapStateToProps, mapDispatchToProps)(Container)
+    connect(mapStateToProps, mapDispatchToProps)(Container),
 );
 
 export default ContainerContainer;

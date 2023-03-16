@@ -1,21 +1,20 @@
-import * as d3 from "d3";
-import React, { useState } from "react";
-import { connect } from "react-redux";
-import { withContext } from "../../withContext";
-import * as stateActions from "../../redux/stateActions";
-import { scaleSqrt } from "d3";
+import * as d3 from 'd3';
+import React, {useState} from 'react';
+import {connect} from 'react-redux';
+import {withContext} from '../../withContext';
+import * as stateActions from '../../redux/stateActions';
 
 function LaunchSiteMarks(props) {
-  const { cx, cy, r, site, launches } = props;
-  let radius = r;
-  let color = "#0000006b";
+  const {cx, cy, r, site, launches} = props;
+  const radius = r;
+  let color = '#0000006b';
   if (launches) {
-    color = "#a34a4a6b";
+    color = '#a34a4a6b';
   }
-  
+
   return (
-    <> 
-    {}
+    <>
+      {}
       <circle
         className="site"
         cx={cx}
@@ -25,7 +24,7 @@ function LaunchSiteMarks(props) {
         onClick={() => props.togglePopup(site.location_name)}
       >
         <title>
-          {site.location_name}: long:{site.longitude} lat:{site.latitude}{" "}
+          {site.location_name}: long:{site.longitude} lat:{site.latitude}{' '}
         </title>
       </circle>
     </>
@@ -40,7 +39,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 });
 const LaunchSiteMarksContainer = withContext(
-  connect(mapStateToProps, mapDispatchToProps)(LaunchSiteMarks)
+    connect(mapStateToProps, mapDispatchToProps)(LaunchSiteMarks),
 );
 
 export default LaunchSiteMarksContainer;
