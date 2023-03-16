@@ -8,11 +8,11 @@ function MyHubMenu() {
       <a className="myhub">Menu</a>
       <div className="navigation-content">
         <Link className="menuLinks" to={'/profile'}>
-          <a>Profile</a>
+          <a>N/A</a>
         </Link>
         <Link className="menuLinks" to="/">
           {/* to tracked launches page*/}
-          <a>Tracked Launches</a>
+          <a>Tracked Launches N/A</a>
         </Link>
         <Link className="menuLinks" to="">
           <a>Favorites: N/A</a>

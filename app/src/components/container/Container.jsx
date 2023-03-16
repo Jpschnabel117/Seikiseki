@@ -17,6 +17,30 @@ function Container(props) {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [sortField, setSortField] = useState('date');
+  const [sortDirection, setSortDirection] = useState('asc');
+
+  const sortData = (field) => {
+    setSortDirection((prevDirection) =>
+      prevDirection === 'asc' ? 'desc' : 'asc'
+    );
+    setSortField(field);
+  };
+
+  const sortedLaunches = [...(launchIndex[props.site_name] || [])].sort(
+    (a, b) => {
+       if (!sortField || sortField === 'date') {
+         return sortDirection === 'desc'
+           ? new Date(a.date_str) - new Date(b.date_str)
+           : new Date(b.date_str) - new Date(a.date_str);
+       } else if (sortField) {
+         return sortDirection === 'asc'
+           ? a[sortField].localeCompare(b[sortField])
+           : b[sortField].localeCompare(a[sortField]);
+       }
+      return 0;
+    }
+  );
 
   function brushCheck(array, start, end) {
     let counter = 0;
@@ -106,15 +130,31 @@ function Container(props) {
               <table>
                 <thead>
                   <tr>
-                    <th>Provider</th>
-                    <th>Mission</th>
-                    <th>Vehicle</th>
-                    <th>Date</th>
+                    <th onClick={() => sortData('prov')}>
+                      Provider{' '}
+                      {sortField === 'prov' &&
+                        (sortDirection === 'asc' ? '▲' : '▼')}
+                    </th>
+                    <th onClick={() => sortData('launch_name')}>
+                      Mission{' '}
+                      {sortField === 'launch_name' &&
+                        (sortDirection === 'asc' ? '▲' : '▼')}
+                    </th>
+                    <th onClick={() => sortData('vehicle')}>
+                      Vehicle{' '}
+                      {sortField === 'vehicle' &&
+                        (sortDirection === 'asc' ? '▲' : '▼')}
+                    </th>
+                    <th onClick={() => sortData('date')}>
+                      Date{' '}
+                      {sortField === 'date' &&
+                        (sortDirection === 'asc' ? '▲' : '▼')}
+                    </th>
                     <th>Result</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {launchIndex[props.site_name]?.map((launch) => (
+                  {sortedLaunches?.map((launch) => (
                     <>
                       {launch.sort_date < brushExtent[0] ||
                       launch.sort_date > brushExtent[1] ? (
@@ -147,7 +187,7 @@ function Container(props) {
         </div>
       )}
       <div className="dateRangeSelect">
-        <div className='dateinputs'>
+        <div className="dateinputs">
           <label>
             Start Date:
             <input
