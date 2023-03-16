@@ -1,5 +1,5 @@
-import * as stateActions from "./redux/stateActions";
-const url = "http://localhost:3000"; // probaly put in env
+import * as stateActions from './redux/stateActions';
+const url = 'https://seikiseki.duckdns.org'; // probaly put in env
 // "https://seikiseki.duckdns.org"
 let store;
 class Client {
@@ -15,13 +15,13 @@ class Client {
     };
     const res = fetch(`${url}/serverSideProps`, requestOptions);
     res
-        .then((data) => data.json())
-        .then((json) => {
-          const {worldMapData} = json;
-          store.dispatch(stateActions.toggleFetchingWorldGeoData(false));
+      .then((data) => data.json())
+      .then((json) => {
+        const { worldMapData } = json;
+        store.dispatch(stateActions.toggleFetchingWorldGeoData(false));
 
-          store.dispatch(stateActions.populateWorldMapData({worldMapData}));
-        });
+        store.dispatch(stateActions.populateWorldMapData({ worldMapData }));
+      });
   }
 
   async get_launch_sites() {
@@ -32,12 +32,12 @@ class Client {
     };
     const res = fetch(`${url}/getLaunchSites`, requestOptions);
     res
-        .then((data) => data.json())
-        .then((json) => {
-          const locations = json;
-          store.dispatch(stateActions.toggleFetchingLaunchSites(false));
-          store.dispatch(stateActions.fillLocationData({locations}));
-        });
+      .then((data) => data.json())
+      .then((json) => {
+        const locations = json;
+        store.dispatch(stateActions.toggleFetchingLaunchSites(false));
+        store.dispatch(stateActions.fillLocationData({ locations }));
+      });
   }
 
   // make this vvvv
@@ -48,27 +48,27 @@ class Client {
       redirect: 'follow',
     };
     const res = fetch(
-        `${url}/getLaunchData?startDate=${startDate}&endDate=${endDate}`,
-        requestOptions,
+      `${url}/getLaunchData?startDate=${startDate}&endDate=${endDate}`,
+      requestOptions
     ); // change to correct route, use start and end dates.
     res
-        .then((data) => data.json())
-        .then((json) => {
-          const launchArray = json;
-          const launchIndexNew = {};
-          launchArray.forEach((launch) => {
-            if (launch.launch_site) {
-              const padLocationName = launch.launch_site;
-              if (!launchIndexNew[padLocationName]) {
-                launchIndexNew[padLocationName] = [];
-              }
-              launchIndexNew[padLocationName].push(launch);
+      .then((data) => data.json())
+      .then((json) => {
+        const launchArray = json;
+        const launchIndexNew = {};
+        launchArray.forEach((launch) => {
+          if (launch.launch_site) {
+            const padLocationName = launch.launch_site;
+            if (!launchIndexNew[padLocationName]) {
+              launchIndexNew[padLocationName] = [];
             }
-          });
-          store.dispatch(stateActions.toggleFetchingLaunches(false));
-          store.dispatch(stateActions.populateLaunchArray({launchArray}));
-          store.dispatch(stateActions.populateLaunchIndex( launchIndexNew ));
+            launchIndexNew[padLocationName].push(launch);
+          }
         });
+        store.dispatch(stateActions.toggleFetchingLaunches(false));
+        store.dispatch(stateActions.populateLaunchArray({ launchArray }));
+        store.dispatch(stateActions.populateLaunchIndex(launchIndexNew));
+      });
   }
 }
 export default Client;
