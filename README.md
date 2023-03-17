@@ -28,7 +28,7 @@ Clicking on any of the launch circles on the map will display a table with all o
 
 ### Quirks
 
-- Currently data before the 90s from the rocketLaunch API is not fully fleshed out, Because of that i have split the before 1990 and after, as two options for the graph. 
+- Currently data before the 90s from the rocketLaunch API is not fully fleshed out
 
 ## Contributing
 
