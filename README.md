@@ -1,4 +1,4 @@
-# Seikiseki
+# Seikiseki, (deployed site here https://seikiseki.netlify.app/)
 Seikiseki is a web application that displays information about space launches around the world. The application uses data from the [RocketLaunch.live](https://www.rocketlaunch.live/api) API to display launches on a map and in a table, and provides additional visualizations of launch data.
 
 ## Technologies Used
