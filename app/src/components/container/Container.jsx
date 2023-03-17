@@ -100,6 +100,7 @@ function Container(props) {
   const currentTime = Math.floor(Date.now() / 1000);
 
   return (
+    
     <div className="mapScreen">
       <span className="copyright">Data by RocketLaunch.Live</span>
       <svg width={width} height={height} id="worldMap">

@@ -1,5 +1,5 @@
 import * as stateActions from "./redux/stateActions";
-const url = import.meta.env.VITE_SERVER_URL; 
+const url = "https://seikiseki.duckdns.org"; 
 let store;
 class Client {
   static init(data) {
