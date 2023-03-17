@@ -1,5 +1,5 @@
 import * as stateActions from "./redux/stateActions";
-const url = "http://seikiseki.duckdns.org"; 
+const url = "https://seikiseki.duckdns.org"; 
 let store;
 class Client {
   static init(data) {
