@@ -7,13 +7,15 @@ require('dotenv').config(); // Load environment variables
 const request = require('request');
 const mysql = require('mysql2');
 
-const connection = mysql.createConnection({
-  database: 'seikiseki',
-  user: process.env.user,
-  password: process.env.password,
-  host: process.env.host,
-  port: process.env.port,
-});
+// const connection = mysql.createConnection({
+//   database: 'seikiseki',
+//   user: process.env.user,
+//   password: process.env.password,
+//   host: process.env.host,
+//   port: process.env.port,
+// });
+
+const connection = mysql.createConnection(process.env.DATABASE_URL);
 
 connection.connect(function(err) {
   if (err) throw err;
