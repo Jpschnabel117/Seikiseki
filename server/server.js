@@ -9,13 +9,15 @@ const bodyParser = require('body-parser');
 // const request = require('request');
 require('dotenv').config(); // Load environment variables
 
-const connection = mysql.createConnection({
-  database: 'seikiseki',
-  user: process.env.user,
-  password: process.env.password,
-  host: process.env.host,
-  port: process.env.port,
-});
+// const connection = mysql.createConnection({
+//   database: 'seikiseki',
+//   user: process.env.user,
+//   password: process.env.password,
+//   host: process.env.host,
+//   port: process.env.port,
+// });
+
+const connection = mysql.createConnection(process.env.DATABASE_URL);
 
 
 connection.connect(function(err) {
@@ -25,7 +27,7 @@ connection.connect(function(err) {
 
 // Set CORS options
 const corsOptions = {
-  origin: process.env.origin,
+  origin: ['http://127.0.0.1:5173', 'https://seikiseki.netlify.app'],
   methods: ['POST', 'GET'],
   optionsSuccessStatus: 200,
 };
@@ -144,4 +146,4 @@ app.get('/', cors(corsOptions), (req, res) => {
   res.send('Hello world!!');
 });
 
-app.listen(3000, () => console.log(`Example app is listening on port 3000.`));
+app.listen(8080, () => console.log(`Example app is listening on port 8080.`));

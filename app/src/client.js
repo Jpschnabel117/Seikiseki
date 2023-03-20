@@ -1,5 +1,6 @@
-import * as stateActions from "./redux/stateActions";
-const url = "https://seikiseki.duckdns.org"; 
+import * as stateActions from './redux/stateActions';
+const url = 'https://seikiseki.fly.dev';
+//https://seikiseki.duckdns.org
 let store;
 class Client {
   static init(data) {
